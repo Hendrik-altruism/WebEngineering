@@ -1,0 +1,40 @@
+1.1:
+    1. Vagheit im Konzept nicht verstanden, Konzept von T.B. Lee ein Rückschritt aus Sicht der Hypertext Community, Broken Links sind möglich
+    2. 
+    3. 
+1.2:
+    1. Success, Alles war erfolgreich
+    2. URL wird umgeleitet, da sie sich geändet hat oder nicht mehr existiert
+    3. Error auf Seite des Client -> eine Fehlerhafte Anfrage liegt vor. Debugging auf Client-Seite um den Error zu beheben
+    4. Fehlende Zugriffsberechtigung -> Kann durch leeren des Caches behoben werden, oder Deaktivierung von Browser-Erweiterungen
+    5. 
+1.3:
+    1. Textbasierte Auszeichnungssprache zur Strukturierung von Dokumenten, Standart für die Erstellung von Webseiten
+    2.  <ol>
+            <li>Element1</li>
+            <ol>
+                <li>Element2</li>
+                <ol>
+                    <li>Element3</li>
+                </ol>
+            </ol>
+        </ol>
+    3.  <table>
+            <tr>
+                <th>Spalte1</th>
+                <th>Spalte2</th>
+                <th>Spalte3</th>
+            </tr>
+            <tr>
+                <th>Wert1</th>
+                <th>Wert2</th>
+                <th>Wert3</th>
+            </tr>
+        </table>
+    4. / -> Unterster Ordner im Verzeichnis , ../ -> ein Ordner über dem Aktuellen
+    5.  <ul>
+            <li></li>
+        </ul>
+    6. style(width, height und float), alt -> um Text anzuzeigen
+1.4:
+    
