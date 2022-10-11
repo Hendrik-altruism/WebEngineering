@@ -12,35 +12,97 @@
 </head>
 <body style="background-color: #b2d6d1;">
         <h1 style="text-align: center;">Survey Form</h1>
-        <form style="background-color:  #fafafa; padding: 20px; margin: 30px; height: 700px;">
+        <div style="background-color:  #fafafa; padding: 20px; margin: 30px; border-radius: 4px;">
             <p style="text-align: center;">Let us know how we can improve freeCodeCamp</p> 
-            <div id="left">
-                * Name:<p></p>
-                * Email:<p></p>
-                * Age:<p></p>
+        <form>
+            <div class="row">
+                <div class="left">
+                    <label for="name" class="default">* Name:</label>
+                </div>
+                <div class="right">
+                    <input id="name" type="text" class="inputs" placeholder="Enter your name">
+                </div>
             </div>
-            <div id="right">
-                <input type="text" class="inputs" placeholder="Enter your name"><p></p>
-                <input type="text" class="inputs" placeholder="Enter your Email"><p></p>
+            <div class="row">
+                <div class="left">
+                    <label for="email" class="default">* Email:</label>
+                </div>
+                <div class="right">
+                    <input id="email" type="text" class="inputs" placeholder="Enter your Email">
+                </div>
             </div>
-            <table>
-                <tr>
-                    <th>
-                        sddsff
-                    </th>
-                    <th>
-                        <ul>
-                           <li>
-                               ss
-                           </li>
-                           <li>
-                               aa
-                           </li> 
-                        </ul>
-                    </th>
-                </tr>
-            </table> 
+            <div class="row">
+                <div class="left">
+                    <label for="age" class="default">* Age:</label>
+                </div>
+                <div class="right">
+                    <input id="age" type="text" class="inputs" placeholder="Enter your Age">
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <label for="role" class="selectL">Which option best describes your current Role?</label>
+                </div>
+                <div class="right">
+                    <select id="role">
+                        <option value="Student">Student</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Worker">Worker</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <label for="recommendation" class="selectL">* How likely is that you would recommend FCC to a friend?</label>
+                </div>
+                <div class="right">
+                    <form id="recommendation" name="recommendForm">
+                        <input type="radio" id="definitely" name="recommendForm">
+                        <label for="definitely">Definitely</label>
+                        <br>
+                        <input type="radio" id="maybe" name="recommendForm">
+                        <label for="maybe">Maybe</label>
+                        <br>
+                        <input type="radio" id="notSure" name="recommendForm">
+                        <label for="notSure">Not Sure</label>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <label for="like" class="selectL">What do you like most in FCC:</label>
+                </div>
+                <div class="right">
+                    <select id="like">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="easy">its Easy-to-Use</option>
+                        <option value="content">has Good Content</option>
+                        <option value="best">Best fucking Thing</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <label for="improve" class="selectL">Things that should be improved in the future (Check all the apply):</label>
+                </div>
+                <div class="right">
+                    <form id="improve" name="improveForm">
+                        <input type="checkbox" id="fend" name="improveForm">
+                        <label for="fend">Front-end Projekts</label>
+                        <br>
+                        <input type="checkbox" id="bend" name="improveForm">
+                        <label for="bend">Back-end Projects</label>
+                        <br>
+                        <input type="checkbox" id="Data" name="improveForm">
+                        <label for="Data">Data Visualization</label>
+                    </form>
+                </div>
+            </div>
+            <div id="buttonDiv">
+                <button type="submit">Submit</button>
+            </div>
         </form>
+        </div>
         
 
 
@@ -49,19 +111,21 @@
         <style>
             * {
             font-family: 'Raleway', sans-serif;
+            box-sizing: border-box;
             }
 
-            #left {
+            .left {
                 float: left;
-                width: 48%;
+                width: 50%;
                 text-align: right;
             }
-
-            #right {
+            .row {
+                margin-top: 25px;
+            }
+            .right {
                 float: right;
-                width: 48%;
+                width: 50%;
             }            
-
             .inputs {
                 text-align: left;
             }
@@ -69,6 +133,50 @@
             .question {
                 text-align: right;
             }
+            input[type=text], select, textarea {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 2px;
+                resize: vertical;
+                font-size: 16px;
+                
+            }
+            .default {
+                padding: 9px 12px 9px 0;
+                display: inline-block;
+            }    
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            } 
+            .selectL {
+                padding: 0px 12px 0px 0;
+                display: inline-block;
+            }
+            input[type="checkbox"], input[type="radio"] {
+                margin-bottom: 10px;
+            }
+            button {
+                border: 1px solid #ccc;
+                border-radius: 2px;
+                resize: vertical;
+                font-size: 20px;
+                width: 120px;
+                height: 50px;
+                cursor: pointer;
+            }
+            #buttonDiv{
+                text-align: center;
+                margin-top: 20px;
+            }
+            @media screen and (max-width: 600px) {
+                .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+}
             
         </style>
 </body>
