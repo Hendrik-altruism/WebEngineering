@@ -6,87 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>LoesungenWebEngineering</title>
+    <title>houde2s|WebEngineering</title>
 </head>
-<h1>Übung 1</h1>
-<ol>
-    <li><br>
-        <ol>
-            <li>
-                Vagheit im Konzept nicht verstanden, Konzept von T.B. Lee ein Rückschritt aus Sicht der Hypertext
-                Community, Broken Links sind möglich
-            </li>
-            <li>
-                Beliebige Erweiterbarkeit und keine Einschränkungen
-            </li>
-            <li>
-                Constraints, die es verhindern Links anzulegen ohne eine gültige und erreichbare Adresse dahinter. Bei
-                Änderung einer Adresse müssten alle Links,<br> die darauf verweisen automatisch
-                angepasst werden
-            </li>
-        </ol>
-    </li>
-    <li><br>
-        <ol>
-            <li>Success, Alles war erfolgreich</li>
-            <li>URL wird umgeleitet, da sie sich geändet hat oder nicht mehr existiert</li>
-            <li>Error auf Seite des Client -> eine Fehlerhafte Anfrage liegt vor. Debugging auf Client-Seite um den
-                Error zu beheben</li>
-            <li>Fehlende Zugriffsberechtigung -> Kann durch leeren des Caches behoben werden, oder Deaktivierung von
-                Browser-Erweiterungen</li>
-            <li></li>
-        </ol>
-    </li>
-    <li><br>
-        <ol>
-            <li>Textbasierte Auszeichnungssprache zur Strukturierung von Dokumenten, Standart für die Erstellung von
-                Webseiten</li>
-            <li>
-                <ol>
-                    <li>Element1</li>
-                    <ol>
-                        <li>Element2</li>
-                        <ol>
-                            <li>Element3</li>
-                        </ol>
-                    </ol>
-                </ol>
-            </li>
-            <li>
-                <table>
-                    <tr>
-                        <th>Spalte1</th>
-                        <th>Spalte2</th>
-                        <th>Spalte3</th>
-                    </tr>
-                    <tr>
-                        <th>Wert1</th>
-                        <th>Wert2</th>
-                        <th>Wert3</th>
-                    </tr>
-                </table>
-            </li>
-            <li>
-                / -> Unterster Ordner im Verzeichnis , ../ -> ein Ordner über dem Aktuellen
-            </li>
-            <li>
-                <ul>
-                    <li>Beispiel-Wert</li>
-                </ul>
-            </li>
-            <li>style(width, height und float), alt -> um Text anzuzeigen</li>
-        </ol>
-    </li>
-    <li><br>
-        <div id="Aufgabe1.4">
-            <iframe src="LoesungenAufgaben/Aufgabe_1/1.html" height="700" width="700" title="Aufgabe 1.4:"></iframe>
-        </div>
-    </li>
-</ol>
-
-
 <body>
-
+    <div class="grid-container"> 
+        <nav class="navigationBar">
+            <img src="./ressources/graphics/Logo.png" alt="Home" onclick="changeView(1)">
+            <div class="heading">
+                Web Engineering
+            </div>
+            <ul class="navList">
+                <li onclick="changeView(1)">1</li>
+                <li onclick="changeView(2)">2</li>
+                <li onclick="changeView(3)">3</li>
+            </ul>
+            <div class="burger">
+                <div class="l1"></div>
+                <div class="l2"></div>
+                <div class="l3"></div>
+            </div>
+        </nav>
+    </div>
 </body>
 <script type="text/javascript" src="script.js"></script>
 </html>

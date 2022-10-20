@@ -21,14 +21,18 @@
             <img src="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png">
         </div>
         <div id="content">
-            Dont't just drift through Javascript.<br>
-            Understand how Javascript works<br>
-            Start your journey through the bumpy side of Javascript<br>
+            <p id="conText">
+                Dont't just drift through Javascript.<br>
+                Understand how Javascript works<br>
+                Start your journey through the bumpy side of Javascript<br>
+            </p>
             <button class="moreBtn">ORDER YOUR COPY NOW</button>
         </div>
         <div id="footer">
-            The first ebook in the book series is absolutely free.<br>
-            <button class="moreBtn">FIND OUT MORE ABOUT THIS OFFER</button>
+            <p id="fooText">
+                The first ebook in the book series is absolutely free.<br>
+            </p>
+            <p style="font-stretch: 400%; margin: 0;">FIND OUT MORE ABOUT THIS OFFER</p>
         </div> 
     </div> 
 
@@ -86,7 +90,7 @@
         }
 
         #content{
-            padding: 2vh;
+            padding: 4vh;
             grid-area: 3/2;
             text-align: center;
         }
@@ -111,12 +115,20 @@
             list-style: none;
         }
 
-
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
         .moreBtn{
             background-color: #f88e37;
             border-radius: 5px;
             border: none;
             color: white;
+            padding: 5px 4vw;
+            font-family: 'Bebas Neue';
+        }
+
+
+        #conText {
+            line-height: 4;
+            font-weight: 600;
         }
 
         @media (max-width: 600px) {

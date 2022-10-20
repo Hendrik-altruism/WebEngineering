@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+* {
+    font-family: 'Jost', sans-serif;
+}
+
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0;
+}
+
+.grid-container{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 50px 50px 1fr 150px;
+    grid-template-columns: 1fr;
+}
+
+.navigationBar{
+    display: flex;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgb(18, 149, 192);
+}
+
+img{
+    width: 4em;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.heading {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.navList{
+    flex-grow: 1;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navList li{
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 550;
+    letter-spacing: 2px;
+}
+
+.burger{
+    display: none;
+    padding: 10px;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+@media (max-width: 800px){
+    .navList{
+        display: none;
+    }
+    .burger{
+        display: block;
+    }
+    .heading{
+        flex-grow: 1;
+    }
+}
