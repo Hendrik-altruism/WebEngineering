@@ -24,7 +24,7 @@ body{
     display: flex;
     align-items: center;
     min-height: 8vh;
-    background-color: rgb(12, 22, 26);
+    background-color: rgb(10, 20, 34);
 }
 
 img{
@@ -80,7 +80,7 @@ img{
         right: 0px;
         height: 92vh;
         top: 8vh;
-        background-color: rgb(12, 22, 26);
+        background-color: rgb(10, 20, 34);
         margin: 0;
         padding: 0 2vw 0 2vw;
         display: flex;
