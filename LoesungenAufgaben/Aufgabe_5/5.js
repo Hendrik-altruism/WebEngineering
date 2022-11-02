@@ -29,14 +29,6 @@ function myTimer(){
     document.getElementById("t"+current).innerHTML = Dates[current].toLocaleTimeString()
 }
 
-async function updateTime(b){
-    int = setInterval(myTimer, 1000)
-    b.addEventListener("click", function(){
-        b.innerHTML="Start!"
-        clearInterval(int)
-    })
-};
-
 async function toggleTime(c){
     if(document.getElementById("b"+c).innerHTML=="Start!"){
         current = c;
