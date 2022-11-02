@@ -1,32 +1,52 @@
-var current = null;
+var current = 0;
+var Dates = [new Date()];
+var int;
 
 document.getElementById('add').addEventListener("click", async function(){
+    current++;
     const node = document.createElement("li");
     node.appendChild(document.createTextNode(document.getElementById('name').value));
     const time = document.createElement("time")
-    time.setAttribute("id", "t1")
-    const d = new Date()
-    time.innerHTML=(d-d).toLocaleString()
+    time.setAttribute("id", "t"+current)
+    Dates.push(new Date());
+    Dates[current].setTime(-3600000);
+    time.innerHTML= Dates[current].toLocaleTimeString();
     node.appendChild(time)
     const button = document.createElement("button");
-    button.appendChild(document.createTextNode("Stopp!"))
+    button.setAttribute("onclick", "toggleTime("+current+")")
+    button.setAttribute("id", "b"+current)
+    button.appendChild(document.createTextNode("Start!"))
     node.appendChild(button);
     document.getElementById('talkers').appendChild(node)
     document.getElementById('name').value=""
-    updateTime(time, button)
+    toggleTime(current);
 });
 
 
-async function updateTime(t, b){
-   
+function myTimer(){
+    let day = (Dates[current].getTime()+1000);
+    Dates[current].setTime(day)
+    document.getElementById("t"+current).innerHTML = Dates[current].toLocaleTimeString()
+}
+
+async function updateTime(b){
+    int = setInterval(myTimer, 1000)
     b.addEventListener("click", function(){
         b.innerHTML="Start!"
-        return null;
-    })
-    setInterval(1000, async function(){
-
+        clearInterval(int)
     })
 };
+
+async function toggleTime(c){
+    if(document.getElementById("b"+c).innerHTML=="Start!"){
+        current = c;
+        int = setInterval(myTimer, 1000)
+        document.getElementById("b"+c).innerHTML="Stopp!"
+    }else if(document.getElementById("b"+c).innerHTML=="Stopp!"){
+        clearInterval(int)
+        document.getElementById("b"+c).innerHTML="Start!"
+    }
+}
 
 
 const a = document.createElement('a');
