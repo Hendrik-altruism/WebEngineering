@@ -1,10 +1,29 @@
-async function changeView(param){
-    console.log(param)
-}
+import changeModuleView from "./LoesungenAufgaben/Aufgabe_6/modueltest.js"
 
-async function showNav(){
+
+const listeners = document.querySelectorAll('li')
+listeners.forEach((listener, index) =>{
+    listener.addEventListener("click", ()=>{
+       changeView(index+1) 
+    })
+})
+document.getElementById('homeLogo').addEventListener("click", ()=>{
+    changeView(1)
+})
+
+document.getElementById("burgerMenu").addEventListener("click", async ()=>{
     const burger = document.querySelector('.burger');
     const navList = document.querySelector('.navList');
     navList.classList.toggle('nav-active');
-    burger.classList.toggle('trans');
+    burger.classList.toggle('trans'); 
+})
+
+
+/*document.getElementById("first").addEventListener("click", async ()=>{
+    changeModuleView(1)
+})
+*/
+async function changeView(value){
+    console.log(value)
 }
+
