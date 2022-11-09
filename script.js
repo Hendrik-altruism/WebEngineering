@@ -18,11 +18,6 @@ document.getElementById("burgerMenu").addEventListener("click", async ()=>{
     burger.classList.toggle('trans'); 
 })
 
-
-/*document.getElementById("first").addEventListener("click", async ()=>{
-    changeModuleView(1)
-})
-*/
 async function changeView(value){
     console.log(value)
 }

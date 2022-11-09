@@ -1,3 +1,5 @@
+
+
 document.getElementById('btn').addEventListener("click", () => {
     let el = document.getElementById('field');
     let s = el.value
@@ -46,3 +48,6 @@ function control(sentance, first, last){
     }
     return erg;
 }
+
+
+
