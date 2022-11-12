@@ -5,14 +5,15 @@ var relations = ([
 ])
 
 console.log(relations)
-topSortStep()
+console.log(topSortStep())
 console.log(relations)
-topSortStep()
+console.log(topSortStep())
 console.log(relations)
-topSortStep()
+console.log(topSortStep())
 console.log(relations)
-topSortStep()
+console.log(topSortStep())
 console.log(relations)
+console.log(topSortStep())
 
 function topSortStep() {
     const Larr = []

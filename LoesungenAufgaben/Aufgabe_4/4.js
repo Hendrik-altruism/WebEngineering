@@ -55,7 +55,7 @@ function conflict(){
 //4.3
 //79    -> Maximaler Integer    (8944394323791464)     
 //1477  -> Maximale Number      (1.3069892237633987e+308)
-fibonacci(2000)
+fibonacci(100)
 function fibonacci(amount){
     let prev = BigInt(0);
     console.log(prev)
@@ -70,10 +70,52 @@ function fibonacci(amount){
 }
 
 //4.4
-topSort([["schlafen","studieren"],["essen","studieren"],["studieren","prüfen"]])
+
+console.log(topSort([
+    ["schlafen", "studieren"],
+    ["essen", "studieren"],
+    ["studieren", "prüfen"]
+]))
+
 function topSort(x){
-    let finish = []
-    sorted = false
+    var relations = x
+    let erg = [];
+    while (relations[0].length>1){
+        erg.push(topSortStep())
+    }
+    erg.push(topSortStep())
+
+    function topSortStep() {
+        const Larr = []
+        const Rarr = []
+        relations.forEach(element => {
+            Larr.push(element[0])
+            Rarr.push(element[1])
+        });
+        const distinct = (value, index, self) => {
+            return self.indexOf(value) === index;
+        }
+        const distinctEl = (Larr.concat(Rarr)).filter(distinct);
+        
+        let del  
+        distinctEl.forEach(element => {
+            if(!Rarr.includes(element)){
+                del = element
+            }
+        })
+        if(relations.length===1){
+            del = relations[0][0]
+            relations[0].shift()
+        }else{
+        relations = relations.filter(function(value, index, arr){
+            return value[0]!=del;
+        })
+        }
+        return del
+    }
     
+    return erg;
 }
+
+
 
