@@ -80,10 +80,9 @@ console.log(topSort([
 function topSort(x){
     var relations = x
     let erg = [];
-    while (relations[0].length>1){
-        erg.push(topSortStep())
+    while (typeof(x = topSortStep())!="undefined"){
+        erg.push(x)
     }
-    erg.push(topSortStep())
 
     function topSortStep() {
         const Larr = []
@@ -97,23 +96,22 @@ function topSort(x){
         }
         const distinctEl = (Larr.concat(Rarr)).filter(distinct);
         
+
+
         let del  
         distinctEl.forEach(element => {
             if(!Rarr.includes(element)){
                 del = element
             }
         })
-        if(relations.length===1){
-            del = relations[0][0]
-            relations[0].shift()
-        }else{
-        relations = relations.filter(function(value, index, arr){
-            return value[0]!=del;
+        relations.forEach(element => {
+            if(element[0]===del){
+                element.shift();
+            };
         })
-        }
         return del
     }
-    
+
     return erg;
 }
 
