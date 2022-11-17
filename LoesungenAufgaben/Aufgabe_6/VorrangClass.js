@@ -4,21 +4,15 @@ var relations = ([
     ["studieren", "prüfen"]
 ])
 
-console.log(relations)
 console.log(topSortStep())
-console.log(relations)
 console.log(topSortStep())
-console.log(relations)
 console.log(topSortStep())
-console.log(relations)
-console.log(topSortStep())
-console.log(relations)
 console.log(topSortStep())
 
 function topSortStep() {
     const Larr = []
     const Rarr = []
-    this.relations.forEach(element => {
+    relations.forEach(element => {
         Larr.push(element[0])
         Rarr.push(element[1])
     });
@@ -27,20 +21,19 @@ function topSortStep() {
     }
     const distinctEl = (Larr.concat(Rarr)).filter(distinct);
     
+
+
     let del  
     distinctEl.forEach(element => {
         if(!Rarr.includes(element)){
             del = element
         }
     })
-    if(relations.length===1){
-        del = relations[0][0]
-        relations[0].shift()
-    }else{
-    this.relations = relations.filter(function(value, index, arr){
-        return value[0]!=del;
+    relations.forEach(element => {
+        if(element[0]===del){
+            element.shift();
+        };
     })
-    }
     return del
 }
 
