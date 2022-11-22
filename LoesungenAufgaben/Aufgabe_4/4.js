@@ -9,18 +9,18 @@ function identify_function(param){
     return function ident(){return param}
 }
 
-let add=(x, y) => y+x; 
-let mul=(x, y) => y*x;
+function add(x, y){ return y+x;} 
+function mul(x, y){ return y*x;}
 
 function addf(x){
-    return function add(y){
+    return function (y){
         return x+y
     }
 }
 
 function applyf(x){
-    return function addf(y){
-        return function fun(z){
+    return function (y){
+        return function (z){
             return x(y, z);
         }    
     }
@@ -95,9 +95,6 @@ function topSort(x){
             return self.indexOf(value) === index;
         }
         const distinctEl = (Larr.concat(Rarr)).filter(distinct);
-        
-
-
         let del  
         distinctEl.forEach(element => {
             if(!Rarr.includes(element)){
