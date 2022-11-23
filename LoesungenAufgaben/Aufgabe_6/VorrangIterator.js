@@ -19,22 +19,21 @@ function topSortStep(relations) {
         };
     })
     return [del, relations]
-}
+} 
 
-
-class VorrangIterator{
+class VorrangIt{   
     constructor(rel){
-        this.relation = rel;
-    }
-    [Symbol.iterator](){
-        let cur = this.relation
-        return{
-            next(){
-                let obj = topSortStep(cur)
-                cur = obj[1]
-                return  {done: typeof(obj[0])==="undefined", value: obj[0]}
+        this.ar = rel
+    }   
+    [Symbol.iterator]() {
+            let cur = this.ar
+            return{
+                next(){
+                    let out = topSortStep(cur)
+                    cur = out[1];
+                    return  {done: typeof(out[0]==="undefined"), value: out[0]}
+                }
             }
-        }
     }
 }
 
