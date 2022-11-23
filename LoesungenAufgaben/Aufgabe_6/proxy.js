@@ -32,18 +32,27 @@ class VorrangProxy{
             next(){
                 let obj = topSortStep(cur)
                 cur = obj[1]
-                return  {done: typeof(obj[0])==="undefined", value: obj[0]}
+                return  {done: typeof(obj[0])==="undefined", value: obj}
             }
         }
     }
 }
 
-studentenLeben = new VorrangProxy([
+let studentenLebenProxy = new VorrangProxy([
     ["schlafen", "studieren"],
     ["essen", "studieren"],
     ["studieren", "prüfen"]
 ])
 
-for(const n of studentenLeben){
-    console.log(n)
-}
+const proxy = new Proxy(studentenLebenProxy,{
+        get(target, prop, reciever){
+            let erg = topSortStep(target.relation)
+            target.relation = erg[1]
+            return erg
+        }
+    })
+
+console.log(proxy.next)
+console.log(proxy.next)
+console.log(proxy.next)
+console.log(proxy.next)
