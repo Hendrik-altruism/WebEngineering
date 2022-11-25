@@ -1,0 +1,5 @@
+Schreiben Sie in HTML und CSS nur den responsiven Rahmen für einen solchen WWW-Navigator.
+Dabei können Sie auch ein schöneres Layout als das hier gezeigte erstellen.
+Die Inhalte sollen in einer JSON-Datei extern gelagert werden.
+Mit der fetch-API soll die JSON-Datei asynchron nicht-blockierend geladen werden, und zwar nur einmal, nicht mehrfach.
+(d.h. Sparen Sie Internet-Bandbreite.) Sobald die Inhalte angekommen sind, sollen sie im Browser auch sofort angezeigt werden.

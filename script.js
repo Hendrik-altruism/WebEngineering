@@ -1,5 +1,3 @@
-import changeModuleView from "./LoesungenAufgaben/Aufgabe_6/modueltest.js"
-
 
 const listeners = document.querySelectorAll('li')
 listeners.forEach((listener, index) =>{
