@@ -37,7 +37,7 @@ class VorrangIt{
     }
 }
 
-let studentenLeben = new VorrangIterator([
+let studentenLeben = new VorrangIt([
     ["schlafen", "studieren"],
     ["essen", "studieren"],
     ["studieren", "prüfen"]

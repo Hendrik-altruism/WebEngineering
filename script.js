@@ -1,6 +1,5 @@
 
-const listeners = document.querySelectorAll('li')
-listeners.forEach((listener, index) =>{
+const listeners = document.querySelectorAll('li').forEach((listener, index) =>{
     listener.addEventListener("click", ()=>{
        changeView(index+1) 
     })
