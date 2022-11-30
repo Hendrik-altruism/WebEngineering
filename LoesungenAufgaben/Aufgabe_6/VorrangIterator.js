@@ -19,25 +19,26 @@ function topSortStep(relations) {
         };
     })
     return [del, relations]
-} 
+}
 
-class VorrangIt{   
+
+class VorrangIterator{
     constructor(rel){
-        this.ar = rel
-    }   
-    [Symbol.iterator]() {
-            let cur = this.ar
-            return{
-                next(){
-                    let out = topSortStep(cur)
-                    cur = out[1];
-                    return  {done: typeof(out[0]==="undefined"), value: out[0]}
-                }
+        this.relation = rel;
+    }
+    [Symbol.iterator](){
+        let cur = this.relation
+        return{
+            next(){
+                let obj = topSortStep(cur)
+                cur = obj[1]
+                return  {done: typeof(obj[0])==="undefined", value: obj[0]}
             }
+        }
     }
 }
 
-let studentenLeben = new VorrangIt([
+let studentenLeben = new VorrangIterator([
     ["schlafen", "studieren"],
     ["essen", "studieren"],
     ["studieren", "prüfen"]
