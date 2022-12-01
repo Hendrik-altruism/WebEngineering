@@ -23,4 +23,11 @@ main{
 
 footer{
     grid-area: 3/ span 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a:hover{
+    cursor: pointer;
 }
