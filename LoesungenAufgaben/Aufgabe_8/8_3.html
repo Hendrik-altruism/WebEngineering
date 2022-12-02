@@ -13,46 +13,50 @@
         <header>
           <nav class="navbar navbar-expand-lg" style="background-color: #8aceff">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Home</a>
+                  <a class="navbar-brand" onclick='changeView("home")'>Home</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" role="button" onclick="changeField('html')" data-bs-toggle="dropdown" aria-expanded="false">
                           HTML
                         </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <ul class="dropdown-menu" id="htmlDrop">
+                          <li><a class="dropdown-item" onclick="changeView('headings')">Headings</a></li>
+                          <li><a class="dropdown-item" onclick="changeView('paragraph')">Paragraph</a></li>
                         </ul>
                       </li>
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" onclick="changeField('css')" aria-expanded="false">
                           CSS
                         </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <ul class="dropdown-menu" id="htmlDrop">
+                          <li><a class="dropdown-item" onclick="changeView('selectors')">Selectors</a></li>
+                          <li><a class="dropdown-item" onclick="changeView('colors')">Colors</a></li>
                         </ul>
                       </li>
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" onclick="changeField('javascript')" aria-expanded="false">
                           JavaScript
                         </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <ul class="dropdown-menu" id="htmlDrop">
+                          <li><a class="dropdown-item" onclick="changeView('function')">Function</a></li>
+                          <li><a class="dropdown-item" onclick="changeView('object')">Object</a></li>
+                          <li><a class="dropdown-item" onclick="changeView('class')">Class</a></li>
+                          <li><a class="dropdown-item" onclick="changeView('Promise')">Promise</a></li>
+                          <li><a class="dropdown-item" onclick="changeView('async')">Async</a></li>
+                          <li><a class="dropdown-item" onclick="changeView('fetch')">Fetch</a></li>
+                          <li><a class="dropdown-item" onclick="changeView('callback')">Callback</a></li>
                         </ul>
                       </li>
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Other
                         </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <ul class="dropdown-menu" id="htmlDrop">
+                          <li><a class="dropdown-item" onclick="changeView('home')">Other</a></li>
                         </ul>
                       </li>
                     </ul>
@@ -60,7 +64,9 @@
                 </div>
               </nav>
         </header>
+        <div id="left"></div>
         <main></main>
+        <div id="right"></div>
         <footer style="background-color: #8aceff;">
           <div><a>Home</a>
           </div>
@@ -73,6 +79,6 @@
         </footer>
     </div>
 </body>
+<script src="8_3.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script src="8_3.js" type="module"></script>
 </html>

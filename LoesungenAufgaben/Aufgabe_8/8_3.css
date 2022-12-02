@@ -13,12 +13,24 @@ body{
     grid-template-columns: 1fr 2fr 1fr;
 }
 
+.navbar{
+    height: 100%;
+}
+
 header{
     grid-area: 1 / span 3;
 }
 
+#left{
+    grid-area: 2 /1;
+}
+
 main{
-    grid-area: 2 /span 3;
+    grid-area: 2 /2;
+}
+
+#right{
+    grid-area: 2 /3;
 }
 
 footer{

@@ -1,4 +1,4 @@
-{
+{   
     "html": {
       "headings": {
         "content": "Die Überschrift-Elemente bestehen aus sechs verschiedenen Levels. Das 'h1'-Element ist die Überschrift mit der höchsten Gewichtung und das 'h6'-Element mit der kleinsten. Ein Überschriften-Element beschreibt das Thema des Bereiches, welcher der Überschrift folgt. Überschriften können auch verwendet werden, um ein Inhaltsverzeichnis für ein Dokument automatisch zu erstellen.",
@@ -29,15 +29,45 @@
     },
     "javascript": {
       "function": {
-        "content": "Funktionen sind ein Grundbaustein in JavaScript. Eine Funktion ist eine Prozedur - eine Reihe von Anweisungen, um eine Aufgabe auszuführen oder eine Wert auszurechnen. Um Funktionen zu verwenden, müssen diese im Scope (Gültigkeitsbereich) deklariert werden, in dem sie ausgeführt werden soll.",
+        "content": "Generally speaking, a function is a subprogram that can be called by code external (or internal in the case of recursion) to the function. Like the program itself, a function is composed of a sequence of statements called the function body. Values can be passed to a function, and the function will return a value. In JavaScript, functions are first-class objects, because they can have properties and methods just like any other object. What distinguishes them from other objects is that functions can be called. In brief, they are Function objects.",
         "references": [
-          "https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Funktionen"
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions"
         ]
       },
       "object": {
-        "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
+        "content": "JavaScript is designed on a simple object-based paradigm. An object is a collection of properties, and a property is an association between a name (or key) and a value. A property's value can be a function, in which case the property is known as a method. Objects in JavaScript, just as in many other programming languages, can be compared to objects in real life. In JavaScript, an object is a standalone entity, with properties and type. Compare it with a cup, for example. A cup is an object, with properties. A cup has a color, a design, weight, a material it is made of, etc. The same way, JavaScript objects can have properties, which define their characteristics.",
         "references": [
-          "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects"
+        ]
+      },
+      "class": {
+        "content": "JavaScript is a prototype-based language — an object's behaviors are specified by its own properties and its prototype's properties. However, with the addition of classes, the creation of hierarchies of objects and the inheritance of properties and their values are much more in line with other object-oriented languages such as Java. In this section, we will demonstrate how objects can be created from classes. In many other languages, classes, or constructors, are clearly distinguished from objects, or instances. In JavaScript, classes are mainly an abstraction over the existing prototypical inheritance mechanism — all patterns are convertible to prototype-based inheritance. Classes themselves are normal JavaScript values as well, and have their own prototype chains. In fact, most plain JavaScript functions can be used as constructors — you use the new operator with a constructor function to create a new object.",
+        "references": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_Classes"
+        ]
+      },
+      "Promise": {
+        "content": "A Promise is an object representing the eventual completion or failure of an asynchronous operation. Since most people are consumers of already-created promises, this guide will explain consumption of returned promises before explaining how to create them. Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function. Imagine a function, createAudioFileAsync(), which asynchronously generates a sound file given a configuration record and two callback functions: one called if the audio file is successfully created, and the other called if an error occurs.",
+        "references": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises"
+        ]
+      },
+      "async": {
+        "content": "The async function declaration declares an async function where the await keyword is permitted within the function body. The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.",
+        "references": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
+        ]
+      },
+      "fetch": {
+        "content": "The Fetch API provides a JavaScript interface for accessing and manipulating parts of the protocol, such as requests and responses. It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network. This kind of functionality was previously achieved using XMLHttpRequest. Fetch provides a better alternative that can be easily used by other technologies such as Service Workers. Fetch also provides a single logical place to define other HTTP-related concepts such as CORS and extensions to HTTP.",
+        "references": [
+          "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+        ]
+      },
+      "callback": {
+        "content": "A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action. Note, however, that callbacks are often used to continue code execution after an asynchronous operation has completed — these are called asynchronous callbacks. A good example is the callback functions executed inside a .then() block chained onto the end of a promise after that promise fulfills or rejects. This structure is used in many modern web APIs, such as fetch().",
+        "references": [
+          "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function"
         ]
       }
     }
