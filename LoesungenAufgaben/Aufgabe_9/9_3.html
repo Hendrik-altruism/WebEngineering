@@ -15,19 +15,80 @@
             <line x1="100" y1="5" x2="100" y2="295" stroke="black"></line>
             <line x1="200" y1="5" x2="200" y2="295" stroke="black"></line>
         </g>
-        <g id="leftupp" visibility="visible" onmouseover='this.setAttribute("visibility", "visible")' onmouseout='this.setAttribute("visibility", "hidden")'>
-            <line x1="10" y1="50" x2="90" y2="50" stroke="grey"></line>
-            <line x1="50" y1="10" x2="50" y2="90" stroke="grey"></line>
+        <g id="leftupp" class="fields">
+            <rect x="10" y="10" width="80" height="80"style="fill:white;"/>
+            <g visibility="hidden">
+                <line x1="10" y1="10" x2="90" y2="90" stroke="black" stroke-width="3" ></line>
+                <line x1="10" y1="90" x2="90" y2="10" stroke="black" stroke-width="3" ></line>
+            </g>
+            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="white" visibility="hidden"></circle>
         </g>
-        <g id="midupp"></g>
-        <g id="leftupp"></g>
-        <g id="leftupp"></g>
-        <g id="leftupp"></g>
-        <g id="leftupp"></g>
-        <g id="leftupp"></g>
-        <g id="leftupp"></g>
-        <g id="leftupp"></g>
+        <g id="midupp" class="fields">
+            <rect x="110" y="10" width="80" height="80"style="fill:white;"/>
+            <g visibility="hidden">
+                <line x1="110" y1="10" x2="190" y2="90" stroke="black" stroke-width="3" ></line>
+                <line x1="110" y1="90" x2="190" y2="10" stroke="black" stroke-width="3" ></line>
+            </g>
+            <circle cx="150" cy="50" r="40" stroke="black" stroke-width="3" fill="white" visibility="hidden"></circle>
+        </g>
+        <g id="rightupp" class="fields">
+            <rect x="210" y="10" width="80" height="80"style="fill:white;"/>
+            <g visibility="hidden">
+                <line x1="210" y1="10" x2="290" y2="90" stroke="black" stroke-width="3" ></line>
+                <line x1="210" y1="90" x2="290" y2="10" stroke="black" stroke-width="3" ></line>
+            </g>
+            <circle cx="250" cy="50" r="40" stroke="black" stroke-width="3" fill="white" visibility="hidden"></circle>
+        </g>
+        <g id="leftmid" class="fields">
+            <rect x="10" y="110" width="80" height="80"style="fill:white;"/>
+            <g visibility="hidden">
+                <line x1="10" y1="110" x2="90" y2="190" stroke="black" stroke-width="3" ></line>
+                <line x1="10" y1="190" x2="90" y2="110" stroke="black" stroke-width="3" ></line>
+            </g>
+            <circle cx="50" cy="150" r="40" stroke="black" stroke-width="3" fill="white" visibility="hidden"></circle>
+        </g>
+        <g id="midmid" class="fields">
+            <rect x="110" y="110" width="80" height="80"style="fill:white;"/>
+            <g visibility="hidden">
+                <line x1="110" y1="110" x2="190" y2="190" stroke="black" stroke-width="3" ></line>
+                <line x1="110" y1="190" x2="190" y2="110" stroke="black" stroke-width="3" ></line>
+            </g>
+            <circle cx="150" cy="150" r="40" stroke="black" stroke-width="3" fill="white" visibility="hidden"></circle>
+        </g>
+        <g id="rightmid" class="fields">
+            <rect x="210" y="110" width="80" height="80"style="fill:white;"/>
+            <g visibility="hidden">
+                <line x1="210" y1="110" x2="290" y2="190" stroke="black" stroke-width="3" ></line>
+                <line x1="210" y1="190" x2="290" y2="110" stroke="black" stroke-width="3" ></line>
+            </g>
+            <circle cx="250" cy="150" r="40" stroke="black" stroke-width="3" fill="white" visibility="hidden"></circle>
+        </g>
+        <g id="leftdow" class="fields">
+            <rect x="10" y="210" width="80" height="80"style="fill:white;"/>
+            <g visibility="hidden">
+                <line x1="10" y1="210" x2="90" y2="290" stroke="black" stroke-width="3" ></line>
+                <line x1="10" y1="290" x2="90" y2="210" stroke="black" stroke-width="3" ></line>
+            </g>
+            <circle cx="50" cy="250" r="40" stroke="black" stroke-width="3" fill="white" visibility="hidden"></circle>
+        </g>
+        <g id="middow" class="fields">
+            <rect x="110" y="210" width="80" height="80"style="fill:white;"/>
+            <g visibility="hidden">
+                <line x1="110" y1="210" x2="190" y2="290" stroke="black" stroke-width="3" ></line>
+                <line x1="110" y1="290" x2="190" y2="210" stroke="black" stroke-width="3" ></line>
+            </g>
+            <circle cx="150" cy="250" r="40" stroke="black" stroke-width="3" fill="white" visibility="hidden"></circle>
+        </g>
+        <g id="rightdow" class="fields">
+            <rect x="210" y="210" width="80" height="80"style="fill:white;"/>
+            <g visibility="hidden">
+                <line x1="210" y1="210" x2="290" y2="290" stroke="black" stroke-width="3" ></line>
+                <line x1="210" y1="290" x2="290" y2="210" stroke="black" stroke-width="3" ></line>
+            </g>
+            <circle cx="250" cy="250" r="40" stroke="black" stroke-width="3" fill="white" visibility="hidden"></circle>
+        </g>
     </svg>
+    <button onclick="document.location.reload()">Start Over</button>
 </body>
 <script src="9_3.js"></script>
 </html>
