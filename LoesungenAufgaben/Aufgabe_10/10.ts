@@ -1,7 +1,8 @@
-const myAdd = function(x: number, y: number): number{return x+y}
+//Typescript variablen werden anders benannt, damit VSC kein Fehler anzeigt, da die selbe Methode sonst mehrmals generiert wird
+const myAddts = function(x: number, y: number): number{return x+y}
 
-const equals = function(x: any, y:any): boolean{return x===y}
+const equalsts = function(x: any, y:any): boolean{return x===y}
 
-console.log(myAdd(1, 2))
+console.log(myAddts(1, 2))
 
-console.log(equals(1, 1))
+console.log(equalsts(1, 1))
