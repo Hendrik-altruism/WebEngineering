@@ -43,12 +43,21 @@ console.log(inc2(1))
 console.log(inc3(1))
 
 //Methodize
-const methodize = (fun) => {
-    return //Todo 
+const methodize = (f) => {
+	return function(y){
+  		return f(this,y)
+  }
 }
+Number.prototype.add = methodize(add);
+console.log((3).add(4));
 
 //Demethodize
-//Todo
+const demethodize = (method) => {
+    return function(x,y) {
+          return method.call(x,y);
+    };
+  }
+console.log(demethodize(Number.prototype.add)(5,6));
 
 //Twice Funktion
 const twice = (fun) => {
