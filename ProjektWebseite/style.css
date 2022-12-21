@@ -15,16 +15,30 @@ body{
 .grid-container{
     height: 100%;
     display: grid;
-    grid-template-rows: 50px 50px 1fr 150px;
-    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr 150px;
+    grid-template-columns: auto;
+    grid-template-areas: 
+                    "header"
+                    "main"
+                    "footer";
     background-color: rgb(9, 9, 24);
 }
 
-.navigationBar{
+.header{
     display: flex;
     align-items: center;
     min-height: 8vh;
     background-color: rgb(10, 20, 34);
+    grid-area: header;
+}
+
+.main{
+    grid-area: main;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: rgb(10, 20, 34); 
 }
 
 img{
