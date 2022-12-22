@@ -15,7 +15,7 @@ body{
 .grid-container{
     height: 100%;
     display: grid;
-    grid-template-rows: 50px 1fr 150px;
+    grid-template-rows: 8vh 1fr 150px;
     grid-template-columns: auto;
     grid-template-areas: 
                     "header"
@@ -27,21 +27,61 @@ body{
 .header{
     display: flex;
     align-items: center;
-    min-height: 8vh;
+  
     background-color: rgb(10, 20, 34);
-    grid-area: header;
+    grid-area: 1/1;
 }
 
 .main{
-    grid-area: main;
+    grid-area: 2/1;
+    padding: 1em;
+}
+
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.col{
+    padding: 0;
+    margin: 1em 1em;
+    cursor: pointer;
+    max-height: 30vh;
+    min-width: 400px;
+}
+
+.card{
+    margin: 0;
+    border: 0;
+}
+
+.row{
+    margin: 0;
+}
+
+.col-md-4{
+    background-color: rgb(10, 20, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-md-8{
+    background-color: rgb(7, 15, 26);
 }
 
 .footer{
-    grid-area: footer;
+    grid-area: 3/1;
     background-color: rgb(10, 20, 34); 
 }
 
 img{
+    width: 5em;
+    padding: 10px;
+}
+
+#homeLogo{
     width: 4em;
     padding: 10px;
     cursor: pointer;

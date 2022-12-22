@@ -33,45 +33,40 @@ const topicsData = {
         {
             titel: "CSS",
             img: "./ressources/svg/eyedropper.svg",
-            text: "CSS-Selektoren und Farben, sowie Positionierung und eine einfache Anwendung"
+            text: "Selektoren und Farben, sowie Positionierung und eine einfache Anwendung"
         },
         {
-            titel: "RWD",
+            titel: "Responsive Web Design",
             img: "./ressources/svg/phone.svg",
-            text: "Responsives Web-Design mit Grid, Flexbox und Media Queries"
+            text: "Grid, Flexbox und Media Queries"
         },
         {
             titel: "JavaScript",
             img: "./ressources/svg/braces.svg",
-            text: "Javascript Funktionen, Objekte mit den Anwendungen Fibonacci und TopSort"
+            text: "Funktionen, Objekte mit den Anwendungen Fibonacci und TopSort"
         },
         {
-            titel: "PHP",
-            img: "./ressources/svg/router.svg",
-            text: "Das erste Kapitel befasst sich mit Html "
-        },
-        {
-            titel: "DOM",
+            titel: "Document Object Model",
             img: "./ressources/svg/columns-gap.svg",
             text: "Das erste Kapitel befasst sich mit Html "
         },
         {
-            titel: "ECMA",
+            titel: "ECMAScript",
             img: "./ressources/svg/chevron-right.svg",
             text: "Das erste Kapitel befasst sich mit Html "
         },
         {
-            titel: "Funktional",
+            titel: "Funktionale Programmierung",
             img: "./ressources/svg/speedometer2.svg",
             text: "Das erste Kapitel befasst sich mit Html "
         },
         {
-            titel: "Vue",
-            img: "./ressources/svg/chevron-down.svg",
+            titel: "Asynchrones JavaScript",
+            img: "./ressources/svg/pause-circle.svg",
             text: "Das erste Kapitel befasst sich mit Html "
         },
         {
-            titel: "SVG",
+            titel: "Scalable Vector Graphics",
             img: "./ressources/svg/filetype-svg.svg",
             text: "Das erste Kapitel befasst sich mit Html "
         },
@@ -81,15 +76,47 @@ const topicsData = {
             text: "Das erste Kapitel befasst sich mit Html "
         },
         {
-            titel: "Async",
-            img: "./ressources/svg/pause-circle.svg",
+            titel: "Vue 2",
+            img: "./ressources/svg/chevron-down.svg",
             text: "Das erste Kapitel befasst sich mit Html "
         },
         {
-            titel: "WA-Security",
+            titel: "Server-side Scripting",
+            img: "./ressources/svg/router.svg",
+            text: "Das erste Kapitel befasst sich mit Html "
+        },
+        {
+            titel: "Web App Security",
             img: "./ressources/svg/shield-lock.svg",
             text: "Das erste Kapitel befasst sich mit Html "
         }
     ]
 }
 
+renderApp();
+
+    function renderApp() {
+      const $items = document.querySelector( '#cards' );
+      $items.innerHTML = '';
+      topicsData.elemente.forEach( element => {
+        const $item = document.createElement( 'div' );
+        const elementSVG = element.img;
+        $item.classList.add( 'col' );
+        $item.innerHTML = `  
+          <div class="card">
+            <div class="row">
+             <div class="col-md-4">
+              <img src=${elementSVG}>
+             </div>
+             <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title mb-0">${ element.titel }</h5>
+                <p class="card-text">${element.text}</p>
+              </div>
+             </div>
+            </div>
+          </div>
+        `;
+        $items.appendChild( $item );
+      } );
+    }
