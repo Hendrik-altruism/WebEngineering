@@ -119,4 +119,16 @@ renderApp();
         `;
         $items.appendChild( $item );
       } );
+      //Länge des letzten Kastens
+      {const $item = document.createElement( 'div' );
+        $item.classList.add( 'col' );
+        $items.appendChild( $item );}
+
+        {const $item = document.createElement( 'div' );
+        $item.classList.add( 'col' );
+        $items.appendChild( $item );}
+        
+        {const $item = document.createElement( 'div' );
+        $item.classList.add( 'col' );
+        $items.appendChild( $item );}
     }

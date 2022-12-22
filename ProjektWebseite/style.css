@@ -47,18 +47,18 @@ body{
 #cards{
     display: flex;
     flex-wrap: wrap;
-    align-content: flex-start;
     padding: 1em;
 }
 
 .col{
     padding: 1em;
-    cursor: pointer;
     max-height: 30vh;
     min-width: 400px;
+    flex-grow: 1;
 }
 
 .card{
+    cursor: pointer;
     height: 100%;
     margin: 0;
     border: 0;
@@ -137,7 +137,7 @@ img{
     .navList{
         position: absolute;
         right: 0px;
-        height: 92vh;
+        bottom: 150px;
         top: 8vh;
         background-color: rgb(10, 20, 34);
         margin: 0;
