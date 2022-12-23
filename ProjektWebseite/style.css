@@ -37,6 +37,7 @@ body{
     padding: 0;
     overflow: auto;
     background-color: rgb(9, 9, 24);
+
 }
 
 .footer{
@@ -58,11 +59,28 @@ body{
 }
 
 .card{
+    scale: 0;
     cursor: pointer;
     height: 100%;
     margin: 0;
     border: 0;
     background-color: rgb(7, 15, 26);
+    transition: 0.5s;
+    animation: startup 1s ease-in forwards;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card:active{
+    transform: scale(1);
+}
+
+@keyframes startup {
+    100%{
+        scale: 1;
+    }
 }
 
 .row{
@@ -71,7 +89,7 @@ body{
 }
 
 .col-md-4{
-    background-color: rgb(10, 20, 34);
+    background-color: rgb(14, 28, 48);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,6 +107,26 @@ img{
 #homeLogo{
     width: 4em;
     padding: 10px;
+    cursor: pointer;
+    transition: 1;
+}
+
+#homeLogo:hover{
+    transform: scale(1.2);
+}
+
+.main::-webkit-scrollbar{
+    width: 1.5vw;
+    min-width: 20px;
+}
+
+.main::-webkit-scrollbar-thumb{
+    background-color: rgb(12, 17, 46);
+    border-radius: 30px;
+}
+
+.main::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(25, 34, 80);
     cursor: pointer;
 }
 

@@ -1,12 +1,13 @@
 import {webData} from './config.js';
 
+
 const listeners = document.querySelectorAll('li').forEach((listener, index) =>{
     listener.addEventListener("click", ()=>{
        changeView(index+1) 
     })
 })
 document.getElementById('homeLogo').addEventListener("click", ()=>{
-    changeView(1)
+    renderHomeApp()
 })
 
 document.getElementById("burgerMenu").addEventListener("click", async ()=>{
@@ -21,9 +22,9 @@ async function changeView(value){
 }
 
 
-renderApp();
+renderHomeApp();
 
-    function renderApp() {
+    function renderHomeApp() {
       const $items = document.querySelector( '#cards' );
       $items.innerHTML = '';
       webData.elemente.forEach( element => {
@@ -46,7 +47,8 @@ renderApp();
           </div>
         `;
         $items.appendChild( $item );
-      } );
+      }
+      );
       //Länge des letzten Kastens
       {const $item = document.createElement( 'div' );
         $item.classList.add( 'col' );
