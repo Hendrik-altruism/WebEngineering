@@ -1,0 +1,5 @@
+1. Success, Alles war erfolgreich
+2. URL wird umgeleitet, da sie sich geändet hat oder nicht mehr existiert
+3. Error auf Seite des Client -> eine Fehlerhafte Anfrage liegt vor. Debugging auf Client-Seite um den Error zu beheben
+4. Fehlende Zugriffsberechtigung -> Kann durch leeren des Caches behoben werden, oder Deaktivierung von Browser-Erweiterungen
+5. 

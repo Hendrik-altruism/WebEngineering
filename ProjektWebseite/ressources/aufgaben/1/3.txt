@@ -1,0 +1,27 @@
+1. Textbasierte Auszeichnungssprache zur Strukturierung von Dokumenten, Standart für die Erstellung von Webseiten
+    2.  <ol>
+            <li>Element1</li>
+            <ol>
+                <li>Element2</li>
+                <ol>
+                    <li>Element3</li>
+                </ol>
+            </ol>
+        </ol>
+    3.  <table>
+            <tr>
+                <th>Spalte1</th>
+                <th>Spalte2</th>
+                <th>Spalte3</th>
+            </tr>
+            <tr>
+                <th>Wert1</th>
+                <th>Wert2</th>
+                <th>Wert3</th>
+            </tr>
+        </table>
+    4. / -> Unterster Ordner im Verzeichnis , ../ -> ein Ordner über dem Aktuellen
+    5.  <ul>
+            <li></li>
+        </ul>
+    6. style(width, height und float), alt -> um Text anzuzeigen

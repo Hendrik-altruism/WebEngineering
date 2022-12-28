@@ -7,7 +7,13 @@ export const webData = {
         {
             titel: "HTML",
             img: "./ressources/svg/code-slash.svg",
-            text: "Geschichte des WWW, Einführung in HTTP und HTML mit einer Anwendung"
+            text: "Geschichte des WWW, Einführung in HTTP und HTML mit einer Anwendung",
+            task: [
+                ["./ressources/aufgaben/1/1.txt"],
+                ["./ressources/aufgaben/1/2.txt"],
+                ["./ressources/aufgaben/1/3.txt"],
+                ["./ressources/aufgaben/1/4.txt", "./ressources/aufgaben/1/4.html"]
+            ]
         },
         {
             titel: "CSS",
