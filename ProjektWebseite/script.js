@@ -100,6 +100,7 @@ function renderHomeApp() {
 //Rendert das Layout für die Lösungen einer Augabe 
 
     async function renderTaskApp(value, state = []){
+      //Funktion um Status der Felder zu berechnen
       function calculateState(){
         const panels = document.querySelectorAll('.accordion-collapse');
         panels.forEach((element, index)=>{
@@ -123,9 +124,7 @@ function renderHomeApp() {
             ${"Aufgabe "+(index+1)}
           </button>
         </h2>
-        <div id="panelsStayOpen-collapse${index}" class="accordion-collapse collapse`
-        if(state[index]){tasks += `show`}
-        tasks +=`" aria-labelledby="panelsStayOpen-heading${index}">
+        <div id="panelsStayOpen-collapse${index}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading${index}">
           <div class="accordion-body">
           <textarea disabled oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>${result}</textarea>`;
         if(element[1]!=null){tasks += `<button class="showExample">Beispiel</button>`}
@@ -133,7 +132,11 @@ function renderHomeApp() {
         tasks +=  `</div></div>`
         obj.innerHTML = tasks;
         $task.appendChild(obj)
-
+        if(state[index]){
+          obj.querySelector('button').classList.remove("collapsed")
+          obj.querySelector('button').setAttribute("area-expanded", "true")
+          obj.querySelector('.accordion-collapse').classList.add("show")
+         }
         if(element[1]!=null){
           obj.querySelector('.showExample').addEventListener('click', ()=>{
             calculateState()
@@ -142,7 +145,7 @@ function renderHomeApp() {
           })
         }
         }))
-      })
+      }) 
   }
 
 //Rendert Main für div
