@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
-* {
-    font-family: 'Jost', sans-serif;
-}
 
 html{
     height: 100%;
@@ -9,10 +6,10 @@ html{
 body{
     height: 100%;
     margin: 0;
-    color: rgb(204, 203, 203);
 }
 
 .grid-container{
+    font-family: 'Jost', sans-serif;
     height: 100vh;
     display: grid;
     grid-template-rows: 8vh 1fr 100px;
@@ -22,27 +19,54 @@ body{
                     "main"
                     "footer";
     background-color: rgb(9, 9, 24);
+    color: rgb(204, 203, 203);
+}
+
+.grid-container-task{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 8vh 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+                    "header"
+                    "main";
+    background-color: rgb(9, 9, 24);
 }
 
 .header{
+    font-family: 'Jost', sans-serif;
+    color: rgb(204, 203, 203);
     display: flex;
     align-items: center;
   
     background-color: rgb(10, 20, 34);
-    grid-area: header;
+    grid-area: "header";
 }
 
 .main{
-    grid-area: main;
+    grid-area: "main";
     padding: 0;
     overflow: auto;
     background-color: rgb(9, 9, 24);
+}
 
+.main-task{
+    grid-area: "main";
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(9, 9, 24);
 }
 
 .footer{
-    grid-area: footer;
+    grid-area: "footer";
     background-color: rgb(10, 20, 34); 
+}
+
+.webContent{
+    background-color: white;
+    height: 100%;
+    font-family: "Source Sans Pro";
+    line-height: 1;
 }
 
 #cards{
@@ -125,7 +149,13 @@ textarea{
 }
 
 iframe{
-    flex-grow: 1;
+    scale: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-width: 0;
+    resize: none;
+    animation: startup 0.5s ease-in forwards;
 }
 
 #homeLogo{
@@ -133,6 +163,17 @@ iframe{
     padding: 10px;
     cursor: pointer;
     transition: 1;
+}
+
+#returnArrow{
+    width: 4em;
+    padding: 10px;
+    cursor: pointer;
+    transition: 1;
+}
+
+#returnArrow:hover{
+    transform: scale(1.2);
 }
 
 #homeLogo:hover{
@@ -160,6 +201,10 @@ iframe{
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 10px;
+}
+
+.taskHeading{
+    margin-left: auto;
 }
 
 .navList{

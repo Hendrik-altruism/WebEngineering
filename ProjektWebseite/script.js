@@ -1,11 +1,11 @@
 import {webData} from './config.js';
 
-renderTaskExample();
 renderMainNav();
 renderHomeApp();
 
 //Rendert die standart Navbar Struktur mit EventListenern
 function renderMainNav(){
+  document.querySelector('body').innerHTML=''
   document.querySelector('body').innerHTML=`<div class="grid-container"> 
   <nav class="header">
       <img src="./ressources/graphics/Logo.png" alt="Home" id="homeLogo">
@@ -34,7 +34,8 @@ function renderMainNav(){
   </div>`
   
   document.getElementById('homeLogo').addEventListener("click", ()=>{
-    renderHomeApp()
+    renderMainNav();
+    renderHomeApp();
   })
 
   document.getElementById("burgerMenu").addEventListener("click", async ()=>{
@@ -48,6 +49,7 @@ function renderMainNav(){
 //Rendert den Haubtcontent der Main-Page
 
 function renderHomeApp() {
+      document.querySelector('.main').innerHTML=''
       document.querySelector( '.main' ).innerHTML='<div id="cards" class="row row-cols-1 row-cols-md-3 g-4"></div>';
       const $items = document.querySelector('#cards')
       webData.elemente.forEach( element => {
@@ -97,9 +99,18 @@ function renderHomeApp() {
 
 //Rendert das Layout für die Lösungen einer Augabe 
 
-    async function renderTaskApp(value){
+    async function renderTaskApp(value, state = []){
+      function calculateState(){
+        const panels = document.querySelectorAll('.accordion-collapse');
+        panels.forEach((element, index)=>{
+           if(element.classList.contains("show")){
+             state[index] = true;
+           }else{state[index]= false}
+        })
+      }
       const assignment = webData.elemente[value]
       const $item = document.querySelector( '.main' );
+      $item.innerHTML='';
       $item.innerHTML = `<div class="accordionTask" id="accordionPanelsStayOpenExample"></div>`;
       const $task = document.querySelector('.accordionTask')
       assignment.task.forEach((element, index) =>{
@@ -112,19 +123,22 @@ function renderHomeApp() {
             ${"Aufgabe "+(index+1)}
           </button>
         </h2>
-        <div id="panelsStayOpen-collapse${index}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading${index}">
+        <div id="panelsStayOpen-collapse${index}" class="accordion-collapse collapse`
+        if(state[index]){tasks += `show`}
+        tasks +=`" aria-labelledby="panelsStayOpen-heading${index}">
           <div class="accordion-body">
           <textarea disabled oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>${result}</textarea>`;
         if(element[1]!=null){tasks += `<button class="showExample">Beispiel</button>`}
         //Todo kein Button
-        tasks +=  `</div>
-        </div>`
+        tasks +=  `</div></div>`
         obj.innerHTML = tasks;
         $task.appendChild(obj)
 
         if(element[1]!=null){
           obj.querySelector('.showExample').addEventListener('click', ()=>{
-            renderTaskExample(JSON.stringify(element[1]))
+            calculateState()
+            console.log(state)
+            renderTaskExample(value, index, state)
           })
         }
         }))
@@ -132,21 +146,17 @@ function renderHomeApp() {
   }
 
 //Rendert Main für div
-function renderTaskExample(value){
+function renderTaskExample(value, index, state){
   document.querySelector('body').innerHTML=''
-  document.querySelector('body').innerHTML=`<div class="grid-container"> 
+  document.querySelector('body').innerHTML=`<div class="grid-container-task"> 
   <nav class="header">
       <img src="./ressources/graphics/Logo.png" alt="Home" id="homeLogo">
-      <div class="heading">
-          Web Engineering
+      <img id="returnArrow" src="./ressources/svg/arrow-return-left.svg">
+      <div class="heading taskHeading">
+          Aufgabe ${index+1}
       </div>
-      <ul class="navList">
-          <li class="navItem" id="first">1</li>
-          <li class="navItem">2</li>
-          <li class="navItem">3</li>
-      </ul>
   </nav>
-  <div class="main">
+  <div class="main-task">
       <div class="spinner-border" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
@@ -154,10 +164,15 @@ function renderTaskExample(value){
   </div>`
   
   document.getElementById('homeLogo').addEventListener("click", ()=>{
-    renderHomeApp()
-  })
-        
-  const el = fetch(value).then(response=>response.text().then(result=>{
+    renderMainNav();
+    renderHomeApp();
+  }) 
 
-  }))
+  document.getElementById('returnArrow').addEventListener("click", ()=>{
+    renderMainNav();
+    renderTaskApp(value, state);
+  })
+
+  const $content = document.querySelector('.main-task');
+  $content.innerHTML=`<iframe src="./ressources/aufgaben/1/4.html"></iframe>`;
 }
