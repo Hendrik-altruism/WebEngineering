@@ -52,7 +52,7 @@ body{
 
 .main-task{
     grid-area: "main";
-    padding: 0;
+    padding: 1em;
     overflow: hidden;
     background-color: rgb(9, 9, 24);
 }

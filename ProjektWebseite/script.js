@@ -114,42 +114,42 @@ function renderHomeApp() {
       $item.innerHTML='';
       $item.innerHTML = `<div class="accordionTask" id="accordionPanelsStayOpenExample"></div>`;
       const $task = document.querySelector('.accordionTask')
-      assignment.task.forEach((element, index) =>{
-        const solution = fetch(element[0]).then(response=>response.text().then(result=>{
+      let arr = []
+      assignment.task.forEach(async (element, index) =>{
+        const solution = await fetch(element[0]).then(response=>response.text().then(result=>{
           const obj = document.createElement('div')
           obj.classList.add('accordion-item')
           let tasks = `
-        <h2 class="accordion-header" id="panelsStayOpen-heading${index}">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${index}" aria-expanded="true" aria-controls="panelsStayOpen-heading${index}">
+            <h2 class="accordion-header" id="panelsStayOpen-heading${index}">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${index}" aria-expanded="true" aria-controls="panelsStayOpen-heading${index}">
             ${"Aufgabe "+(index+1)}
-          </button>
-        </h2>
-        <div id="panelsStayOpen-collapse${index}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading${index}">
-          <div class="accordion-body">
-          <textarea disabled oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>${result}</textarea>`;
-        if(element[1]!=null){tasks += `<button class="showExample">Beispiel</button>`}
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapse${index}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading${index}">
+            <div class="accordion-body">
+            <textarea disabled oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>${result}</textarea>`;
+          if(element[1]!=null){tasks += `<button class="showExample">Beispiel</button>`}
         //Todo kein Button
-        tasks +=  `</div></div>`
-        obj.innerHTML = tasks;
-        $task.appendChild(obj)
-        if(state[index]){
-          obj.querySelector('button').classList.remove("collapsed")
-          obj.querySelector('button').setAttribute("area-expanded", "true")
-          obj.querySelector('.accordion-collapse').classList.add("show")
-         }
-        if(element[1]!=null){
-          obj.querySelector('.showExample').addEventListener('click', ()=>{
+          tasks +=  `</div></div>`
+          obj.innerHTML = tasks;
+          $task.appendChild(obj)
+          if(state[index]){
+            obj.querySelector('button').classList.remove("collapsed")
+            obj.querySelector('button').setAttribute("area-expanded", "true")
+            obj.querySelector('.accordion-collapse').classList.add("show")
+          }
+          if(element[1]!=null){
+            obj.querySelector('.showExample').addEventListener('click', ()=>{
             calculateState()
             console.log(state)
-            renderTaskExample(value, index, state)
-          })
-        }
+            renderTaskNav(value, index, state)
+          })}
         }))
       }) 
   }
 
 //Rendert Main für div
-function renderTaskExample(value, index, state){
+function renderTaskNav(value, index, state){
   document.querySelector('body').innerHTML=''
   document.querySelector('body').innerHTML=`<div class="grid-container-task"> 
   <nav class="header">
