@@ -1,27 +1,27 @@
 1. Textbasierte Auszeichnungssprache zur Strukturierung von Dokumenten, Standart für die Erstellung von Webseiten
-    2.  <ol>
-            <li>Element1</li>
-            <ol>
-                <li>Element2</li>
-                <ol>
-                    <li>Element3</li>
-                </ol>
-            </ol>
-        </ol>
-    3.  <table>
-            <tr>
-                <th>Spalte1</th>
-                <th>Spalte2</th>
-                <th>Spalte3</th>
-            </tr>
-            <tr>
-                <th>Wert1</th>
-                <th>Wert2</th>
-                <th>Wert3</th>
-            </tr>
-        </table>
-    4. / -> Unterster Ordner im Verzeichnis , ../ -> ein Ordner über dem Aktuellen
-    5.  <ul>
-            <li></li>
-        </ul>
-    6. style(width, height und float), alt -> um Text anzuzeigen
+2.  &lt;ol&gt;
+        &lt;li&gt;Element1&lt;/li&gt;
+        &lt;ol&gt;
+            &lt;li&gt;Element2&lt;/li&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Element3&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/ol&gt;
+    &lt;/ol&gt;
+3.  &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Spalte1&lt;/th&gt;
+            &lt;th&gt;Spalte2&lt;/th&gt;
+            &lt;th&gt;Spalte3&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Wert1&lt;/th&gt;
+            &lt;th&gt;Wert2&lt;/th&gt;
+            &lt;th&gt;Wert3&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+4. / -&gt; Unterster Ordner im Verzeichnis , ../ -&gt; ein Ordner über dem Aktuellen
+5.  &lt;ul&gt;
+        &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+6. style(width, height und float), alt -&gt; um Text anzuzeigen

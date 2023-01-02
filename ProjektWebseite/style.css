@@ -119,16 +119,44 @@ body{
     align-items: center;
 }
 
+h2{
+    background-color: rgb(14, 28, 48);
+}
+
+.accordion-button{
+background-color: rgb(14, 28, 48);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+}
+
 h5{
     padding-bottom: 1em;
 }
 
+
 img{
     width: 5em;
+    padding: 5px;
+}
+
+svg{
+    height: 46px;
     padding: 10px;
+    transition: 0.2s ease-in;
+}
+
+.rot{
+    transform: rotate(-180deg);
+}
+
+.accordion-button{
+    cursor: pointer;
 }
 
 .accordionTask{
+    width: 98.5vw;
     scale: 0;
     padding: 2em;
     animation: startup 0.5s ease-in forwards;
@@ -138,14 +166,10 @@ img{
     display: flex;
 }
 
-textarea{
-    width: 100%;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    font-size: 16px;
-    resize: none;
+.codeField{
+    color: rgb(204, 203, 203);
+    background-color: rgb(7, 15, 26);
+    padding: 1em;
 }
 
 iframe{

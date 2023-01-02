@@ -99,7 +99,7 @@ function renderHomeApp() {
 
 //Rendert das Layout für die Lösungen einer Augabe 
 
-    async function renderTaskApp(value, state = []){
+    async function renderTaskApp(val, state = []){
       //Funktion um Status der Felder zu berechnen
       function calculateState(){
         const panels = document.querySelectorAll('.accordion-collapse');
@@ -109,26 +109,27 @@ function renderHomeApp() {
            }else{state[index]= false}
         })
       }
-      const assignment = webData.elemente[value]
+      const assignment = webData.elemente[val]
       const $item = document.querySelector( '.main' );
       $item.innerHTML='';
       $item.innerHTML = `<div class="accordionTask" id="accordionPanelsStayOpenExample"></div>`;
       const $task = document.querySelector('.accordionTask')
-      let arr = []
-      assignment.task.forEach(async (element, index) =>{
-        const solution = await fetch(element[0]).then(response=>response.text().then(result=>{
+      let index = 0;
+      for (const [key, value] of Object.entries(assignment.task)){
+        const solution = await fetch(value[0]).then(response=>response.text().then(result=>{
           const obj = document.createElement('div')
           obj.classList.add('accordion-item')
           let tasks = `
             <h2 class="accordion-header" id="panelsStayOpen-heading${index}">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${index}" aria-expanded="true" aria-controls="panelsStayOpen-heading${index}">
-            ${"Aufgabe "+(index+1)}
+            ${key}
+            <svg id="svg${index}" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>
             </button>
             </h2>
             <div id="panelsStayOpen-collapse${index}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading${index}">
             <div class="accordion-body">
-            <textarea disabled oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>${result}</textarea>`;
-          if(element[1]!=null){tasks += `<button class="showExample">Beispiel</button>`}
+            <pre class="codeField">${result}</pre>`;
+          if(value[1]!=null){tasks += `<button class="showExample">Beispiel</button>`}
         //Todo kein Button
           tasks +=  `</div></div>`
           obj.innerHTML = tasks;
@@ -138,14 +139,17 @@ function renderHomeApp() {
             obj.querySelector('button').setAttribute("area-expanded", "true")
             obj.querySelector('.accordion-collapse').classList.add("show")
           }
-          if(element[1]!=null){
+          obj.querySelector('button').addEventListener('click', ()=>{
+            obj.querySelector('svg').classList.toggle('rot')
+          })
+          if(value[1]!=null){
             obj.querySelector('.showExample').addEventListener('click', ()=>{
             calculateState()
-            console.log(state)
-            renderTaskNav(value, index, state)
+            renderTaskNav(val, index, state)
           })}
         }))
-      }) 
+        index++;
+      } 
   }
 
 //Rendert Main für div
