@@ -1,4 +1,7 @@
-&lt;body&gt;
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>&lt;body&gt;
     &lt;h1&gt;Übung 1.2: Inventors of the Web&lt;/h1&gt;
     &lt;div&gt;
         &lt;ul&gt;
@@ -71,3 +74,4 @@
     &lt;/div&gt;
     &lt;hr&gt;
 &lt;/body&gt;
+</code></pre>

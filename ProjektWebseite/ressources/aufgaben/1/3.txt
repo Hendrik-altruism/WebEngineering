@@ -1,5 +1,8 @@
 1. Textbasierte Auszeichnungssprache zur Strukturierung von Dokumenten, Standart für die Erstellung von Webseiten
-2.  &lt;ol&gt;
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>2. &lt;ol&gt;
         &lt;li&gt;Element1&lt;/li&gt;
         &lt;ol&gt;
             &lt;li&gt;Element2&lt;/li&gt;
@@ -8,6 +11,7 @@
             &lt;/ol&gt;
         &lt;/ol&gt;
     &lt;/ol&gt;
+
 3.  &lt;table&gt;
         &lt;tr&gt;
             &lt;th&gt;Spalte1&lt;/th&gt;
@@ -25,3 +29,4 @@
         &lt;li&gt;&lt;/li&gt;
     &lt;/ul&gt;
 6. style(width, height und float), alt -&gt; um Text anzuzeigen
+<code></pre>

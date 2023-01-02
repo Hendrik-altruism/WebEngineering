@@ -121,31 +121,32 @@ function renderHomeApp() {
           obj.classList.add('accordion-item')
           let tasks = `
             <h2 class="accordion-header" id="panelsStayOpen-heading${index}">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${index}" aria-expanded="true" aria-controls="panelsStayOpen-heading${index}">
+            <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${index}" aria-expanded="true" aria-controls="panelsStayOpen-heading${index}">
             ${key}
             <svg id="svg${index}" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>
-            </button>
+            </div>
             </h2>
             <div id="panelsStayOpen-collapse${index}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading${index}">
             <div class="accordion-body">
-            <pre class="codeField">${result}</pre>`;
-          if(value[1]!=null){tasks += `<button class="showExample">Beispiel</button>`}
+            ${result}`;
+          if(value[1]!=null){tasks += `<button class="showExample">Zeige Beispiel</button>`}
         //Todo kein Button
           tasks +=  `</div></div>`
           obj.innerHTML = tasks;
           $task.appendChild(obj)
           if(state[index]){
-            obj.querySelector('button').classList.remove("collapsed")
-            obj.querySelector('button').setAttribute("area-expanded", "true")
+            obj.querySelector('.accordion-button').classList.remove("collapsed")
+            obj.querySelector('.accordion-button').setAttribute("area-expanded", "true")
             obj.querySelector('.accordion-collapse').classList.add("show")
+            obj.querySelector('svg').classList.toggle('rot')
           }
-          obj.querySelector('button').addEventListener('click', ()=>{
+          obj.querySelector('.accordion-button').addEventListener('click', ()=>{
             obj.querySelector('svg').classList.toggle('rot')
           })
           if(value[1]!=null){
             obj.querySelector('.showExample').addEventListener('click', ()=>{
             calculateState()
-            renderTaskNav(val, index, state)
+            renderTaskNav(val, key, state)
           })}
         }))
         index++;
@@ -153,14 +154,14 @@ function renderHomeApp() {
   }
 
 //Rendert Main für div
-function renderTaskNav(value, index, state){
+function renderTaskNav(value, key, state){
   document.querySelector('body').innerHTML=''
   document.querySelector('body').innerHTML=`<div class="grid-container-task"> 
   <nav class="header">
       <img src="./ressources/graphics/Logo.png" alt="Home" id="homeLogo">
       <img id="returnArrow" src="./ressources/svg/arrow-return-left.svg">
       <div class="heading taskHeading">
-          Aufgabe ${index+1}
+          ${key}
       </div>
   </nav>
   <div class="main-task">

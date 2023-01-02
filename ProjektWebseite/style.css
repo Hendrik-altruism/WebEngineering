@@ -123,12 +123,30 @@ h2{
     background-color: rgb(14, 28, 48);
 }
 
+.accordion-item{
+    background-color: rgb(7, 15, 26);
+}
+
 .accordion-button{
-background-color: rgb(14, 28, 48);
+    cursor: pointer;
+    padding: .1em .25em ;
+    background-color: rgb(14, 28, 48);
    display: flex;
    align-items: center;
    justify-content: space-between;
    width: 100%;
+}
+
+.accordion-header{
+    transition: 0.2s;
+}
+
+.accordion-header:hover{
+    transform: scale(1.025);
+}
+
+.accordion-header:active{
+    transform: scale(1);
 }
 
 h5{
@@ -142,17 +160,12 @@ img{
 }
 
 svg{
-    height: 46px;
-    padding: 10px;
+    height: 1em;
     transition: 0.2s ease-in;
 }
 
 .rot{
     transform: rotate(-180deg);
-}
-
-.accordion-button{
-    cursor: pointer;
 }
 
 .accordionTask{
@@ -164,12 +177,44 @@ svg{
 
 .accordion-body{
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1em;
 }
 
-.codeField{
+pre{
     color: rgb(204, 203, 203);
-    background-color: rgb(7, 15, 26);
+    white-space: pre-wrap;
+    overflow-x: auto;
+    margin: 0;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3{
+    margin: 0;
+}
+
+hr{
+    margin: 0;
+    border-width: 2px;
+    width: 100%;
+    color: black;
+    background-color: black;
+}
+
+code{
     padding: 1em;
+}
+
+button{
+    height: 50px;
+    cursor: pointer;
 }
 
 iframe{
@@ -206,7 +251,6 @@ iframe{
 
 .main::-webkit-scrollbar{
     width: 1.5vw;
-    min-width: 20px;
 }
 
 .main::-webkit-scrollbar-thumb{
