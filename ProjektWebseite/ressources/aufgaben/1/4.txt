@@ -1,4 +1,4 @@
-<b>Mit welchem HTML-Code (ohne CSS, nur mit HTML-Tags) kann man das angegebene Wireframe exakt nachbilden?</b>
+<b>Mit welchem HTML-Code (ohne CSS, nur mit HTML-Tags) kann man das angegebene <a href="https://kaul.inf.h-brs.de/ccm/we/ws22/resources/assets/wireframe01.jpg" target=_"blank">Wireframe</a> exakt nachbilden?</b>
 <pre>
 <h3 class="codeHeader">HTML</h3>
 <hr>
