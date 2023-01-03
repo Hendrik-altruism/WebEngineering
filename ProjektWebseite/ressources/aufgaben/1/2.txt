@@ -6,4 +6,5 @@
     Error auf Seite des Client -> eine Fehlerhafte Anfrage liegt vor. Debugging auf Client-Seite um den Error zu beheben
 <b>Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten?Was können sie dagegen tun?</b>
     Fehlende Zugriffsberechtigung -> Kann durch leeren des Caches behoben werden, oder Deaktivierung von Browser-Erweiterungen
-<b>n einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll. Aus Performanzgründen soll die Abfrage jedoch cacheable sein. Wie könnten Sie dafür eine Lösung angehen?</b>
+<b>In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll. Aus Performanzgründen soll die Abfrage jedoch cacheable sein. Wie könnten Sie dafür eine Lösung angehen?</b>
+//TODO

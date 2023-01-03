@@ -3,4 +3,4 @@
 <b>Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?</b>
         Open-Source-Prinzip, URLs und Hyperlinkstruktur
 <b>Was wäre der Preis für eine garantierte Verhinderung von "broken links"?</b>
-        
+//TODO
