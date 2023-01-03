@@ -1,3 +1,6 @@
-1. Vagheit im Konzept nicht verstanden, Konzept von T.B. Lee ein Rückschritt aus Sicht der Hypertext Community, Broken Links sind möglich
-2. 
-3. 
+<b>Mit welchen fachlichen Argumenten wurde das WWW-Proposal von TBL abgelehnt?</b>
+        Vagheit im Konzept nicht verstanden, Konzept von T.B. Lee ein Rückschritt aus Sicht der Hypertext Community, Broken Links sind möglich
+<b>Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?</b>
+        Open-Source-Prinzip, URLs und Hyperlinkstruktur
+<b>Was wäre der Preis für eine garantierte Verhinderung von "broken links"?</b>
+        

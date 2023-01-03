@@ -1,32 +1,48 @@
-1. Textbasierte Auszeichnungssprache zur Strukturierung von Dokumenten, Standart für die Erstellung von Webseiten
+<b>Was ist HTML?</b> 
+Textbasierte Auszeichnungssprache zur Strukturierung von Dokumenten, Standart für die Erstellung von Webseiten
+<b>Wie kann man eine geschachtelte geordnete Liste der Schachtelungstiefe 3 erzeugen?</b>
 <pre>
 <h3 class="codeHeader">HTML</h3>
 <hr>
-<code>2. &lt;ol&gt;
-        &lt;li&gt;Element1&lt;/li&gt;
+<code>&lt;ol&gt;
+    &lt;li&gt;Element1&lt;/li&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Element2&lt;/li&gt;
         &lt;ol&gt;
-            &lt;li&gt;Element2&lt;/li&gt;
-            &lt;ol&gt;
-                &lt;li&gt;Element3&lt;/li&gt;
-            &lt;/ol&gt;
+            &lt;li&gt;Element3&lt;/li&gt;
         &lt;/ol&gt;
     &lt;/ol&gt;
-
-3.  &lt;table&gt;
-        &lt;tr&gt;
-            &lt;th&gt;Spalte1&lt;/th&gt;
-            &lt;th&gt;Spalte2&lt;/th&gt;
-            &lt;th&gt;Spalte3&lt;/th&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;th&gt;Wert1&lt;/th&gt;
-            &lt;th&gt;Wert2&lt;/th&gt;
-            &lt;th&gt;Wert3&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/table&gt;
-4. / -&gt; Unterster Ordner im Verzeichnis , ../ -&gt; ein Ordner über dem Aktuellen
-5.  &lt;ul&gt;
-        &lt;li&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-6. style(width, height und float), alt -&gt; um Text anzuzeigen
-<code></pre>
+&lt;/ol&gt;
+</code>
+</pre>
+<b>Wie ist eine HTML-Tabelle aufgebaut?</b>
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Spalte1&lt;/th&gt;
+        &lt;th&gt;Spalte2&lt;/th&gt;
+        &lt;th&gt;Spalte3&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Wert1&lt;/th&gt;
+        &lt;th&gt;Wert2&lt;/th&gt;
+        &lt;th&gt;Wert3&lt;/th&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code>
+</pre>
+<b>Welche Konventionen sollte man bei Pfaden und Dateinamen beachten?</b>
+/ -> Unterster Ordner im Verzeichnis , ../ -> ein Ordner über dem Aktuellen
+<b>Wie baut man in HTML ein Menü?</b>
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code>
+</pre>
+<b>Welche Attribute sollte man bei Bildern wie verwenden?</b>
+style(width, height und float), alt -> um Text anzuzeigen

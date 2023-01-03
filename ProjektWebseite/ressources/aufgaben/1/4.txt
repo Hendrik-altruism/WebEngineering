@@ -1,3 +1,4 @@
+<b>Mit welchem HTML-Code (ohne CSS, nur mit HTML-Tags) kann man das angegebene Wireframe exakt nachbilden?</b>
 <pre>
 <h3 class="codeHeader">HTML</h3>
 <hr>
