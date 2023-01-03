@@ -1,0 +1,179 @@
+<b>Mit welchem HTML- und CSS-Code kann man diesen <a href="https://kaul.inf.h-brs.de/ccm/we/ws22/resources/assets/survey.png" target=_"blank">Wireframe</a> exakt nachbilden?</b>
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>&lt;h1 style="text-align: center;"&gt;Survey Form&lt;/h1&gt;
+        &lt;div style="background-color:  #fafafa; padding: 20px; margin: 30px; border-radius: 4px;"&gt;
+            &lt;p style="text-align: center;"&gt;Let us know how we can improve freeCodeCamp&lt;/p&gt; 
+        &lt;form&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="left"&gt;
+                    &lt;label for="name" class="default"&gt;* Name:&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;input id="name" type="text" class="inputs" placeholder="Enter your name"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="left"&gt;
+                    &lt;label for="email" class="default"&gt;* Email:&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;input id="email" type="text" class="inputs" placeholder="Enter your Email"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="left"&gt;
+                    &lt;label for="age" class="default"&gt;* Age:&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;input id="age" type="text" class="inputs" placeholder="Enter your Age"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="left"&gt;
+                    &lt;label for="role" class="selectL"&gt;Which option best describes your current Role?&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;select id="role"&gt;
+                        &lt;option value="Student"&gt;Student&lt;/option&gt;
+                        &lt;option value="Teacher"&gt;Teacher&lt;/option&gt;
+                        &lt;option value="Worker"&gt;Worker&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="left"&gt;
+                    &lt;label for="recommendation" class="selectL"&gt;* How likely is that you would recommend FCC to a friend?&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;form id="recommendation" name="recommendForm"&gt;
+                        &lt;input type="radio" id="definitely" name="recommendForm"&gt;
+                        &lt;label for="definitely"&gt;Definitely&lt;/label&gt;
+                        &lt;br&gt;
+                        &lt;input type="radio" id="maybe" name="recommendForm"&gt;
+                        &lt;label for="maybe"&gt;Maybe&lt;/label&gt;
+                        &lt;br&gt;
+                        &lt;input type="radio" id="notSure" name="recommendForm"&gt;
+                        &lt;label for="notSure"&gt;Not Sure&lt;/label&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="left"&gt;
+                    &lt;label for="like" class="selectL"&gt;What do you like most in FCC:&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;select id="like"&gt;
+                        &lt;option value="" disabled selected&gt;Select an option&lt;/option&gt;
+                        &lt;option value="easy"&gt;its Easy-to-Use&lt;/option&gt;
+                        &lt;option value="content"&gt;has Good Content&lt;/option&gt;
+                        &lt;option value="best"&gt;Best fucking Thing&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="left"&gt;
+                    &lt;label for="improve" class="selectL"&gt;Things that should be improved in the future (Check all the apply):&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class="right"&gt;
+                    &lt;form id="improve" name="improveForm"&gt;
+                        &lt;input type="checkbox" id="fend" name="improveForm"&gt;
+                        &lt;label for="fend"&gt;Front-end Projekts&lt;/label&gt;
+                        &lt;br&gt;
+                        &lt;input type="checkbox" id="bend" name="improveForm"&gt;
+                        &lt;label for="bend"&gt;Back-end Projects&lt;/label&gt;
+                        &lt;br&gt;
+                        &lt;input type="checkbox" id="Data" name="improveForm"&gt;
+                        &lt;label for="Data"&gt;Data Visualization&lt;/label&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div id="buttonDiv"&gt;
+                &lt;button type="submit"&gt;Submit&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+        &lt;/div&gt;
+</code>
+<hr>
+<h3 class="codeHeader">CSS</h3>
+<hr>
+<code>* {
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+}
+
+.left {
+    float: left;
+    width: 50%;
+    text-align: right;
+}
+
+.row {
+    margin-top: 25px;
+}
+
+.right {
+    float: right;
+    width: 50%;
+} 
+
+.inputs {
+    text-align: left;
+}
+
+.question {
+    text-align: right;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    resize: vertical;
+    font-size: 16px;
+}
+
+.default {
+    padding: 9px 12px 9px 0;
+    display: inline-block;
+} 
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+} 
+
+.selectL {
+    padding: 0px 12px 0px 0;
+    display: inline-block;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    margin-bottom: 10px;
+}
+
+button {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    resize: vertical;
+    font-size: 20px;
+    width: 120px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#buttonDiv{
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+}}
+</code>
+</pre>

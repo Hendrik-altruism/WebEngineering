@@ -182,5 +182,5 @@ function renderTaskNav(value, key, state){
   })
 
   const $content = document.querySelector('.main-task');
-  $content.innerHTML=`<iframe src="./ressources/aufgaben/1/4.html"></iframe>`;
+  $content.innerHTML=`<iframe src=${webData.elemente[value].task[key][1]}></iframe>`;
 }

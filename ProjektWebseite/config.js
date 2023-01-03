@@ -18,7 +18,14 @@ export const webData = {
         {
             titel: "CSS",
             img: "./ressources/svg/eyedropper.svg",
-            text: "Selektoren und Farben, sowie Positionierung und eine einfache Anwendung"
+            text: "Selektoren und Farben, sowie Positionierung und eine einfache Anwendung",
+            task: {
+                Selektoren: ["./ressources/aufgaben/2/1.txt"],
+                Farben: ["./ressources/aufgaben/2/2.txt"],
+                Sticky: ["./ressources/aufgaben/2/3.txt", "./ressources/aufgaben/2/3.html"],
+                CheckBox: ["./ressources/aufgaben/2/4.txt", "./ressources/aufgaben/2/4.html"],
+                Wireframe: ["./ressources/aufgaben/2/5.txt", "./ressources/aufgaben/2/5.html"]
+            }
         },
         {
             titel: "Responsive Web Design",

@@ -1,0 +1,49 @@
+<b>Bauen Sie das dynamische Verhalten in dem folgenden <a href="https://www.youtube.com/watch?v=PE3POxjDspo" target=_"blank">Video</a> exakt nach</b>
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>&lt;div class="headerdiv"&gt;
+    &lt;span class="headings"&gt;Erste Überschrift&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="defaultText"&gt;
+    Lorem ipsum dolor sit ...
+&lt;/div&gt;
+&lt;div class="headerdiv"&gt;
+    &lt;span class="headings"&gt;Zweite Überschrift&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="defaultText"&gt;
+    Lorem ipsum dolor sit ...
+&lt;/div&gt;
+&lt;div class="headerdiv"&gt;
+    &lt;span class="headings"&gt;Dritte Überschrift&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="defaultText"&gt;
+    Lorem ipsum dolor sit ...
+&lt;/div&gt;
+</code>
+<hr>
+<h3 class="codeHeader">CSS</h3>
+<hr>
+<code>.headerdiv{
+    width: calc(100%-20px);
+    border-style: solid;
+    border-width: 2px;
+    padding: 15px;
+    margin: 10px;
+    position: sticky;
+    top: 10px;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.headings{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.defaultText {
+    background-color: rgba(128, 128, 128 ,0.4);
+    font-size: 20px;
+    margin: 10px;
+}
+</code>
+</pre>
