@@ -30,7 +30,12 @@ export const webData = {
         {
             titel: "Responsive Web Design",
             img: "./ressources/svg/phone.svg",
-            text: "Grid, Flexbox und Media Queries"
+            text: "Grid, Flexbox und Media Queries",
+            task: {
+                Flexbox: ["./ressources/aufgaben/3/1.txt", "./ressources/aufgaben/3/1.html"],
+                Grid: ["./ressources/aufgaben/3/2.txt", "./ressources/aufgaben/3/2.html"],
+                Page: ["./ressources/aufgaben/3/3.txt", "./ressources/aufgaben/3/3.html"]
+            }
         },
         {
             titel: "JavaScript",

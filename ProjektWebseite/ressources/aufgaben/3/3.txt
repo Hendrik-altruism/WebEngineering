@@ -1,0 +1,12 @@
+<b>Implementieren Sie folgende <a href="https://kaul.inf.h-brs.de/ccm/we/ws22/resources/assets/landing.png" target=_"blank">Landing-Page</a> responsiv mit Grid Layout. Vermeiden Sie auch hier das Erscheinen von horizontalen Scrollbars so weit wie möglich</b>
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>
+</code>
+<hr>
+<h3 class="codeHeader">CSS</h3>
+<hr>
+<code>
+</code>
+</pre>
