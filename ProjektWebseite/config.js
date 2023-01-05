@@ -52,12 +52,24 @@ export const webData = {
         {
             titel: "Document Object Model",
             img: "./ressources/svg/columns-gap.svg",
-            text: "DOM-Operationen, Performanz-Messung sowie RednerListe und Top-Sort als Web-App"
+            text: "DOM-Operationen, Performanz-Messung sowie RednerListe und Top-Sort als Web-App",
+            task: {
+                Performanz: ["./ressources/aufgaben/5/1.txt", "./ressources/aufgaben/5/1.html"],
+                Rednerliste: ["./ressources/aufgaben/5/2.txt", "./ressources/aufgaben/5/2.html"],
+                TopSort: ["./ressources/aufgaben/5/3.txt", "./ressources/aufgaben/5/3.html"]
+            }
         },
         {
             titel: "ECMAScript",
             img: "./ressources/svg/equal-chevron.svg",
-            text: "Iteratoren, Generatoren und Proxy für den TopSort-Algorithmus. Aufgabe zu den Klammerpaaren"
+            text: "Iteratoren, Generatoren und Proxy für den TopSort-Algorithmus. Aufgabe zu den Klammerpaaren",
+            task: {
+                Klammerpaare: ["./ressources/aufgaben/6/1.txt"],
+                Iterator: ["./ressources/aufgaben/6/2.txt"],
+                Generator: ["./ressources/aufgaben/6/3.txt"],
+                Proxy: ["./ressources/aufgaben/6/4.txt"],
+                DeepCopy: ["./ressources/aufgaben/6/5.txt"]
+            }
         },
         {
             titel: "Funktionale Programmierung",
