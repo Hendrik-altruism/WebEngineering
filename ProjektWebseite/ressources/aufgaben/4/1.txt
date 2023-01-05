@@ -1,0 +1,51 @@
+<b>Schreiben Sie eine Funktion identity(), die ein Argument als Parameter entgegen nimmt und dieses als Ergebnis zurück gibt</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>function identify(param){
+    return param
+}
+</code>
+</pre>
+<b>Schreiben Sie eine Funktion identity_function(), die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>function identify_function(param){
+    return function ident(){return param}
+}
+</code>
+</pre>
+<b>Schreiben Sie zwei binäre Funktionen add und mul, die Summe und Produkt berechnen</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>function add(x, y){ return y+x;} 
+
+function mul(x, y){ return y*x;}
+</code>
+</pre>
+<b>Schreiben Sie eine Addier-Funktion addf(), so dass addf(x)(y) genau x + y zurück gibt</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>function addf(x){
+    return function (y){
+        return x+y
+    }
+}
+</code>
+</pre>
+<b>Schreiben Sie eine Funktion applyf(), die aus einer binären Funktion wie add(x,y) eine Funktion addf berechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>function applyf(x){
+    return function (y){
+        return function (z){
+            return x(y, z);
+        }    
+    }
+}
+</code>
+</pre>

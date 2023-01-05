@@ -2,11 +2,160 @@
 <pre>
 <h3 class="codeHeader">HTML</h3>
 <hr>
-<code>
+<code>&lt;div class="grid-container"&gt;
+    &lt;div id="headNav"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;The book series&lt;/li&gt;
+            &lt;li&gt;Testimonials&lt;/li&gt;
+            &lt;li&gt;The Author&lt;/li&gt;
+            &lt;li&gt;Free resources&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div id="headline"&gt;You dont know Javascript&lt;/div&gt;
+    &lt;div id="jsPic"&gt;
+        &lt;img src="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png"&gt;
+    &lt;/div&gt;
+    &lt;div id="content"&gt;
+        &lt;p id="conText"&gt;
+            Dont't just drift through Javascript.&lt;br&gt;
+            Understand how Javascript works&lt;br&gt;
+            Start your journey through the bumpy side of Javascript&lt;br&gt;
+        &lt;/p&gt;
+        &lt;button class="moreBtn"&gt;ORDER YOUR COPY NOW&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div id="footer"&gt;
+        &lt;p id="fooText"&gt;
+            The first ebook in the book series is absolutely free.&lt;br&gt;
+        &lt;/p&gt;
+        &lt;p style="font-stretch: 400%; margin: 0;"&gt;FIND OUT MORE ABOUT THIS OFFER&lt;/p&gt;
+    &lt;/div&gt; 
+&lt;/div&gt;
 </code>
 <hr>
 <h3 class="codeHeader">CSS</h3>
 <hr>
-<code>
+<code>@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+}
+
+.grid-container{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 50px 50px 1fr 150px;
+    grid-template-columns: 1fr 1fr;
+}
+
+#headNav {
+    grid-area: 1/span 2;
+    background-color: #363636;
+    color: white;
+    padding-left: 25vw;
+    padding-right: 25vw;
+    font-size: 15px;
+}
+
+#headline {
+    grid-area: 2/span 2;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    word-spacing: 0.5em;
+    padding: 12.5px;
+}
+
+#jsPic {
+    grid-area: 3/1;
+    padding: 2vh 7.5vw 2vh 7.5vw;
+    align-self: center;
+}
+
+#jsPic img{
+    width: 100%;
+    border: 1px black;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+#content{
+    padding: 4vh;
+    grid-area: 3/2;
+    text-align: center;
+}
+
+#footer{
+    grid-area: 4/span 2;
+    background-color: #011826;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 0 25vw 25px 25vw;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li {
+    list-style: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+    
+.moreBtn{
+    background-color: #f88e37;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 5px 4vw;
+    font-family: 'Bebas Neue';
+}
+
+#conText {
+    line-height: 4;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .grid-container{
+        grid-template-rows: 118px 50px 1fr 1fr 150px;
+    }
+            
+    #jsPic{
+        grid-area: 3/span 2;  
+    }
+            
+    #content{
+        grid-area: 4/ span 2;
+    }
+            
+    #footer{
+        grid-area: 5/ span 2;
+    }
+            
+    ul{
+        flex-direction: column;
+    }
+            
+    ul li{
+        padding: 2px;
+    }
+            
+    #headNav{
+        padding: 0;
+    }
+}
 </code>
 </pre>

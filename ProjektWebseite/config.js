@@ -1,5 +1,6 @@
-/* Modul mit den Daten
-   @return {}
+/** 
+ * Modul mit den Daten
+ * @return {}
 */
 
 export const webData = {
@@ -40,7 +41,13 @@ export const webData = {
         {
             titel: "JavaScript",
             img: "./ressources/svg/braces.svg",
-            text: "Funktionen, Objekte mit den Anwendungen Fibonacci und TopSort"
+            text: "Funktionen, Objekte mit den Anwendungen Fibonacci und TopSort",
+            task: {
+                Funktionen: ["./ressources/aufgaben/4/1.txt"],
+                Objekte: ["./ressources/aufgaben/4/2.txt"],
+                Fibonacci: ["./ressources/aufgaben/4/3.txt"],
+                TopSort: ["./ressources/aufgaben/4/4.txt", "./ressources/aufgaben/4/4.html"]
+            }
         },
         {
             titel: "Document Object Model",
