@@ -2,10 +2,9 @@
 <pre>
 <h3 class="codeHeader">HTML</h3>
 <hr>
-<code>&lt;div&gt;
-    &lt;h1 style="font-size: 50px; font-weight: 600;"&gt;Übung 2.2&lt;/h1&gt;&lt;/div&gt;
-    &lt;div id="cont1"&gt;&lt;span style="font-size: 20px; font-weight: 600; position: relative; left: 30px"&gt;hide and show via checkbox&lt;/span&gt;&lt;/div&gt;
-    &lt;div id="cont2" style="border-style: solid; border-width: 2px; padding: 5px; width: calc(100%-4px);"&gt;
+<code>&lt;div&gt; &lt;h1 style="font-size: 50px; font-weight: 600;"&gt;Übung 2.2&lt;/h1&gt;&lt;/div&gt;
+&lt;div id="cont1"&gt;&lt;span style="font-size: 20px; font-weight: 600; position: relative; left: 30px"&gt;hide and show via checkbox&lt;/span&gt;&lt;/div&gt;
+&lt;div id="cont2" style="border-style: solid; border-width: 2px; padding: 5px; width: calc(100%-4px);"&gt;
     &lt;input name="boxtrue" id="checktrue" type="checkbox" style="height: 25px; width: 25px; position: absolute; top: 90px; left: 5px" checked="checked"&gt;
     &lt;img id="image" src="hbrs.jpg"&gt;&lt;/img&gt;
 &lt;/div&gt;

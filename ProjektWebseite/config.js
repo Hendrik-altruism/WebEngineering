@@ -74,7 +74,11 @@ export const webData = {
         {
             titel: "Funktionale Programmierung",
             img: "./ressources/svg/speedometer2.svg",
-            text: "Diverse JavaScript Funktionen mit TextAnalyse, basierend auf filter-map-reduce"
+            text: "Diverse JavaScript Funktionen mit TextAnalyse, basierend auf filter-map-reduce",
+            task: {
+                Funktionen: ["./ressources/aufgaben/7/1.txt", "./ressources/aufgaben/7/1.html"],
+                Texntanalyse: ["./ressources/aufgaben/7/2.txt", "./ressources/aufgaben/7/2.html"]
+            }
         },
         {
             titel: "Asynchrones JavaScript",

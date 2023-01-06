@@ -13,7 +13,7 @@ Textbasierte Auszeichnungssprache zur Strukturierung von Dokumenten, Standart fÃ
         &lt;/ol&gt;
     &lt;/ol&gt;
 &lt;/ol&gt;
-</code>
+</code> 
 </pre>
 <b>Wie ist eine HTML-Tabelle aufgebaut?</b>
 <pre>
