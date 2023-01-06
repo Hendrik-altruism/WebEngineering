@@ -1,0 +1,44 @@
+<b>Schreiben sie eine ES6-Klasse Vorrang für die Vorrangsrelation und machen sie diese iterierbar</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>function topSortStep(relations) {
+    const Larr = []
+    const Rarr = []
+    relations.forEach(element =&gt; {
+        Larr.push(element[0])
+        Rarr.push(element[1])
+    });
+    const EL = Larr.concat(Rarr);
+    const distinctEl = [...new Set(EL)];
+    let del  
+    distinctEl.forEach(element =&gt; {
+        if(!Rarr.includes(element)){
+            del = element
+        }
+    })
+    relations.forEach(element =&gt; {
+        if(element[0]===del){
+            element.shift();
+        };
+    })
+    return [del, relations]
+}
+
+class VorrangIterator{
+    constructor(rel){
+        this.relation = rel;
+    }
+    [Symbol.iterator](){
+        let cur = this.relation
+        return{
+            next(){
+                let obj = topSortStep(cur)
+                cur = obj[1]
+                return  {done: typeof(obj[0])==="undefined", value: obj[0]}
+            }
+        }
+    }
+}
+</code>
+</pre>

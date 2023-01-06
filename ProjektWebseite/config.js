@@ -64,10 +64,10 @@ export const webData = {
             img: "./ressources/svg/equal-chevron.svg",
             text: "Iteratoren, Generatoren und Proxy für den TopSort-Algorithmus. Aufgabe zu den Klammerpaaren",
             task: {
-                Klammerpaare: ["./ressources/aufgaben/6/1.txt"],
-                Iterator: ["./ressources/aufgaben/6/2.txt"],
-                Generator: ["./ressources/aufgaben/6/3.txt"],
-                Proxy: ["./ressources/aufgaben/6/4.txt"],
+                Klammerpaare: ["./ressources/aufgaben/6/1.txt", "./ressources/aufgaben/6/1.html"],
+                Iterator: ["./ressources/aufgaben/6/2.txt", "./ressources/aufgaben/6/2.html"],
+                Generator: ["./ressources/aufgaben/6/3.txt", "./ressources/aufgaben/6/3.html"],
+                Proxy: ["./ressources/aufgaben/6/4.txt", "./ressources/aufgaben/6/4.html"],
                 DeepCopy: ["./ressources/aufgaben/6/5.txt"]
             }
         },
