@@ -3,6 +3,29 @@
 html{
     height: 100%;
 }
+
+.light-mode{
+    --font-color: black;
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: rgb(73, 154, 247);
+    --tertiary-color: rgb(219, 235, 245);
+    --forth-color: rgb(101, 184, 252);
+    --fifth-color: rgb(9, 9, 24);
+    --scrollbar-color: rgb(134, 165, 201);
+    --scrollbar-hover-color: rgb(55, 87, 124);
+}
+
+:root{
+    --font-color: rgb(204, 203, 203);
+    --primary-color: rgb(9, 9, 24);
+    --secondary-color: rgb(10, 20, 34);
+    --tertiary-color: rgb(7, 15, 26);
+    --forth-color: rgb(14, 28, 48);
+    --fifth-color: rgb(204, 224, 236);
+    --scrollbar-color: rgb(12, 17, 46);
+    --scrollbar-hover-color: rgb(25, 34, 80);
+}
+
 body{
     height: 100%;
     margin: 0;
@@ -18,8 +41,8 @@ body{
                     "header"
                     "main"
                     "footer";
-    background-color: rgb(9, 9, 24);
-    color: rgb(204, 203, 203);
+    background-color: var(--primary-color);
+    color: var(--font-color);
 }
 
 .grid-container-task{
@@ -30,16 +53,16 @@ body{
     grid-template-areas: 
                     "header"
                     "main";
-    background-color: rgb(9, 9, 24);
+    background-color: var(--primary-color);
 }
 
 .header{
     font-family: 'Jost', sans-serif;
-    color: rgb(204, 203, 203);
+    color: var(--font-color);
     display: flex;
     align-items: center;
   
-    background-color: rgb(10, 20, 34);
+    background-color: var(--secondary-color);
     grid-area: "header";
 }
 
@@ -47,19 +70,19 @@ body{
     grid-area: "main";
     padding: 0;
     overflow: auto;
-    background-color: rgb(9, 9, 24);
+    background-color: var(--primary-color);
 }
 
 .main-task{
     grid-area: "main";
     padding: 1em;
     overflow: hidden;
-    background-color: rgb(9, 9, 24);
+    background-color: var(--primary-color);
 }
 
 .footer{
     grid-area: "footer";
-    background-color: rgb(10, 20, 34); 
+    background-color: var(--secondary-color);
 }
 
 .webContent{
@@ -87,7 +110,7 @@ body{
     height: 100%;
     margin: 0;
     border: 0;
-    background-color: rgb(7, 15, 26);
+    background-color: var(--tertiary-color);
     transition: 0.5s;
     animation: startup 1s ease-in forwards;
 }
@@ -112,24 +135,20 @@ body{
 }
 
 .col-md-4{
-    background-color: rgb(14, 28, 48);
+    background-color: var(--forth-color);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-h2{
-    background-color: rgb(14, 28, 48);
-}
-
 .accordion-item{
-    background-color: rgb(7, 15, 26);
+    background-color: var(--tertiary-color);
 }
 
 .accordion-button{
     cursor: pointer;
     padding: .1em .25em ;
-    background-color: rgb(14, 28, 48);
+    background-color: var(--forth-color);
    display: flex;
    align-items: center;
    justify-content: space-between;
@@ -153,12 +172,12 @@ h5{
 }
 
 
-img{
+#cards img{
     width: 5em;
     padding: 5px;
 }
 
-svg{
+.accordion-item svg{
     height: 1em;
     transition: 0.2s ease-in;
 }
@@ -182,7 +201,7 @@ svg{
 }
 
 pre{
-    color: rgb(204, 203, 203);
+    color: var(--font-color);
     white-space: pre-wrap;
     overflow-x: auto;
     margin: 0;
@@ -212,6 +231,8 @@ code{
 }
 
 button{
+    background-color: var(--fifth-color);
+    color: var(--primary-color);
     height: 50px;
     cursor: pointer;
 }
@@ -234,8 +255,9 @@ iframe{
 }
 
 #returnArrow{
-    width: 4em;
-    padding: 10px;
+    fill: var(--font-color);
+    height: 2.5em;
+    width: 2.5em;
     cursor: pointer;
     transition: 1;
 }
@@ -253,12 +275,12 @@ iframe{
 }
 
 .main::-webkit-scrollbar-thumb{
-    background-color: rgb(12, 17, 46);
+    background-color: var(--scrollbar-color);
     border-radius: 30px;
 }
 
 .main::-webkit-scrollbar-thumb:hover{
-    background-color: rgb(25, 34, 80);
+    background-color: var(--scrollbar-hover-color);
     cursor: pointer;
 }
 
@@ -276,10 +298,14 @@ iframe{
 
 .navList{
     flex-grow: 1;
+    margin: 0;
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
 }
 
 .navList li{
@@ -287,6 +313,10 @@ iframe{
     font-size: 20px;
     font-weight: 550;
     letter-spacing: 2px;
+}
+
+.navList li img{
+    width: 1.75em;
 }
 
 .burger{
@@ -298,7 +328,7 @@ iframe{
 .burger div{
     width: 25px;
     height: 3px;
-    background-color: rgb(204, 203, 203);
+    background-color: var(--font-color);
     margin: 5px;
     border-radius: 5px;
     transition: all 0.3s ease;
@@ -313,7 +343,7 @@ iframe{
         right: 0px;
         bottom: 150px;
         top: 8vh;
-        background-color: rgb(10, 20, 34);
+        background-color: var(--secondary-color);
         margin: 0;
         padding: 0 2vw 0 2vw;
         display: flex;

@@ -5,6 +5,10 @@ renderHomeApp();
 
 //Rendert die standart Navbar Struktur mit EventListenern
 function renderMainNav(){
+  let src = "./ressources/svg/brightness-high.svg"
+  if(document.body.classList.contains("light-mode")){
+    src = "./ressources/svg/moon.svg"
+  }
   document.querySelector('body').innerHTML=''
   document.querySelector('body').innerHTML=`<div class="grid-container"> 
   <nav class="header">
@@ -13,9 +17,9 @@ function renderMainNav(){
           Web Engineering
       </div>
       <ul class="navList">
-          <li class="navItem" id="first">1</li>
+          <li class="navItem">1</li>
           <li class="navItem">2</li>
-          <li class="navItem">3</li>
+          <li class="navItem"><img id="modeSwitch" src=${src}></li>
       </ul>
       <div class="burger" id="burgerMenu">
           <div class="l1"></div>
@@ -43,6 +47,15 @@ function renderMainNav(){
     const navList = document.querySelector('.navList');
     navList.classList.toggle('nav-active');
     burger.classList.toggle('trans'); 
+  })
+
+  document.getElementById('modeSwitch').addEventListener("click", async ()=>{
+    document.body.classList.toggle("light-mode");
+    if(document.body.classList.contains("light-mode")){
+      document.getElementById('modeSwitch').src = "./ressources/svg/moon.svg"
+    }else{
+      document.getElementById('modeSwitch').src = "./ressources/svg/brightness-high.svg"
+    }
   })
 }
 
@@ -158,7 +171,7 @@ function renderTaskNav(value, key, state){
   document.querySelector('body').innerHTML=`<div class="grid-container-task"> 
   <nav class="header">
       <img src="./ressources/graphics/Logo.png" alt="Home" id="homeLogo">
-      <img id="returnArrow" src="./ressources/svg/arrow-return-left.svg">
+      <svg id="returnArrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-arrow-return-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/></svg>
       <div class="heading taskHeading">
           ${key}
       </div>
