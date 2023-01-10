@@ -77,7 +77,6 @@ body{
 
 .col{
     padding: 1em;
-    max-height: 30vh;
     min-width: 400px;
     flex-grow: 1;
 }
