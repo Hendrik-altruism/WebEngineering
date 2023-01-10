@@ -51,10 +51,10 @@
 <b>Erzeugen Sie die inc-Funktion mit Hilfe einer der Funktionen addf, applyf und curry aus den letzten Aufgaben, ohne die Funktion inc selbst zu implementieren</b>
 <pre>
 <h3 class="codeHeader">JavaScript</h3>
-<hr>let inc1 = addf(1);
+<hr>
+<code>let inc1 = addf(1);
 let inc2 = applyf(add)(1);
 let inc3 = curry(add, 1);
-<code>
 </code>
 </pre>
 
