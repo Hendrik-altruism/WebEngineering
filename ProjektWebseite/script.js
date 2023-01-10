@@ -134,7 +134,7 @@ function renderHomeApp() {
           obj.classList.add('accordion-item')
           let tasks = `
             <h2 class="accordion-header" id="panelsStayOpen-heading${index}">
-            <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${index}" aria-expanded="true" aria-controls="panelsStayOpen-heading${index}">
+            <div class="accordion-button" style="pointer-events: auto" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${index}" aria-expanded="true" aria-controls="panelsStayOpen-heading${index}">
             ${key}
             <svg id="svg${index}" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>
             </div>
@@ -152,8 +152,11 @@ function renderHomeApp() {
             obj.querySelector('.accordion-collapse').classList.add("show")
             obj.querySelector('svg').classList.toggle('rot')
           }
-          obj.querySelector('.accordion-button').addEventListener('click', ()=>{
+          obj.querySelector('.accordion-button').addEventListener('click', async ()=>{
             obj.querySelector('svg').classList.toggle('rot')
+            obj.querySelector('.accordion-button').style="pointer-events: none";
+            await sleep(300);
+            obj.querySelector('.accordion-button').style="pointer-events: auto";
           })
           if(value[1]!=null){
             obj.querySelector('.showExample').addEventListener('click', ()=>{
@@ -195,4 +198,8 @@ function renderTaskNav(value, key, state){
 
   const $content = document.querySelector('.main-task');
   $content.innerHTML=`<iframe src=${webData.elemente[value].task[key][1]}></iframe>`;
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
