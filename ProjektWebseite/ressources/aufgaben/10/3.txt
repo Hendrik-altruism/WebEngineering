@@ -1,0 +1,71 @@
+<b>Schreiben Sie in TypeScript möglichst umfangreich statisch typisiert ein auf Deno ablauffähiges Programm server.ts, das Sie mit deno run --allow-net server.ts starten können, das die COVID-19-Fallzahlen in Deutschland einliest, Minimum, Maximum, Durchschnitt und Summe berechnet und diese auf einer Webseite ausgibt</b>
+<pre>
+<h3 class="codeHeader">TypeScript</h3>
+<hr>
+<code>fetch("covid.json").then(response=&gt;response.json()
+    .then(data =&gt; {
+        let min: any = Object.entries(data.Fallzahlen)[0]
+        let max: any = Object.entries(data.Fallzahlen)[0]
+        let sum: number = 0;
+        let count: number = Object.keys(data.Fallzahlen).length;
+        for (const [key, value] of Object.entries(data.Fallzahlen)){
+            if(min[1]&gt;value){min = [key, value]}
+            if(max[1]&lt;value){max = [key, value]}
+            sum += value as number;
+        }
+        console.log("Minimum: "+min[0]+" mit "+min[1]+" Infektionen")
+        console.log("Maximum: "+max[0]+" mit "+max[1]+" Infektionen")
+        console.log("Total: "+sum+" Infektionen")
+        console.log("landesweiter Durschschnitt: "+sum/count+" Infektionen pro Bundesland")
+    })
+)
+</code>
+<hr>
+<h3 class="codeHeader">Generated JavaScript</h3>
+<hr>
+<code>fetch("covid.json").then(function (response) { return response.json()
+    .then(function (data) {
+    var min = Object.entries(data.Fallzahlen)[0];
+    var max = Object.entries(data.Fallzahlen)[0];
+    var sum = 0;
+    var count = Object.keys(data.Fallzahlen).length;
+    for (var _i = 0, _a = Object.entries(data.Fallzahlen); _i &lt; _a.length; _i++) {
+        var _b = _a[_i], key = _b[0], value = _b[1];
+        if (min[1] &gt; value) {
+            min = [key, value];
+        }
+        if (max[1] &lt; value) {
+            max = [key, value];
+        }
+        sum += value;
+    }
+    console.log("Minimum: " + min[0] + " mit " + min[1] + " Infektionen");
+    console.log("Maximum: " + max[0] + " mit " + max[1] + " Infektionen");
+    console.log("Total: " + sum + " Infektionen");
+    console.log("landesweiter Durschschnitt: " + sum / count + " Infektionen pro Bundesland");
+    }); 
+});
+</code>
+<hr>
+<h3 class="codeHeader">JSON</h3>
+<hr>
+<code>{"Fallzahlen": {
+    "BadenWürtenberg": 4928906,
+    "Bayern":   6570185,
+    "Berlin": 1379749,
+    "Brandenburg": 1076489,
+    "Bremen": 291092,
+    "Hamburg": 785606,
+    "Hessen": 2814591,
+    "MecklenburgVorpommern": 686114,
+    "Niedersachsen": 3664544,
+    "NordrheinWestfalen": 7635848,
+    "RheinlandPfalz": 1701077,
+    "Saarland": 473782,
+    "Sachsen": 1914141,
+    "SachsenAnhalt": 935693,
+    "SchleswigHolstein": 1135664,
+    "Thüringen": 867517
+}}
+</code>
+</pre>

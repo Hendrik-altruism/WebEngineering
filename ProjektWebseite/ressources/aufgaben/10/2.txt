@@ -1,0 +1,31 @@
+<b>Gegeben sei folgendes fehlerbehaftete JavaScript-Programm. Ergänzen Sie dieses um möglichst viele Typisierungen und übersetzen Sie es in ein TypeScript-Programm</b>
+<pre>
+<h3 class="codeHeader">TypeScript</h3>
+<hr>
+<code>const myAddts = function(x: number, y: number): number{
+    return x+y
+}
+
+const equalsts = function(x: any, y:any): boolean{
+    return x===y
+}
+
+console.log(myAddts(1, 2))
+
+console.log(equalsts(1, 1))
+</code>
+<hr>
+<h3 class="codeHeader">Generated JavaScript</h3>
+<hr>
+<code>var myAdd = function (x, y) { 
+    return x + y; 
+};
+
+var equals = function (x, y) { 
+    return x === y; 
+};
+console.log(myAdd(1, 2));
+
+console.log(equals(1, 1));
+</code>
+</pre>

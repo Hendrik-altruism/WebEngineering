@@ -18,4 +18,5 @@ fetch("covid.json").then(function (response) { return response.json()
     console.log("Maximum: " + max[0] + " mit " + max[1] + " Infektionen");
     console.log("Total: " + sum + " Infektionen");
     console.log("landesweiter Durschschnitt: " + sum / count + " Infektionen pro Bundesland");
-}); });
+    }); 
+});

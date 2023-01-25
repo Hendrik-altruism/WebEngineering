@@ -103,7 +103,12 @@ export const webData = {
         {
             titel: "TypeScript",
             img: "./ressources/svg/cup-hot.svg",
-            text: "Fehlersuche und Beispielprogramm in TypeScript zur Visualisierung der Covid-Fallzahlen"
+            text: "Fehlersuche und Beispielprogramm in TypeScript zur Visualisierung der Covid-Fallzahlen",
+            task: {
+                StaticClasses: ["./ressources/aufgaben/10/1.txt"],
+                Fehlersuche: ["./ressources/aufgaben/10/2.txt", "./ressources/aufgaben/10/2.html"],
+                Deno: ["./ressources/aufgaben/10/3.txt", "./ressources/aufgaben/10/3.html"]
+            }
         },
         {
             titel: "Vue 2",
