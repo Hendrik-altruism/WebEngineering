@@ -1,6 +1,5 @@
 let obj = []
 let count = 0;
-
 let turn = true;
 
 function testWin(){
@@ -14,7 +13,6 @@ function testWin(){
         alert("Draw!!")
     }
 }
-
 
 let listener = document.querySelectorAll('g.fields')
 for(let i = 0; i<listener.length; i++){

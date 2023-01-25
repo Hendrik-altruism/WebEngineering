@@ -1,0 +1,8 @@
+<b>Implementieren Sie ein eigenes Balkendiagramm mit HTML, Inline SVG, CSS und JavaScript</b>
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>
+//TODO
+</code>
+</pre>

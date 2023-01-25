@@ -1,0 +1,20 @@
+<b>Codieren Sie eine HTML-Datei mit Inline SVG, so dass sich folgendes <a href="https://kaul.inf.h-brs.de/ccm/we/ws22/resources/assets/use_the_platform.png" target=_"blank">Aussehen</a> ergibt</b>
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>&lt;b&gt;SVG Use the Platform&lt;/b&gt;
+&lt;button onclick="document.location.reload()"&gt;Start Over&lt;/button&gt;
+&lt;svg viewBox="0 0 300 250"&gt;
+    &lt;g transform="scale(1 1)" onmouseover='this.setAttribute("transform", "scale(2 2)")' onmouseout='this.setAttribute("transform", "scale(1 1)")'&gt;
+        &lt;rect width="50" height="50" fill="#cb798d"/&gt;
+        &lt;text x="5" y="10" style="fill:white; font-size: 10"&gt;Use
+            &lt;tspan x="5" y="25"&gt;The&lt;/tspan&gt;
+            &lt;tspan x="5" y="40"&gt;Platform&lt;/tspan&gt;
+        &lt;/text&gt;
+        &lt;line x1="5" y1="13" x2="45" y2="13" stroke="white"&gt;&lt;/line&gt;
+        &lt;line x1="5" y1="28" x2="45" y2="28" stroke="white"&gt;&lt;/line&gt;
+        &lt;line x1="5" y1="43" x2="45" y2="43" stroke="white"&gt;&lt;/line&gt;
+    &lt;/g&gt;
+&lt;/svg&gt;
+</code>
+</pre>

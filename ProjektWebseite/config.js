@@ -83,12 +83,22 @@ export const webData = {
         {
             titel: "Asynchrones JavaScript",
             img: "./ressources/svg/pause-circle.svg",
-            text: "Promises und Async / Await zur Realisierung eines WWW-Navigators mit der Fetch-API"
+            text: "Promises und Async / Await zur Realisierung eines WWW-Navigators mit der Fetch-API",
+            task: {
+                Promises: ["./ressources/aufgaben/8/1.txt", "./ressources/aufgaben/8/1.html"],
+                AsyncAwait: ["./ressources/aufgaben/8/2.txt", "./ressources/aufgaben/8/2.html"],
+                Navigator: ["./ressources/aufgaben/8/3.txt", "./ressources/aufgaben/8/3.html"]
+            }
         },
         {
             titel: "Scalable Vector Graphics",
             img: "./ressources/svg/filetype-svg.svg",
-            text: "Tic-Tac-Toe durch SVGs visualisiert und Einstiegsaufgabe"
+            text: "Tic-Tac-Toe durch SVGs visualisiert und Einstiegsaufgabe",
+            task: {
+                PlatformSVG: ["./ressources/aufgaben/9/1.txt", "./ressources/aufgaben/9/1.html"],
+                Covid: ["./ressources/aufgaben/9/2.txt", "./ressources/aufgaben/9/2.html"],
+                TicTacToe: ["./ressources/aufgaben/9/3.txt", "./ressources/aufgaben/9/3.html"]
+            }
         },
         {
             titel: "TypeScript",
