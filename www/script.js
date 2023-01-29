@@ -2,12 +2,103 @@ import {webData} from './config.js';
 
 renderMainNav();
 renderHomeApp();
+//renderModal();
+
+//rendert das Modal-Element => Register und Login
+function renderModal(){
+  const body = document.querySelector('body');
+  body.classList.add("modal-open");
+  body.style = "overflow: hidden;"
+  const myModal = document.createElement('div')
+  const modal = `<div
+  class="modal fade show"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-modal="true"
+  style="display: block;"
+  role="dialog"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <div id="login" class="nav-link active">Login</div>
+          </li>
+          <li class="nav-item">
+            <div id="register" class="nav-link">Registrieren</div>
+          </li>
+        </ul>
+        <div class="modalContent"></div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade show"></div>`;
+  myModal.innerHTML = modal;
+  body.appendChild(myModal);
+  buildForm();
+
+  document.getElementById('login').addEventListener('click', ()=>{
+    document.getElementById('register').classList.remove("active")
+    document.getElementById('login').classList.add("active")
+    buildForm()
+  });
+
+  document.getElementById('register').addEventListener('click', ()=>{
+    document.getElementById('login').classList.remove("active")
+    document.getElementById('register').classList.add("active")
+    buildForm()
+  });
+
+  function buildForm(){
+    const login = document.getElementById('login').classList.contains("active");
+    const space = document.querySelector(".modalContent");
+    space.firstChild.remove()
+    const form = document.createElement('form');
+    form.setAttribute("action", "connect.php");
+    form.setAttribute("method", "POST");
+    const modalForm = `
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email Addresse</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="emailAdress">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Passwort</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+    </div>
+    ${!login? `
+    <div class="mb-3">
+    <label for="exampleInputPassword2" class="form-label">Passwort Wiederholung</label>
+    <input type="password" class="form-control" id="exampleInputPassword2" name="password2">
+    <p style="display: none">Passwort stimmt nicht überein</p>
+    </div>`: ""}
+    <button type="submit" class="btn loginBtn">${login? "Login": "Registrieren"}</button>`
+    form.innerHTML = modalForm;
+    space.appendChild(form);
+    document.querySelector('.loginBtn').addEventListener("click", ()=>{
+      const body = document.querySelector('body');
+      body.classList.remove("modal-open");
+      body.style = "overflow: auto;"
+      document.querySelector('.modal').remove();
+      document.querySelector('.modal-backdrop').remove();
+    });
+  }
+}
+
 
 //Rendert die standart Navbar Struktur mit EventListenern
 function renderMainNav(){
-  let src = "./ressources/svg/brightness-high.svg"
+  let srcMode = "./ressources/svg/brightness-high.svg";
+  let srcLog = "./ressources/svg/power-light.svg";
   if(document.body.classList.contains("light-mode")){
-    src = "./ressources/svg/moon.svg"
+    srcMode = "./ressources/svg/moon.svg"
+    srcLog = "./ressources/svg/power-dark.svg";
   }
   document.querySelector('body').innerHTML=''
   document.querySelector('body').innerHTML=`<div class="grid-container"> 
@@ -18,8 +109,8 @@ function renderMainNav(){
       </div>
       <ul class="navList">
           <li class="navItem">1</li>
-          <li class="navItem">2</li>
-          <li class="navItem"><img id="modeSwitch" src=${src}></li>
+          <li class="navItem"><img id="modeSwitch" src=${srcMode}></li>
+          <li class="navItem"><a href="login.php"><img id="logout" src=${srcLog}></a></li>
       </ul>
       <div class="burger" id="burgerMenu">
           <div class="l1"></div>
@@ -53,10 +144,13 @@ function renderMainNav(){
     document.body.classList.toggle("light-mode");
     if(document.body.classList.contains("light-mode")){
       document.getElementById('modeSwitch').src = "./ressources/svg/moon.svg"
+      document.getElementById('logout').src = "./ressources/svg/power-dark.svg"
     }else{
       document.getElementById('modeSwitch').src = "./ressources/svg/brightness-high.svg"
+      document.getElementById('logout').src = "./ressources/svg/power-light.svg"
     }
   })
+
 }
 
 //Rendert den Haubtcontent der Main-Page

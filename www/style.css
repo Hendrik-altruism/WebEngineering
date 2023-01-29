@@ -29,10 +29,13 @@ html{
 body{
     height: 100%;
     margin: 0;
+    background-color: var(--primary-color);
 }
 
 .grid-container{
     font-family: 'Jost', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--font-color);
     height: 100vh;
     display: grid;
     grid-template-rows: 8vh 1fr 100px;
@@ -41,8 +44,6 @@ body{
                     "header"
                     "main"
                     "footer";
-    background-color: var(--primary-color);
-    color: var(--font-color);
 }
 
 .grid-container-task{
@@ -170,7 +171,6 @@ body{
 h5{
     padding-bottom: 1em;
 }
-
 
 #cards img{
     width: 5em;
@@ -332,6 +332,56 @@ iframe{
     margin: 5px;
     border-radius: 5px;
     transition: all 0.3s ease;
+}
+
+.login-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3em;
+}
+
+.login-head{
+    color: var(--font-color);
+    margin-bottom: 5vw;
+}
+
+.formBox{
+    background-color: white;
+    padding: 10px;
+    border: 10px var(--forth-color) solid;
+    border-radius: 7px;
+}
+
+.modal-content{
+    font-family: 'Jost', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+}
+
+.nav-tabs{
+    margin-bottom: 1em;
+    width: 35vw;
+}
+
+.nav-item:hover{
+    cursor: pointer;
+}
+
+.form-button{
+    display: flex;
+    justify-content: center;
+}
+
+.loginBtn{
+    background-color: var(--scrollbar-color);
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+.loginBtn:hover{
+    background-color: var(--scrollbar-hover-color);
 }
 
 @media (max-width: 800px){
