@@ -16,6 +16,7 @@
 <body>
     <div class="login-content">
         <h1 class="login-head">Einführung ins Web Engineering</h1>
+        <div id="flex-helper">
         <div class="formBox">
         <ul class="nav nav-tabs justify-content-center">
             <li class="nav-item">
@@ -27,7 +28,10 @@
         </ul>
         <div class="modalContent">
             </div>
-        </div>  
+        </div> 
+        </div>
+        <img id="front-image" src="./ressources/graphics/logo.png">
+        <h3 class="login-head">Webseite von Hendrik Oude Hengel</h3> 
     </div>
 
     <?php

@@ -335,16 +335,23 @@ iframe{
 }
 
 .login-content{
+    height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 3em;
 }
 
 .login-head{
     color: var(--font-color);
-    margin-bottom: 5vw;
+    margin: 5vw 0;
+}
+
+#front-image{
+    width: 10vw;
+}
+
+#flex-helper{
+    flex-grow: 1;
 }
 
 .formBox{
