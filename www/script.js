@@ -6,23 +6,25 @@ renderHomeApp();
 
 //Rendert die standart Navbar Struktur mit EventListenern
 function renderMainNav(){
+  let srcPerson = "./ressources/svg/person-light.svg";
   let srcMode = "./ressources/svg/brightness-high.svg";
   let srcLog = "./ressources/svg/power-light.svg";
   if(document.body.classList.contains("light-mode")){
+    srcPerson = "./ressources/svg/person-dark.svg";
     srcMode = "./ressources/svg/moon.svg"
     srcLog = "./ressources/svg/power-dark.svg";
   }
   document.querySelector('body').innerHTML=''
   document.querySelector('body').innerHTML=`<div class="grid-container"> 
   <nav class="header">
-      <img src="./ressources/graphics/Logo.png" alt="Home" id="homeLogo">
+      <img class="clickable" src="./ressources/graphics/Logo.png" alt="Home" id="homeLogo">
       <div class="heading">
-          Web Engineering
+          Solution Navigator
       </div>
       <ul class="navList">
-          <li class="navItem">1</li>
-          <li class="navItem"><img id="modeSwitch" src=${srcMode}></li>
-          <li class="navItem"><a href="login.php"><img id="logout" src=${srcLog}></a></li>
+          <li class="navItem"><img class="clickable" id="user-data" src=${srcPerson}></li>
+          <li class="navItem"><img class="clickable" id="modeSwitch" src=${srcMode}></li>
+          <li class="navItem"><a href="login.php"><img class="clickable" id="logout" src=${srcLog}></a></li>
       </ul>
       <div class="burger" id="burgerMenu">
           <div class="l1"></div>
@@ -45,6 +47,10 @@ function renderMainNav(){
     renderHomeApp();
   })
 
+  document.getElementById('user-data').addEventListener("click", ()=>{
+    renderUserApp();
+  })
+
   document.getElementById("burgerMenu").addEventListener("click", async ()=>{
     const burger = document.querySelector('.burger');
     const navList = document.querySelector('.navList');
@@ -55,9 +61,11 @@ function renderMainNav(){
   document.getElementById('modeSwitch').addEventListener("click", async ()=>{
     document.body.classList.toggle("light-mode");
     if(document.body.classList.contains("light-mode")){
+      document.getElementById('user-data').src = "./ressources/svg/person-dark.svg"
       document.getElementById('modeSwitch').src = "./ressources/svg/moon.svg"
       document.getElementById('logout').src = "./ressources/svg/power-dark.svg"
     }else{
+      document.getElementById('user-data').src = "./ressources/svg/person-light.svg"
       document.getElementById('modeSwitch').src = "./ressources/svg/brightness-high.svg"
       document.getElementById('logout').src = "./ressources/svg/power-light.svg"
     }
@@ -179,8 +187,8 @@ function renderTaskNav(value, key, state){
   document.querySelector('body').innerHTML=''
   document.querySelector('body').innerHTML=`<div class="grid-container-task"> 
   <nav class="header">
-      <img src="./ressources/graphics/Logo.png" alt="Home" id="homeLogo">
-      <svg id="returnArrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-arrow-return-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/></svg>
+      <img src="./ressources/graphics/Logo.png" alt="Home" class="clickable" id="homeLogo">
+      <svg class="clickable" id="returnArrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-arrow-return-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/></svg>
       <div class="heading taskHeading">
           ${key}
       </div>
@@ -204,6 +212,12 @@ function renderTaskNav(value, key, state){
 
   const $content = document.querySelector('.main-task');
   $content.innerHTML=`<iframe src=${webData.elemente[value].task[key][1]}></iframe>`;
+}
+
+//Person Daten anzeigen
+function renderUserApp() {
+  document.querySelector('.main').innerHTML=''
+  document.querySelector( '.main' ).innerHTML='<div id="cards" class="row row-cols-1 row-cols-md-3 g-4"></div>';  
 }
 
 function sleep(ms) {

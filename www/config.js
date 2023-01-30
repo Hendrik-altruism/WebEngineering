@@ -113,17 +113,17 @@ export const webData = {
         {
             titel: "Vue 2",
             img: "./ressources/svg/svg-path.svg",
-            text: "Das erste Kapitel befasst sich mit Html "
+            text: "Kapitel in Bearbeitung"
         },
         {
             titel: "Server-side Scripting",
             img: "./ressources/svg/router.svg",
-            text: "Das erste Kapitel befasst sich mit Html "
+            text: "Kapitel in Bearbeitung"
         },
         {
             titel: "Web App Security",
             img: "./ressources/svg/shield-lock.svg",
-            text: "Das erste Kapitel befasst sich mit Html "
+            text: "Kapitel in Bearbeitung"
         }
     ]
 }
