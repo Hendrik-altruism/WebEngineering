@@ -1,5 +1,6 @@
 import {webData} from './config.js';
 
+let animation = true;
 renderMainNav();
 renderHomeApp();
 
@@ -23,8 +24,8 @@ function renderMainNav(){
       </div>
       <ul class="navList">
           <li class="navItem">
-            <img class="user-data clickable icons" src=${srcPerson}>
-            <div class="user-data hoverable word">über mich</div>
+            <img class="animation-style clickable icons" src=${srcPerson}>
+            <div class="animation-style hoverable word">animation</div>
           </li>
           <li class="navItem">
             <img class="modeSwitch clickable icons" src=${srcMode}>
@@ -47,7 +48,28 @@ function renderMainNav(){
         </div>
   </div>
   <div class="footer">
-      
+      <div class="footer-box">
+        <div class="footer-header"><h5>Kontakt</h5></div>
+        <div class="footer-text">
+          <b>email:</b> hendrik.oh@t-online.de
+          <br>
+          <b>mobil:</b> +49 175 5333890
+          <br>
+          <a href="https://www.instagram.com/hendrik.oh/" target=_"black"><img src="./ressources/svg/instagram.svg"></a>
+          <a href="https://www.snapchat.com/add/hendrik_0605?share_id=fffdcaKES824ysRlQ58Ukg&locale=de_DE" target=_"black"><img src="./ressources/svg/snapchat.svg"></a>
+          <a href="https://www.youtube.com/@lothohornblaeser5879" target=_"black"><img src="./ressources/svg/youtube.svg"></a>
+          <a href="hhttps://www.facebook.com/fredegar.maggot.5" target=_"black"><img src="./ressources/svg/facebook.svg"></a>
+          <a href="https://github.com/Hendrik-altruism" target=_"black"><img src="./ressources/svg/github.svg"></a>
+        </div>
+      </div>
+      <div class="footer-box">
+        <div class="footer-header"><h5>Programme</h5></div>
+        <div class="footer-text">
+          <a href="https://code.visualstudio.com/" traget=_"blanck">Visual Studio Code</a><br>
+          <a href="https://github.com/" traget=_"blanck">GitHub</a><br>
+          <a href="https://stackoverflow.com/" traget=_"blanck">Stack Overflow</a>
+        </div>
+      </div>
   </div>
   </div>`
   
@@ -56,8 +78,11 @@ function renderMainNav(){
     renderHomeApp();
   })
 
-  document.querySelectorAll('.user-data').forEach(element => element.addEventListener("click", ()=>{
-    renderUserApp();
+  document.querySelectorAll('.animation-style').forEach(element => element.addEventListener("click", ()=>{
+    document.querySelectorAll('.card').forEach(element=>{
+      animation = !animation;
+    });
+    renderHomeApp();
   }))
 
   document.getElementById("burgerMenu").addEventListener("click", async ()=>{
@@ -69,11 +94,11 @@ function renderMainNav(){
   document.querySelectorAll('.modeSwitch').forEach(element => element.addEventListener("click", async ()=>{
     document.body.classList.toggle("light-mode");
     if(document.body.classList.contains("light-mode")){
-      document.querySelector('.user-data').src = "./ressources/svg/person-dark.svg"
+      document.querySelector('.animation-style').src = "./ressources/svg/person-dark.svg"
       document.querySelector('.modeSwitch').src = "./ressources/svg/moon.svg"
       document.querySelector('.logout').src = "./ressources/svg/power-dark.svg"
     }else{
-      document.querySelector('.user-data').src = "./ressources/svg/person-light.svg"
+      document.querySelector('.animation-style').src = "./ressources/svg/person-light.svg"
       document.querySelector('.modeSwitch').src = "./ressources/svg/brightness-high.svg"
       document.querySelector('.logout').src = "./ressources/svg/power-light.svg"
     }
@@ -88,11 +113,12 @@ function renderHomeApp() {
       document.querySelector( '.main' ).innerHTML='<div id="cards" class="row row-cols-1 row-cols-md-3 g-4"></div>';
       const $items = document.querySelector('#cards')
       webData.elemente.forEach( element => {
+        const animate = generateAnimation();
         const $item = document.createElement( 'div' );
         const elementSVG = element.img;
         $item.classList.add( 'col' );
         $item.innerHTML = `  
-          <div class="card">
+          <div class="card ${animate}">
             <div class="row">
              <div class="col-md-4">
               <img src=${elementSVG}>
@@ -222,12 +248,19 @@ function renderTaskNav(value, key, state){
   $content.innerHTML=`<iframe src=${webData.elemente[value].task[key][1]}></iframe>`;
 }
 
-//Person Daten anzeigen
-function renderUserApp() {
-  document.querySelector('.main').innerHTML=''
-  document.querySelector( '.main' ).innerHTML='<div id="cards" class="row row-cols-1 row-cols-md-3 g-4"></div>';  
-}
-
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function generateAnimation(){
+  if(animation){
+    return "scale";
+  }
+  const rand = Math.round(Math.random() * (3 - 1)) + 1;
+  console.log(rand)
+  switch(rand){
+    case 1: return "rotate";
+    case 2: return "fly-x";
+    case 3: return "fly-y";
+  }
 }

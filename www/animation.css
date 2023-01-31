@@ -1,0 +1,66 @@
+.scale{
+    animation: scaleUp 1s ease-in forwards;
+}
+
+.accordionTask{
+    animation: scaleUp 0.5s ease-in forwards;
+}
+
+iframe{
+    animation: scaleUp 0.5s ease-in forwards;
+}
+
+@keyframes scaleUp {
+    0%{
+        scale: 0;
+    }
+    100%{
+        scale: 1;
+    }
+}
+
+.fly-x{
+    animation: flyX 1s ease-in infinite;
+}
+
+.fly-y{
+    animation: flyY 1s ease-in infinite;
+}
+
+.rotate{
+    animation: rotate 1s ease-in infinite;
+}
+
+@keyframes flyX {
+    0% {
+        transform: translateX(+500px);
+    }
+    50%{
+        transform: translateX(-500px);
+    }
+    100%{
+        transform: translateX(+500px);
+    }
+}
+
+@keyframes flyY {
+    0% {
+        transform: translateY(+500px);
+    }
+    50%{
+        transform: translateY(-500px);
+    }
+    100%{
+        transform: translateY(+500px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+

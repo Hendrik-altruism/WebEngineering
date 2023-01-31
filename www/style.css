@@ -86,6 +86,32 @@ body{
 .footer{
     grid-area: "footer";
     background-color: var(--secondary-color);
+    display: flex;
+    padding: 15px;
+}
+
+.footer-box{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-header{
+    padding-right: 10px;
+}
+
+.footer-text{
+    border-left: solid 2px var(--font-color);
+    padding-left: 10px;
+}
+
+.footer a{
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+.footer a:hover{
+    color: var(--scrollbar-hover-color);
 }
 
 .webContent{
@@ -114,7 +140,6 @@ body{
     border: 0;
     background-color: var(--tertiary-color);
     transition: 0.5s;
-    animation: startup 1s ease-in forwards;
 }
 
 .card:hover{
@@ -123,15 +148,6 @@ body{
 
 .card:active{
     transform: scale(1);
-}
-
-@keyframes startup {
-    0%{
-        scale: 0;
-    }
-    100%{
-        scale: 1;
-    }
 }
 
 .row{
@@ -194,7 +210,6 @@ h5{
     width: 98.5vw;
     scale: 0;
     padding: 2em;
-    animation: startup 0.5s ease-in forwards;
 }
 
 .accordion-body{
@@ -248,7 +263,6 @@ iframe{
     background-color: white;
     border-width: 0;
     resize: none;
-    animation: startup 0.5s ease-in forwards;
 }
 
 #homeLogo{
