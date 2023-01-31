@@ -22,9 +22,18 @@ function renderMainNav(){
           Solution Navigator
       </div>
       <ul class="navList">
-          <li class="navItem"><img class="clickable" id="user-data" src=${srcPerson}></li>
-          <li class="navItem"><img class="clickable" id="modeSwitch" src=${srcMode}></li>
-          <li class="navItem"><a href="login.php"><img class="clickable" id="logout" src=${srcLog}></a></li>
+          <li class="navItem">
+            <img class="user-data clickable icons" src=${srcPerson}>
+            <div class="user-data hoverable word">über mich</div>
+          </li>
+          <li class="navItem">
+            <img class="modeSwitch clickable icons" src=${srcMode}>
+            <div class="modeSwitch hoverable word">farbmodus</div>
+          </li>
+          <li class="navItem">
+            <a href="login.php"><img class="logout clickable icons" src=${srcLog}></a>
+            <a id="custom-link" href="login.php"><div class="logout hoverable word">logout</div></a>
+          </li>
       </ul>
       <div class="burger" id="burgerMenu">
           <div class="l1"></div>
@@ -47,9 +56,9 @@ function renderMainNav(){
     renderHomeApp();
   })
 
-  document.getElementById('user-data').addEventListener("click", ()=>{
+  document.querySelectorAll('.user-data').forEach(element => element.addEventListener("click", ()=>{
     renderUserApp();
-  })
+  }))
 
   document.getElementById("burgerMenu").addEventListener("click", async ()=>{
     const burger = document.querySelector('.burger');
@@ -57,19 +66,18 @@ function renderMainNav(){
     navList.classList.toggle('nav-active');
     burger.classList.toggle('trans'); 
   })
-
-  document.getElementById('modeSwitch').addEventListener("click", async ()=>{
+  document.querySelectorAll('.modeSwitch').forEach(element => element.addEventListener("click", async ()=>{
     document.body.classList.toggle("light-mode");
     if(document.body.classList.contains("light-mode")){
-      document.getElementById('user-data').src = "./ressources/svg/person-dark.svg"
-      document.getElementById('modeSwitch').src = "./ressources/svg/moon.svg"
-      document.getElementById('logout').src = "./ressources/svg/power-dark.svg"
+      document.querySelector('.user-data').src = "./ressources/svg/person-dark.svg"
+      document.querySelector('.modeSwitch').src = "./ressources/svg/moon.svg"
+      document.querySelector('.logout').src = "./ressources/svg/power-dark.svg"
     }else{
-      document.getElementById('user-data').src = "./ressources/svg/person-light.svg"
-      document.getElementById('modeSwitch').src = "./ressources/svg/brightness-high.svg"
-      document.getElementById('logout').src = "./ressources/svg/power-light.svg"
+      document.querySelector('.user-data').src = "./ressources/svg/person-light.svg"
+      document.querySelector('.modeSwitch').src = "./ressources/svg/brightness-high.svg"
+      document.querySelector('.logout').src = "./ressources/svg/power-light.svg"
     }
-  })
+  }))
 
 }
 

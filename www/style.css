@@ -400,6 +400,19 @@ iframe{
     background-color: var(--scrollbar-hover-color);
 }
 
+.icons{
+    display: none;
+}
+
+.hoverable:hover{
+    color: var(--scrollbar-hover-color);
+}
+
+#custom-link{
+    color: var(--font-color);
+    text-decoration: none;
+}
+
 @media (max-width: 800px){
     body{
         overflow-x: hidden;
@@ -422,10 +435,13 @@ iframe{
         min-width: 35px;
     }
 
+    .navList li{
+        margin: 0;
+    }
+
     .nav-active{
         transform: translateX(0%);
     }
-
 
     .burger{
         display: block;
@@ -444,4 +460,11 @@ iframe{
         transform: rotate(45deg) translate(-5px,-6px);
     }
 
+    .icons{
+        display: block;
+    }
+
+    .word{
+        display: none;
+    }
 }
