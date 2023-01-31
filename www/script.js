@@ -7,11 +7,11 @@ renderHomeApp();
 
 //Rendert die standart Navbar Struktur mit EventListenern
 function renderMainNav(){
-  let srcPerson = "./ressources/svg/person-light.svg";
+  let srcPerson = "./ressources/svg/magic-light.svg";
   let srcMode = "./ressources/svg/brightness-high.svg";
   let srcLog = "./ressources/svg/power-light.svg";
   if(document.body.classList.contains("light-mode")){
-    srcPerson = "./ressources/svg/person-dark.svg";
+    srcPerson = "./ressources/svg/magic-dark.svg";
     srcMode = "./ressources/svg/moon.svg"
     srcLog = "./ressources/svg/power-dark.svg";
   }
@@ -55,19 +55,19 @@ function renderMainNav(){
           <br>
           <b>mobil:</b> +49 175 5333890
           <br>
-          <a href="https://www.instagram.com/hendrik.oh/" target=_"black"><img src="./ressources/svg/instagram.svg"></a>
-          <a href="https://www.snapchat.com/add/hendrik_0605?share_id=fffdcaKES824ysRlQ58Ukg&locale=de_DE" target=_"black"><img src="./ressources/svg/snapchat.svg"></a>
-          <a href="https://www.youtube.com/@lothohornblaeser5879" target=_"black"><img src="./ressources/svg/youtube.svg"></a>
-          <a href="hhttps://www.facebook.com/fredegar.maggot.5" target=_"black"><img src="./ressources/svg/facebook.svg"></a>
-          <a href="https://github.com/Hendrik-altruism" target=_"black"><img src="./ressources/svg/github.svg"></a>
+          <a href="https://www.instagram.com/hendrik.oh/" target=_"blank"><img src="./ressources/svg/instagram.svg"></a>
+          <a href="https://www.snapchat.com/add/hendrik_0605?share_id=fffdcaKES824ysRlQ58Ukg&locale=de_DE" target=_"blank"><img src="./ressources/svg/snapchat.svg"></a>
+          <a href="https://www.youtube.com/@lothohornblaeser5879" target=_"blank"><img src="./ressources/svg/youtube.svg"></a>
+          <a href="hhttps://www.facebook.com/fredegar.maggot.5" target=_"blank"><img src="./ressources/svg/facebook.svg"></a>
+          <a href="https://github.com/Hendrik-altruism" target=_"blank"><img src="./ressources/svg/github.svg"></a>
         </div>
       </div>
       <div class="footer-box">
-        <div class="footer-header"><h5>Programme</h5></div>
+        <div class="footer-header"><h5>Ressourcen</h5></div>
         <div class="footer-text">
-          <a href="https://code.visualstudio.com/" traget=_"blanck">Visual Studio Code</a><br>
-          <a href="https://github.com/" traget=_"blanck">GitHub</a><br>
-          <a href="https://stackoverflow.com/" traget=_"blanck">Stack Overflow</a>
+          <a href="https://code.visualstudio.com/" target=_"blank">Visual Studio Code</a><br>
+          <a href="https://github.com/" target=_"blank">GitHub</a><br>
+          <a href="https://getbootstrap.com/" target=_"blank">Bootstrap</a>
         </div>
       </div>
   </div>
@@ -94,11 +94,11 @@ function renderMainNav(){
   document.querySelectorAll('.modeSwitch').forEach(element => element.addEventListener("click", async ()=>{
     document.body.classList.toggle("light-mode");
     if(document.body.classList.contains("light-mode")){
-      document.querySelector('.animation-style').src = "./ressources/svg/person-dark.svg"
+      document.querySelector('.animation-style').src = "./ressources/svg/magic-dark.svg"
       document.querySelector('.modeSwitch').src = "./ressources/svg/moon.svg"
       document.querySelector('.logout').src = "./ressources/svg/power-dark.svg"
     }else{
-      document.querySelector('.animation-style').src = "./ressources/svg/person-light.svg"
+      document.querySelector('.animation-style').src = "./ressources/svg/magic-light.svg"
       document.querySelector('.modeSwitch').src = "./ressources/svg/brightness-high.svg"
       document.querySelector('.logout').src = "./ressources/svg/power-light.svg"
     }
@@ -170,6 +170,7 @@ function renderHomeApp() {
            }else{state[index]= false}
         })
       }
+      document.querySelector(".navItem").style="display: none;"
       const assignment = webData.elemente[val]
       const $item = document.querySelector( '.main' );
       $item.innerHTML='';
