@@ -62,7 +62,6 @@ body{
     color: var(--font-color);
     display: flex;
     align-items: center;
-  
     background-color: var(--secondary-color);
     grid-area: "header";
 }
@@ -74,7 +73,6 @@ body{
     overflow: auto;
     background-color: var(--primary-color);
 }
-
 
 .main-task{
     grid-area: "main";
@@ -250,10 +248,14 @@ code{
 }
 
 button{
-    background-color: var(--fifth-color);
+    background-color: var(--font-color);
     color: var(--primary-color);
     height: 50px;
     cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--fifth-color);
 }
 
 iframe{
@@ -426,6 +428,10 @@ iframe{
     color: var(--font-color);
     text-decoration: none;
 }
+
+/* 
+ *  Media Queries
+ */
 
 @media (max-width: 800px){
     body{

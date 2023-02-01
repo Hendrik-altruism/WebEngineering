@@ -1,4 +1,5 @@
 import {webData} from './config.js';
+import * as helper from './ressources/js/helper.js';
 
 let animation = true;
 renderMainNav();
@@ -79,9 +80,7 @@ function renderMainNav(){
   })
 
   document.querySelectorAll('.animation-style').forEach(element => element.addEventListener("click", ()=>{
-    document.querySelectorAll('.card').forEach(element=>{
-      animation = !animation;
-    });
+    animation = !animation;
     renderHomeApp();
   }))
 
@@ -103,7 +102,6 @@ function renderMainNav(){
       document.querySelector('.logout').src = "./ressources/svg/power-light.svg"
     }
   }))
-
 }
 
 //Rendert den Haubtcontent der Main-Page
@@ -113,7 +111,7 @@ function renderHomeApp() {
       document.querySelector( '.main' ).innerHTML='<div id="cards" class="row row-cols-1 row-cols-md-3 g-4"></div>';
       const $items = document.querySelector('#cards')
       webData.elemente.forEach( element => {
-        const animate = generateAnimation();
+        const animate = helper.generateAnimation(animation);
         const $item = document.createElement( 'div' );
         const elementSVG = element.img;
         $item.classList.add( 'col' );
@@ -153,14 +151,13 @@ function renderHomeApp() {
              renderTaskApp(index) 
           })
         })
-        
     }
     
 
 
 //Rendert das Layout für die Lösungen einer Augabe 
 
-    async function renderTaskApp(val, state = []){
+async function renderTaskApp(val, state = []){
       //Funktion um Status der Felder zu berechnen
       function calculateState(){
         const panels = document.querySelectorAll('.accordion-collapse');
@@ -204,7 +201,7 @@ function renderHomeApp() {
           obj.querySelector('.accordion-button').addEventListener('click', async ()=>{
             obj.querySelector('svg').classList.toggle('rot')
             obj.querySelector('.accordion-button').style="pointer-events: none";
-            await sleep(300);
+            await helper.sleep(300);
             obj.querySelector('.accordion-button').style="pointer-events: auto";
           })
           if(value[1]!=null){
@@ -215,7 +212,7 @@ function renderHomeApp() {
         }))
         index++;
       } 
-  }
+}
 
 //Rendert Main für div
 function renderTaskNav(value, key, state){
@@ -249,19 +246,3 @@ function renderTaskNav(value, key, state){
   $content.innerHTML=`<iframe src=${webData.elemente[value].task[key][1]}></iframe>`;
 }
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-function generateAnimation(){
-  if(animation){
-    return "scale";
-  }
-  const rand = Math.round(Math.random() * (3 - 1)) + 1;
-  console.log(rand)
-  switch(rand){
-    case 1: return "rotate";
-    case 2: return "fly-x";
-    case 3: return "fly-y";
-  }
-}

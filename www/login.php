@@ -42,7 +42,23 @@
                 </div>
                 <div class="registerForm" style="display: none;">
                     <form action="index.php" method="POST">
-
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email Addresse</label>
+                            <input type="email" class="form-control"
+                                aria-describedby="emailHelp" name="emailAdress">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Passwort</label>
+                            <input type="password" class="form-control" name="password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword2" class="form-label">Passwort Wiederholung</label>
+                            <input type="password" class="form-control" id="exampleInputPassword2" name="password2">
+                            <p style="display: none">Passwort stimmt nicht überein</p>
+                        </div>
+                        <div class="form-button">
+                            <button type="submit" class="btn loginBtn" name="login">Registrieren</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -54,18 +70,19 @@
     </div>
 </body>
 <script>
-//buildForm();
 
 document.getElementById('login').addEventListener('click', () => {
     document.getElementById('register').classList.remove("active")
     document.getElementById('login').classList.add("active")
-    //buildForm()
+    document.querySelector('.registerForm').style = "display: none;"
+    document.querySelector('.loginForm').style = "display: block;"
 });
 
 document.getElementById('register').addEventListener('click', () => {
-    document.getElementById('login').classList.remove("active")
-    document.getElementById('register').classList.add("active")
-    //buildForm()
+    document.getElementById('login').classList.remove("active");
+    document.getElementById('register').classList.add("active");
+    document.querySelector('.loginForm').style = "display: none;"
+    document.querySelector('.registerForm').style = "display: block;"
 });
 
 function buildForm() {
