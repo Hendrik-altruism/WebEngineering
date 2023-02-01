@@ -4,7 +4,7 @@ module.exports = {
     navigate: true,
     port: 5555,
     root: 'www',
-    open: "login.php",
+    open: "test.php",
     browser: "chrome",
     php: "C:\\xampp\\php\\php.exe"
 }

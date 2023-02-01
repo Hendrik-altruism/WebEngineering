@@ -34,7 +34,7 @@ function renderMainNav(){
           </li>
           <li class="navItem">
             <a href="login.php"><img class="logout clickable icons" src=${srcLog}></a>
-            <a id="custom-link" href="login.php"><div class="logout hoverable word">logout</div></a>
+            <a id="custom-link" href="logout.php"><div class="logout hoverable word">logout</div></a>
           </li>
       </ul>
       <div class="burger" id="burgerMenu">

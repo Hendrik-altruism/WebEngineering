@@ -429,6 +429,12 @@ iframe{
     text-decoration: none;
 }
 
+.mistake{
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
 /* 
  *  Media Queries
  */
