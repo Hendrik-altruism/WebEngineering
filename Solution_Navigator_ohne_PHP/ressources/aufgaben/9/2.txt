@@ -1,0 +1,103 @@
+<b>Implementieren Sie ein eigenes Balkendiagramm mit HTML, Inline SVG, CSS und JavaScript</b>
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>&lt;svg class="chart" viewBox="0 0 17 9"&gt;
+    &lt;g class="back"&gt;
+        &lt;rect
+            x="0"
+            y="0"
+            width="17"
+            height="9"
+            style="fill: grey; stroke: black; stroke-width: 1; opacity: 0.2"
+        /&gt;
+        &lt;line
+            x1=".5"
+            y1="7.525"
+            x2="16.5"
+            y2="7.525"
+            style="stroke: rgb(0, 0, 0); stroke-width: 0.05"
+        &gt;&lt;/line&gt;
+        &lt;text class="header" text-anchor="left" x="1" y="1"&gt;
+            Covid Infektionen in Deutschland
+        &lt;/text&gt;
+    &lt;/g&gt;
+&lt;/svg&gt;
+</code>
+<hr>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const fetchData = async ()=&gt; {
+    return await ((await fetch("covid.json")).json())
+}
+
+async function createChart(){
+    const data = await fetchData()
+    let pos = 1;
+    let max = 0;
+    for (const [key, value] of Object.entries(data.Fallzahlen)) { if(value&gt;max) max=value;}
+    for (const [key, value] of Object.entries(data.Fallzahlen)) {
+        const lineHeight = (value/max)*6.5
+        let toggle = 7.8;
+        if(pos%2===0){toggle = 8.2;}
+        document.querySelector('.chart').innerHTML += `
+        &lt;g&gt;
+        &lt;line class="bar" x1="${pos}" y1="${7.5-lineHeight}" x2="${pos}" y2="7.5"&gt;&lt;/line&gt;
+        &lt;text text-anchor="middle" x="${pos}" y="${toggle}"&gt;${key}&lt;/text&gt;
+        &lt;text text-anchor="middle" x="${pos}" y="${7.5-lineHeight-0.2}"&gt;${value}&lt;/text&gt;
+        &lt;/g&gt;`
+        pos++;
+    }
+}
+
+createChart()
+</code>
+<h3 class="codeHeader">CSS</h3>
+<hr>
+<code>text {
+    font: bold 0.15px Verdana;
+}
+    
+.header {
+    font: bold 0.3px Verdana;
+}
+
+.bar {
+    transform: scaleY(0);
+    stroke: rgb(93, 119, 21);
+    stroke-width: 0.3;
+    animation: startup 1s ease-in forwards;
+}
+
+.bar:hover {
+    stroke: rgb(137, 173, 38);
+}
+
+@keyframes startup {
+    100% {
+        transform: scaleY(100%);
+    }
+}
+</code>
+<h3 class="codeHeader">JSON</h3>
+<hr>
+<code>{"Fallzahlen": {
+    "BadenWürtenberg": 4928906,
+    "Bayern":   6570185,
+    "Berlin": 1379749,
+    "Brandenburg": 1076489,
+    "Bremen": 291092,
+    "Hamburg": 785606,
+    "Hessen": 2814591,
+    "MecklenburgVorpommern": 686114,
+    "Niedersachsen": 3664544,
+    "NordrheinWestfalen": 7635848,
+    "RheinlandPfalz": 1701077,
+    "Saarland": 473782,
+    "Sachsen": 1914141,
+    "SachsenAnhalt": 935693,
+    "SchleswigHolstein": 1135664,
+    "Thüringen": 867517
+}}
+</code>
+</pre>

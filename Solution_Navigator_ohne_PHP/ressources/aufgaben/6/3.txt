@@ -1,0 +1,42 @@
+<b>Stellen Sie bei Ihrer Klasse aus der letzten Aufgabe die topologische Iterierbarkeit mittels Generator her</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>function topSortStep(relations) {
+    const Larr = []
+    const Rarr = []
+    relations.forEach(element =&gt; {
+        Larr.push(element[0])
+        Rarr.push(element[1])
+    });
+    const EL = Larr.concat(Rarr);
+    const distinctEl = [...new Set(EL)];
+    let del  
+    distinctEl.forEach(element =&gt; {
+        if(!Rarr.includes(element)){
+            del = element
+        }
+    })
+    relations.forEach(element =&gt; {
+        if(element[0]===del){
+            element.shift();
+        };
+    })
+    return [del, relations]
+}
+
+class VorrangGen{
+    constructor(rel){
+        this.relation = rel;
+    }
+    * [Symbol.iterator](){
+        let cur = this.relation; 
+        for(;;){
+            let obj = topSortStep(cur)
+            cur = obj[1]
+            yield obj[0];
+        }
+    }
+}
+</code>
+</pre>

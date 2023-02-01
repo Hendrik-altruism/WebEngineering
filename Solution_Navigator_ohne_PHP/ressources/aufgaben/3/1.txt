@@ -1,0 +1,77 @@
+<b>Implementieren Sie dann ausschließlich mit HTML und CSS Flexbox folgendes responsive <a href="https://kaul.inf.h-brs.de/ccm/we/ws22/resources/assets/holy-grail1.png" target=_"blank">Webdesign</a> nach der Desktop-First-Strategie</b>
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>&lt;div id="header"&gt;&lt;/div&gt;
+&lt;div class="flex-container"&gt;
+    &lt;div id="left" class="content"&gt;&lt;/div&gt;
+    &lt;div id="main" class="content"&gt;  &lt;/div&gt;
+    &lt;div id="right" class="content"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code>
+<hr>
+<h3 class="codeHeader">CSS</h3>
+<hr>
+<code>#header{
+    background-color: red;
+    height: 10vw;
+    width: calc(100%-2vw);
+    margin: 1vw;
+}
+
+#left{
+    background-color: rgb(82, 204, 82);
+    flex-grow: 1;
+}
+
+#right{
+    background-color: rgb(209, 56, 209);
+    flex-grow: 1;
+}
+
+#main {
+    background-color: blue;
+    flex-grow: 2;
+}
+        
+.content {
+    margin: 1vw;
+}
+
+.flex-container {
+    width: 100%;
+    height: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+@media (max-width: 500px){
+    #right{
+        width: 100vw;
+        margin: 1vw;
+        height: 10vw;
+    }
+
+    .flex-container {
+        align-items: start;
+    }
+
+    #main {
+        height: 80vw;
+    }
+
+    #left {
+        height: 80vw;
+    }
+}
+
+@media (max-width: 200px){
+    #left{
+        width: 100vw;
+        height: 10vw;
+        margin: 1vw;
+    }
+}
+</code>
+</pre>

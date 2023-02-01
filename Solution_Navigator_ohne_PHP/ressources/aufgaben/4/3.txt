@@ -1,0 +1,36 @@
+<b>Schreiben Sie im Browser die Fibonacci-Funktion in JS und geben Sie die ersten 2000 Fibonacci-Zahlen 0,1,1,2,3,5,8,13,... auf der Konsole mit console.log() aus</b>
+<table>
+  <tr>
+    <th>Datentyp</th>
+    <th>Fibonacci-Zahl</th>
+  </tr>
+  <tr>
+    <td>Integer
+    <td>8944394323791464
+  </tr>
+  <tr>
+    <td>Number
+    <td>1.3069892237633987e+308
+  </tr>
+  <tr>
+    <td>BigInt
+    <td>26110059261835017683386709468290973244755551891148…312325044424769652148982077548213909414076005501n
+  </tr>
+</table>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>function fibonacci(amount){
+    let prev = BigInt(0);
+    console.log(prev)
+    let akt = BigInt(1);
+    console.log(akt)
+    for(let x = 2; x&lt;amount; x++){
+        let y = BigInt(prev+akt)
+        console.log(y);
+        prev = akt;
+        akt = y;
+    }
+}
+</code>
+</pre>

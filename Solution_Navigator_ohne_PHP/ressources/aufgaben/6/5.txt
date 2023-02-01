@@ -1,0 +1,8 @@
+<b>Schreiben Sie eine rekursive Funktion deepCopy( struct ) als ES6-Ausdruck, sodass beliebig geschachtelte Arrays und Objekte tiefenkopiert werden können</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>
+//TODO
+</code>
+</pre>

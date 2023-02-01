@@ -1,0 +1,6 @@
+<b>Mit welchen fachlichen Argumenten wurde das WWW-Proposal von TBL abgelehnt?</b>
+        Vagheit im Konzept nicht verstanden, Konzept von T.B. Lee ein Rückschritt aus Sicht der Hypertext Community, Broken Links sind möglich
+<b>Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?</b>
+        Open-Source-Prinzip, URLs und Hyperlinkstruktur
+<b>Was wäre der Preis für eine garantierte Verhinderung von "broken links"?</b>
+Mit referenzieller Integrität und diese könnte nur gewährleistet werden, wenn man permant ein aktuelles Register aller gültigen URLs führen würde, um überprüfen zu können, ob ein Link gültig ist

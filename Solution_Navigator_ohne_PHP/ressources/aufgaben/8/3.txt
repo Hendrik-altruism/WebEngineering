@@ -1,0 +1,322 @@
+<b>Schreiben Sie einen Navigator für die Fachbegriffe des WWW zu den Oberthemen HTML, CSS und JavaScript</b>
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>&lt;link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+    crossorigin="anonymous"
+/&gt;
+&lt;div id="container1"&gt;
+    &lt;header&gt;
+      &lt;nav class="navbar navbar-expand-lg" style="background-color: #8aceff"&gt;
+        &lt;div class="container-fluid"&gt;
+          &lt;a class="navbar-brand" onclick='changeView("home")'&gt;Home&lt;/a&gt;
+          &lt;button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          &gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;div class="collapse navbar-collapse" id="navbarSupportedContent"&gt;
+            &lt;ul class="navbar-nav me-auto mb-2 mb-lg-0"&gt;
+              &lt;li class="nav-item dropdown"&gt;
+                &lt;a
+                  class="nav-link dropdown-toggle"
+                  role="button"
+                  onclick="changeField('html')"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                &gt;
+                  HTML
+                &lt;/a&gt;
+                &lt;ul class="dropdown-menu" id="htmlDrop"&gt;
+                  &lt;li&gt;
+                    &lt;a class="dropdown-item" onclick="changeView('headings')"
+                      &gt;Headings&lt;/a
+                    &gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                    &lt;a class="dropdown-item" onclick="changeView('paragraph')"
+                      &gt;Paragraph&lt;/a
+                    &gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li class="nav-item dropdown"&gt;
+                &lt;a
+                  class="nav-link dropdown-toggle"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  onclick="changeField('css')"
+                  aria-expanded="false"
+                &gt;
+                  CSS
+                &lt;/a&gt;
+                &lt;ul class="dropdown-menu" id="htmlDrop"&gt;
+                  &lt;li&gt;
+                    &lt;a class="dropdown-item" onclick="changeView('selectors')"
+                      &gt;Selectors&lt;/a
+                    &gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                    &lt;a class="dropdown-item" onclick="changeView('colors')"
+                      &gt;Colors&lt;/a
+                    &gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li class="nav-item dropdown"&gt;
+                &lt;a
+                  class="nav-link dropdown-toggle"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  onclick="changeField('javascript')"
+                  aria-expanded="false"
+                &gt;
+                  JavaScript
+                &lt;/a&gt;
+                &lt;ul class="dropdown-menu" id="htmlDrop"&gt;
+                  &lt;li&gt;
+                    &lt;a class="dropdown-item" onclick="changeView('function')"
+                      &gt;Function&lt;/a
+                    &gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                    &lt;a class="dropdown-item" onclick="changeView('object')"
+                      &gt;Object&lt;/a
+                    &gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                    &lt;a class="dropdown-item" onclick="changeView('class')"
+                      &gt;Class&lt;/a
+                    &gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                    &lt;a class="dropdown-item" onclick="changeView('Promise')"
+                      &gt;Promise&lt;/a
+                    &gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                    &lt;a class="dropdown-item" onclick="changeView('async')"
+                      &gt;Async&lt;/a
+                    &gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                    &lt;a class="dropdown-item" onclick="changeView('fetch')"
+                      &gt;Fetch&lt;/a
+                    &gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                    &lt;a class="dropdown-item" onclick="changeView('callback')"
+                      &gt;Callback&lt;/a
+                    &gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li class="nav-item dropdown"&gt;
+                &lt;a
+                  class="nav-link dropdown-toggle"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                &gt;
+                  Other
+                &lt;/a&gt;
+                &lt;ul class="dropdown-menu" id="htmlDrop"&gt;
+                  &lt;li&gt;
+                    &lt;a class="dropdown-item" onclick="changeView('home')"
+                      &gt;Other&lt;/a
+                    &gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;div id="left"&gt;&lt;/div&gt;
+    &lt;main&gt;&lt;/main&gt;
+    &lt;div id="right"&gt;&lt;/div&gt;
+    &lt;footer style="background-color: #8aceff"&gt;
+      &lt;div&gt;&lt;a&gt;Home&lt;/a&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;a&gt;About Us&lt;/a&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;a&gt;Contact&lt;/a&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;a&gt;News&lt;/a&gt;&lt;/div&gt;
+    &lt;/footer&gt;
+  &lt;/div&gt;
+&lt;script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"
+&gt;&lt;/script&gt;
+</code>
+<hr>
+<h3 class="codeHeader">CSS</h3>
+<hr>
+<code>html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+#container1 {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.navbar {
+    height: 100%;
+}
+
+header {
+    grid-area: 1 / span 3;
+}
+
+#left {
+    grid-area: 2 /1;
+}
+
+main {
+    grid-area: 2 /2;
+}
+
+#right {
+    grid-area: 2 /3;
+}
+
+footer {
+    grid-area: 3 / span 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a:hover {
+    cursor: pointer;
+}
+</code>
+<hr>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const webData = async () =&gt; {
+    return await (await fetch("8_3.json")).json()
+}
+
+let field = 'home'
+
+async function changeField(f) {
+    field = f
+}
+
+const changeView = async (name) =&gt; {
+    const data = await webData()
+    const shownData = data[field][name]
+    const elementLeft = document.getElementById('left')
+    const main = document.querySelector('main')
+    const elementRight = document.getElementById('right')
+
+    elementLeft.innerHTML = `&lt;h1&gt;${name.toUpperCase()}:&lt;/h1&gt;`
+    if(name ==='home'){
+        main.innerHTML = '&lt;h3&gt;Home Screen&lt;h3&gt;'
+        elementRight.innerHTML = ''
+    }else{
+        main.innerHTML = `&lt;p&gt;${shownData.content}&lt;/p&gt;`
+        elementRight.innerHTML = `${shownData.references}`
+    }
+}
+
+changeField('javascript')
+changeView('function')
+</code>
+<hr>
+<h3 class="codeHeader">JSON</h3>
+<hr>
+<code>{   
+    "html": {
+      "headings": {
+        "content": "Die Überschrift-Elemente bestehen aus sechs verschiedenen Levels. Das 'h1'-Element ist die Überschrift mit der höchsten Gewichtung und das 'h6'-Element mit der kleinsten. Ein Überschriften-Element beschreibt das Thema des Bereiches, welcher der Überschrift folgt. Überschriften können auch verwendet werden, um ein Inhaltsverzeichnis für ein Dokument automatisch zu erstellen.",
+        "references": [
+          "https://developer.mozilla.org/de/docs/Web/HTML/Element/h1-h6"
+        ]
+      },
+      "paragraph": {
+        "content": "Das 'p'-Element erzeugt einen Absatz, den zusammenhängenden Abschnitt eines längeren Textes. In HTML kann ein 'p'-Element jedoch für jedwede Art von zu gruppierendem, zusammenhängendem Inhalt genutzt werden, zum Beispiel Bilder oder Formularfelder.",
+        "references": [
+          "https://developer.mozilla.org/de/docs/Web/HTML/Element/p"
+        ]
+      }
+    },
+    "css": {
+      "selectors": {
+        "content": "Selektoren definieren, auf welche Elemente eine Reihe von CSS Regeln angewendet wird.",
+        "references": [
+          "https://developer.mozilla.org/de/docs/Web/CSS/CSS_Selectors"
+        ]
+      },
+      "colors": {
+        "content": "Der CSS Datentyp Color beschreibt eine Farbe im sRGB Farbraum. Eine Farbe kann auf eine von drei Arten beschrieben werden: Schlüsselworte, rgb und rgba, hsl und hsla. ...",
+        "references": [
+          "https://developer.mozilla.org/de/docs/Web/CSS/Farben"
+        ]
+      }
+    },
+    "javascript": {
+      "function": {
+        "content": "Generally speaking, a function is a subprogram that can be called by code external (or internal in the case of recursion) to the function. Like the program itself, a function is composed of a sequence of statements called the function body. Values can be passed to a function, and the function will return a value. In JavaScript, functions are first-class objects, because they can have properties and methods just like any other object. What distinguishes them from other objects is that functions can be called. In brief, they are Function objects.",
+        "references": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions"
+        ]
+      },
+      "object": {
+        "content": "JavaScript is designed on a simple object-based paradigm. An object is a collection of properties, and a property is an association between a name (or key) and a value. A property's value can be a function, in which case the property is known as a method. Objects in JavaScript, just as in many other programming languages, can be compared to objects in real life. In JavaScript, an object is a standalone entity, with properties and type. Compare it with a cup, for example. A cup is an object, with properties. A cup has a color, a design, weight, a material it is made of, etc. The same way, JavaScript objects can have properties, which define their characteristics.",
+        "references": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects"
+        ]
+      },
+      "class": {
+        "content": "JavaScript is a prototype-based language — an object's behaviors are specified by its own properties and its prototype's properties. However, with the addition of classes, the creation of hierarchies of objects and the inheritance of properties and their values are much more in line with other object-oriented languages such as Java. In this section, we will demonstrate how objects can be created from classes. In many other languages, classes, or constructors, are clearly distinguished from objects, or instances. In JavaScript, classes are mainly an abstraction over the existing prototypical inheritance mechanism — all patterns are convertible to prototype-based inheritance. Classes themselves are normal JavaScript values as well, and have their own prototype chains. In fact, most plain JavaScript functions can be used as constructors — you use the new operator with a constructor function to create a new object.",
+        "references": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_Classes"
+        ]
+      },
+      "Promise": {
+        "content": "A Promise is an object representing the eventual completion or failure of an asynchronous operation. Since most people are consumers of already-created promises, this guide will explain consumption of returned promises before explaining how to create them. Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function. Imagine a function, createAudioFileAsync(), which asynchronously generates a sound file given a configuration record and two callback functions: one called if the audio file is successfully created, and the other called if an error occurs.",
+        "references": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises"
+        ]
+      },
+      "async": {
+        "content": "The async function declaration declares an async function where the await keyword is permitted within the function body. The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.",
+        "references": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
+        ]
+      },
+      "fetch": {
+        "content": "The Fetch API provides a JavaScript interface for accessing and manipulating parts of the protocol, such as requests and responses. It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network. This kind of functionality was previously achieved using XMLHttpRequest. Fetch provides a better alternative that can be easily used by other technologies such as Service Workers. Fetch also provides a single logical place to define other HTTP-related concepts such as CORS and extensions to HTTP.",
+        "references": [
+          "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+        ]
+      },
+      "callback": {
+        "content": "A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action. Note, however, that callbacks are often used to continue code execution after an asynchronous operation has completed — these are called asynchronous callbacks. A good example is the callback functions executed inside a .then() block chained onto the end of a promise after that promise fulfills or rejects. This structure is used in many modern web APIs, such as fetch().",
+        "references": [
+          "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function"
+        ]
+      }
+    }
+}
+</code>
+</pre>

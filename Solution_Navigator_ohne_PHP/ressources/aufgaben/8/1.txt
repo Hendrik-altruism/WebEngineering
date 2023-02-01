@@ -1,0 +1,40 @@
+<b>Laden Sie mit der fetch-API parallel beide Text-Dateien vom Server. Geben Sie auf einer Webseite den Inhalt beider Dateien zeilenweise aus, wobei der Anfang der Zeile aus A.txt und das Ende aus B.txt stammen soll. Die beiden Dateien sollen also zeilenweise konkateniert werden. Erzielen Sie max. Geschwindigkeit durch maximale Parallelität</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>let prom = () =&gt; {
+    Promise.all([
+        fetch("A.txt").then((x) =&gt; x.text()),
+        fetch("B.txt").then((x) =&gt; x.text()),
+    ]).then(([texta, textb]) =&gt; {
+        let arra = texta.split("\r\n");
+        let arrb = textb.split("\r\n");
+        let erg = [];
+        if (arra.length &gt;= arrb.length) {
+            arrb.map(
+                (element, index) =&gt; (arra[index] = arra[index].concat(element))
+            );
+            erg = arra;
+        } else {
+            arra.map(
+                (element, index) =&gt; (arrb[index] = arrb[index].concat(element))
+            );
+            erg = arrb;
+        }
+        const initialVal = "";
+        const eString = erg.reduce(
+            (accumulator, currentValue) =&gt;
+            accumulator.toString() + "\n" + currentValue.toString(),
+            initialVal
+        );
+        const h1 = document.createElement("h1");
+        h1.innerHTML = "Promise Text";
+        const f1 = document.createElement("div");
+        f1.innerText = eString;
+        const b = document.querySelector(".textBox");
+        b.appendChild(h1);
+        b.appendChild(f1);
+    });
+};
+</code>
+</pre>

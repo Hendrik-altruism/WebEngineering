@@ -1,0 +1,198 @@
+<b>Schreiben Sie eine Funktion identity_function, die einen Parameter entgegennimmt und eine Funktion zurückgibt, die dieses Argument zurückgibt</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const identify_function = (param) =&gt; {
+    return (ident = () =&gt; {
+        return param;
+    });
+};
+</code>
+</pre>
+
+<b>Schreiben Sie eine Funktion addf, sodass addf(x)(y) genau x + y zurückgibt</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const addf = (x) =&gt; {
+    return (addxy = (y) =&gt; {
+        return x + y;
+    });
+};
+</code>
+</pre>
+
+<b>Schreiben Sie eine Funktion applyf, die aus einer binären Funktion wie add(x,y) eine Funktion addf berechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const applyf = (x) =&gt; {
+    return (addx = (y) =&gt; {
+        return (addy = (z) =&gt; {
+            return x(y, z);
+        });
+    });
+};
+</code>
+</pre>
+
+<b>Schreiben Sie eine Funktion curry (von Currying), die eine binäre Funktion und ein Argument nimmt, um daraus eine Funktion zu erzeugen, die ein zweites Argument entgegennimmt</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const curry = (fun, val) =&gt; {
+    return (afun = (b) =&gt; {
+        return fun(val, b);
+    });
+};
+</code>
+</pre>
+
+<b>Erzeugen Sie die inc-Funktion mit Hilfe einer der Funktionen addf, applyf und curry aus den letzten Aufgaben, ohne die Funktion inc selbst zu implementieren</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>let inc1 = addf(1);
+let inc2 = applyf(add)(1);
+let inc3 = curry(add, 1);
+</code>
+</pre>
+
+<b>Schreiben Sie eine Funktion methodize, die eine binäre Funktion (z.B. add oder mul) in eine unäre Methode verwandelt</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const methodize = (f) =&gt; {
+    return function (y) {
+        return f(this, y);
+    };
+};
+</code>
+</pre>
+
+<b>Schreiben Sie eine Funktion demethodize, die eine unäre Methode (z.B. add oder mul) in eine binäre Funktion umwandelt</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const demethodize = (method) =&gt; {
+    return function (x, y) {
+        return method.call(x, y);
+    };
+};
+</code>
+</pre>
+
+<b>Schreiben Sie eine Funktion twice, die eine binäre Funktion in eine unäre Funktion umwandelt, die den einen Parameter zweimal weiter reicht</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const twice = (fun) =&gt; {
+    return (newf = (x) =&gt; {
+        return fun(x, x);
+    });
+};
+</code>
+</pre>
+
+<b>Schreiben Sie eine Funktion composeu, die zwei unäre Funktionen in eine einzelne unäre Funktion transformiert, die beide nacheinander aufruft</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const composeu = (ufun1, ufun2) =&gt; {
+    return (newfu = (val1) =&gt; {
+        return ufun2(ufun1(val1));
+    });
+};
+</code>
+</pre>
+
+<b>Schreiben Sie eine Funktion composeb, die zwei binäre Funktionen in eine einzelne Funktion transformiert, die beide nacheinander aufruft</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const composeb = (bfun1, bfun2) =&gt; {
+    return (newfb = (x, y, z) =&gt; {
+        return bfun2(z, bfun1(y, x));
+    });
+};
+</code>
+</pre>
+
+<b>Schreiben Sie eine Funktion once, die einer anderen Funktion nur einmal erlaubt, aufgerufen zu werden</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const once = (fun1) =&gt; {
+    let done = true;
+    return (newf1 = (x, y) =&gt; {
+        if (done) {
+            done = false;
+            return fun1(x, y);
+        } else {
+            return null;
+        }
+    });
+};
+</code>
+</pre>
+
+<b>Schreiben Sie eine Fabrik-Funktion counterf, die zwei Funktionen inc und dec berechnet, die einen Zähler hoch- und herunterzählen</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const counterf = (x) =&gt; {
+    return {
+        inc: () =&gt; {
+            return ++x;
+        },
+        dec: () =&gt; {
+            return --x;
+        },
+    };
+};
+</code>
+</pre>
+
+<b>Schreiben Sie eine rücknehmbare Funktion revocable, die als Parameter eine Funktion nimmt und diese bei Aufruf ausführt</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const revocable = (fun1) =&gt; {
+    let revoked = false;
+    return {
+        invoke: (x, ...y) =&gt; {
+            if (!revoked) {
+                return fun1(x, ...y);
+            } else {
+                console.log("Funktion already Revoked");
+            }
+        },
+        revoke: () =&gt; {
+            revoked = true;
+        },
+    };
+};
+</code>
+</pre>
+
+<b>Schreiben Sie ein "Array Wrapper"-Objekt mit den Methoden get, store und append, sodass ein Angreifer keinen Zugriff auf das innere, private Array hat</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const vector = () =&gt; {
+    let arr = [];
+    return {
+        append: (x) =&gt; {
+            arr.push(x);
+        },
+        store: (ind, val) =&gt; {
+            arr[ind] = val;
+        },
+        get: (i) =&gt; {
+            return arr[i];
+        },
+    };
+};
+</code>
+</pre>
+

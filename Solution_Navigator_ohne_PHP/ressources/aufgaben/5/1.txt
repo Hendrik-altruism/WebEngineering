@@ -1,0 +1,26 @@
+<b>Implementieren Sie Performanz-Messungen zum Vergleich von innerHTML, innerText, textContent und outerHTML selbstständig in JavaScript durch Nutzung der DOM-API</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const a = document.createElement('a');
+a.appendChild(document.createTextNode('text'));
+let start = performance.now();
+a.textContent = 'text';
+let erg = [performance.now()-start];
+start = performance.now();
+a.innerText = 'text';
+erg.push(performance.now()-start);
+start = performance.now();
+a.innerHTML = 'text';
+erg.push(performance.now()-start);
+start = performance.now();
+a.nodeValue = 'text';
+erg.push(performance.now()-start);
+var s = '<tr><th>Operation</th><th>Dauer</th></tr>';
+s += '<tr><td>TextContent</td><td>'+erg[0]+'</td></tr>';
+s += '<tr><td>InnerText</td><td>'+erg[1]+'</td></tr>';
+s += '<tr><td>InnerHTML</td><td>'+erg[2]+'</td></tr>';
+s += '<tr><td>NodeValue</td><td>'+erg[3]+'</td></tr>';
+document.getElementById('table').innerHTML=s;
+</code>
+</pre>

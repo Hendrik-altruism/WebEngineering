@@ -1,0 +1,337 @@
+<div class="webContent">
+  <h1>Tic-Tac-Toe</h1>
+  <svg id="board" viewbox="0 0 300 300">
+    <g>
+      <line x1="5" y1="100" x2="295" y2="100" stroke="black"></line>
+      <line x1="5" y1="200" x2="295" y2="200" stroke="black"></line>
+      <line x1="100" y1="5" x2="100" y2="295" stroke="black"></line>
+      <line x1="200" y1="5" x2="200" y2="295" stroke="black"></line>
+    </g>
+    <g id="leftupp" class="fields">
+      <rect x="10" y="10" width="80" height="80" style="fill: white" />
+      <g visibility="hidden">
+        <line
+          x1="10"
+          y1="10"
+          x2="90"
+          y2="90"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+        <line
+          x1="10"
+          y1="90"
+          x2="90"
+          y2="10"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+      </g>
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="white"
+        visibility="hidden"
+      ></circle>
+    </g>
+    <g id="midupp" class="fields">
+      <rect x="110" y="10" width="80" height="80" style="fill: white" />
+      <g visibility="hidden">
+        <line
+          x1="110"
+          y1="10"
+          x2="190"
+          y2="90"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+        <line
+          x1="110"
+          y1="90"
+          x2="190"
+          y2="10"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+      </g>
+      <circle
+        cx="150"
+        cy="50"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="white"
+        visibility="hidden"
+      ></circle>
+    </g>
+    <g id="rightupp" class="fields">
+      <rect x="210" y="10" width="80" height="80" style="fill: white" />
+      <g visibility="hidden">
+        <line
+          x1="210"
+          y1="10"
+          x2="290"
+          y2="90"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+        <line
+          x1="210"
+          y1="90"
+          x2="290"
+          y2="10"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+      </g>
+      <circle
+        cx="250"
+        cy="50"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="white"
+        visibility="hidden"
+      ></circle>
+    </g>
+    <g id="leftmid" class="fields">
+      <rect x="10" y="110" width="80" height="80" style="fill: white" />
+      <g visibility="hidden">
+        <line
+          x1="10"
+          y1="110"
+          x2="90"
+          y2="190"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+        <line
+          x1="10"
+          y1="190"
+          x2="90"
+          y2="110"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+      </g>
+      <circle
+        cx="50"
+        cy="150"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="white"
+        visibility="hidden"
+      ></circle>
+    </g>
+    <g id="midmid" class="fields">
+      <rect x="110" y="110" width="80" height="80" style="fill: white" />
+      <g visibility="hidden">
+        <line
+          x1="110"
+          y1="110"
+          x2="190"
+          y2="190"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+        <line
+          x1="110"
+          y1="190"
+          x2="190"
+          y2="110"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+      </g>
+      <circle
+        cx="150"
+        cy="150"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="white"
+        visibility="hidden"
+      ></circle>
+    </g>
+    <g id="rightmid" class="fields">
+      <rect x="210" y="110" width="80" height="80" style="fill: white" />
+      <g visibility="hidden">
+        <line
+          x1="210"
+          y1="110"
+          x2="290"
+          y2="190"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+        <line
+          x1="210"
+          y1="190"
+          x2="290"
+          y2="110"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+      </g>
+      <circle
+        cx="250"
+        cy="150"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="white"
+        visibility="hidden"
+      ></circle>
+    </g>
+    <g id="leftdow" class="fields">
+      <rect x="10" y="210" width="80" height="80" style="fill: white" />
+      <g visibility="hidden">
+        <line
+          x1="10"
+          y1="210"
+          x2="90"
+          y2="290"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+        <line
+          x1="10"
+          y1="290"
+          x2="90"
+          y2="210"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+      </g>
+      <circle
+        cx="50"
+        cy="250"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="white"
+        visibility="hidden"
+      ></circle>
+    </g>
+    <g id="middow" class="fields">
+      <rect x="110" y="210" width="80" height="80" style="fill: white" />
+      <g visibility="hidden">
+        <line
+          x1="110"
+          y1="210"
+          x2="190"
+          y2="290"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+        <line
+          x1="110"
+          y1="290"
+          x2="190"
+          y2="210"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+      </g>
+      <circle
+        cx="150"
+        cy="250"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="white"
+        visibility="hidden"
+      ></circle>
+    </g>
+    <g id="rightdow" class="fields">
+      <rect x="210" y="210" width="80" height="80" style="fill: white" />
+      <g visibility="hidden">
+        <line
+          x1="210"
+          y1="210"
+          x2="290"
+          y2="290"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+        <line
+          x1="210"
+          y1="290"
+          x2="290"
+          y2="210"
+          stroke="black"
+          stroke-width="3"
+        ></line>
+      </g>
+      <circle
+        cx="250"
+        cy="250"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="white"
+        visibility="hidden"
+      ></circle>
+    </g>
+  </svg>
+  <button onclick="document.location.reload()">Start Over</button>
+  <script>
+    let obj = [];
+    let count = 0;
+
+    let turn = true;
+
+    function testWin() {
+      let circlewin =
+        (obj[0] === 1 && obj[1] === 1 && obj[2] === 1) ||
+        (obj[3] === 1 && obj[4] === 1 && obj[5] === 1) ||
+        (obj[6] === 1 && obj[7] === 1 && obj[8] === 1) ||
+        (obj[0] === 1 && obj[3] === 1 && obj[6] === 1) ||
+        (obj[1] === 1 && obj[4] === 1 && obj[7] === 1) ||
+        (obj[2] === 1 && obj[5] === 1 && obj[8] === 1) ||
+        (obj[0] === 1 && obj[4] === 1 && obj[8] === 1);
+      let crosswin =
+        (obj[0] === 0 && obj[1] === 0 && obj[2] === 0) ||
+        (obj[3] === 0 && obj[4] === 0 && obj[5] === 0) ||
+        (obj[6] === 0 && obj[7] === 0 && obj[8] === 0) ||
+        (obj[0] === 0 && obj[3] === 0 && obj[6] === 0) ||
+        (obj[1] === 0 && obj[4] === 0 && obj[7] === 0) ||
+        (obj[2] === 0 && obj[5] === 0 && obj[8] === 0) ||
+        (obj[0] === 0 && obj[4] === 0 && obj[8] === 0);
+      if (crosswin) {
+        alert("Cross Wins!!");
+      } else if (circlewin) {
+        alert("Circle Wins!!");
+      } else if (count === 9) {
+        alert("Draw!!");
+      }
+    }
+
+    let listener = document.querySelectorAll("g.fields");
+    for (let i = 0; i < listener.length; i++) {
+      listener[i].addEventListener("click", () => {
+        if (
+          listener[i].querySelector("g").getAttribute("visibility") ===
+            "visible" ||
+          listener[i].querySelector("circle").getAttribute("visibility") ===
+            "visible"
+        ) {
+          return;
+        }
+        turn
+          ? listener[i].querySelector("g").setAttribute("visibility", "visible")
+          : listener[i]
+              .querySelector("circle")
+              .setAttribute("visibility", "visible");
+        turn ? (obj[i] = 0) : (obj[i] = 1);
+        count++;
+        testWin(turn);
+        turn = !turn;
+      });
+    }
+  </script>
+</div>

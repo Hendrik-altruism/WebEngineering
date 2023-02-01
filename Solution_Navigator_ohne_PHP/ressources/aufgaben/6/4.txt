@@ -1,0 +1,63 @@
+<b>Erweitern Sie Ihre Vorrang-Klasse um Logging, indem Sie ein Proxy einfügen. Lassen Sie sich vom Logger bei jedem Schritt ausgeben, wie viele der Vorrangrelationen noch übrig bleiben</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>function topSortStep(relations) {
+    const Larr = []
+    const Rarr = []
+    relations.forEach(element =&gt; {
+        Larr.push(element[0])
+        Rarr.push(element[1])
+    });
+    const EL = Larr.concat(Rarr);
+    const distinctEl = [...new Set(EL)];
+    let del  
+    distinctEl.forEach(element =&gt; {
+        if(!Rarr.includes(element)){
+            del = element
+        }
+    })
+    relations.forEach(element =&gt; {
+        if(element[0]===del){
+            element.shift();
+        };
+    })
+    return [del, relations]
+}
+
+class VorrangProxy{
+    constructor(rel){
+        this.relation = rel;
+    }
+    [Symbol.iterator](){
+        let cur = this.relation
+        return{
+            next(){
+                let obj = topSortStep(cur)
+                cur = obj[1]
+                return  {done: typeof(obj[0])==="undefined", value: obj}
+            }
+        }
+    }
+}
+
+let studentenLebenProxy = new VorrangProxy([
+    ["schlafen", "studieren"],
+    ["essen", "studieren"],
+    ["studieren", "prüfen"]
+])
+
+const proxy = new Proxy(studentenLebenProxy,{
+    get(target, prop, reciever){
+        let erg = topSortStep(target.relation)
+        target.relation = erg[1]
+        return erg
+    }
+})
+
+console.log(proxy.next)
+console.log(proxy.next)
+console.log(proxy.next)
+console.log(proxy.next)
+</code>
+</pre>

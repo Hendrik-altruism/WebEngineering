@@ -1,0 +1,30 @@
+<b>Schreiben Sie die Prototypen Person und Auto in JavaScript, so dass jede Person weiß, welche Autos sie besitzt. Schreiben Sie eine Funktion conflict(), die feststellt, ob ein Auto von mehr als einer Person besessen wird</b>
+<pre>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>var Auto = {
+    toString: function(){
+        return 'Auto ' + this.name;
+    }
+}
+
+var Dacia = {
+    __proto__: Auto,
+    name: 'Dacia'
+}
+
+var Peter = {
+    auto: Dacia,
+    name: "Peter"
+}
+
+var Kevin = {
+    auto: Dacia,
+    name: "Kevin"
+}
+
+function conflict(){
+    return Peter.auto == Kevin.auto
+}
+</code>
+</pre>

@@ -1,0 +1,236 @@
+<div class="webContent">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+    crossorigin="anonymous"
+  />
+  <div id="container1">
+    <header>
+      <nav class="navbar navbar-expand-lg" style="background-color: #8aceff">
+        <div class="container-fluid">
+          <a class="navbar-brand" onclick='changeView("home")'>Home</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  role="button"
+                  onclick="changeField('html')"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  HTML
+                </a>
+                <ul class="dropdown-menu" id="htmlDrop">
+                  <li>
+                    <a class="dropdown-item" onclick="changeView('headings')"
+                      >Headings</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="changeView('paragraph')"
+                      >Paragraph</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  onclick="changeField('css')"
+                  aria-expanded="false"
+                >
+                  CSS
+                </a>
+                <ul class="dropdown-menu" id="htmlDrop">
+                  <li>
+                    <a class="dropdown-item" onclick="changeView('selectors')"
+                      >Selectors</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="changeView('colors')"
+                      >Colors</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  onclick="changeField('javascript')"
+                  aria-expanded="false"
+                >
+                  JavaScript
+                </a>
+                <ul class="dropdown-menu" id="htmlDrop">
+                  <li>
+                    <a class="dropdown-item" onclick="changeView('function')"
+                      >Function</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="changeView('object')"
+                      >Object</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="changeView('class')"
+                      >Class</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="changeView('Promise')"
+                      >Promise</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="changeView('async')"
+                      >Async</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="changeView('fetch')"
+                      >Fetch</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="changeView('callback')"
+                      >Callback</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Other
+                </a>
+                <ul class="dropdown-menu" id="htmlDrop">
+                  <li>
+                    <a class="dropdown-item" onclick="changeView('home')"
+                      >Other</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div id="left"></div>
+    <main></main>
+    <div id="right"></div>
+    <footer style="background-color: #8aceff">
+      <div><a>Home</a></div>
+      <div><a>About Us</a></div>
+      <div><a>Contact</a></div>
+      <div><a>News</a></div>
+    </footer>
+  </div>
+
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    #container1 {
+      height: 100%;
+      display: grid;
+      grid-template-rows: 100px 1fr 100px;
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    .navbar {
+      height: 100%;
+    }
+
+    header {
+      grid-area: 1 / span 3;
+    }
+
+    #left {
+      grid-area: 2 /1;
+    }
+
+    main {
+      grid-area: 2 /2;
+    }
+
+    #right {
+      grid-area: 2 /3;
+    }
+
+    footer {
+      grid-area: 3 / span 3;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    a:hover {
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    const webData = async () => {
+      return await (await fetch("8_3.json")).json();
+    };
+
+    let field = "home";
+
+    async function changeField(f) {
+      field = f;
+    }
+
+    const changeView = async (name) => {
+      const data = await webData();
+      const shownData = data[field][name];
+      const elementLeft = document.getElementById("left");
+      const main = document.querySelector("main");
+      const elementRight = document.getElementById("right");
+
+      elementLeft.innerHTML = `<h1>${name.toUpperCase()}:</h1>`;
+      if (name === "home") {
+        main.innerHTML = "<h3>Home Screen<h3>";
+        elementRight.innerHTML = "";
+      } else {
+        main.innerHTML = `<p>${shownData.content}</p>`;
+        elementRight.innerHTML = `${shownData.references}`;
+      }
+    };
+
+    changeField("javascript");
+    changeView("function");
+  </script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"
+  ></script>
+</div>

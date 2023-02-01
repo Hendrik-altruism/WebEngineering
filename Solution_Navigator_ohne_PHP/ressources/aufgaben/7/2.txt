@@ -1,0 +1,149 @@
+<b>Schreiben Sie in JavaScript eine Textanalyse. Ermitteln Sie die häufigsten Begriffe im Text Plagiatsresolution</b>
+<pre>
+<h3 class="codeHeader">HTML</h3>
+<hr>
+<code>&lt;div class="content"&gt;
+    &lt;div
+      class="paragraphs-items paragraphs-items-field-pcf-content paragraphs-items-field-pcf-content-full paragraphs-items-full"
+    &gt;
+      &lt;div class="field field-name-field-pcf-content"&gt;
+        &lt;div class="entity entity-paragraphs-item paragraphs-item-para-text"&gt;
+          &lt;div
+            class="field field--name-field-pf-text-wysiwyg field--type-text-long field--label-hidden"
+          &gt;
+            &lt;p&gt;
+              &lt;strong
+                &gt;Resolution zum akademischen Ethos und zu den akademischen
+                Standards&lt;/strong
+              &gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+              In guter Tradition und anlässlich der öffentlichen Diskussion zum
+              Plagiatsthema sieht sich die Hochschule Bonn-Rhein-Sieg in der
+              Pflicht, ihre Position klar und eindeutig zu bekunden und
+              hochschulweit Maßnahmen einzuleiten.
+            &lt;/p&gt;
+            &lt;p&gt;
+              1. Die Hochschule Bonn-Rhein-Sieg bekennt sich mit dieser
+              Resolution öffentlich zum akademischen Ethos und den akademischen
+              Standards.
+            &lt;/p&gt;
+            &lt;p&gt;
+              2. Die Hochschule Bonn-Rhein-Sieg sieht sich verpflichtet, alle
+              Studierende frühzeitig im Studium sowohl über den
+              wissenschaftlichen Auftrag und den akademischen Ethos als auch
+              über die Konsequenzen seiner Missachtung aufzuklären. In allen
+              Studiengängen wird intensiv in die wissenschaftliche Arbeits- und
+              Denkweise eingeführt und über den akademischen Ethos und die
+              akademischen Standards klar und eindeutig aufgeklärt.
+            &lt;/p&gt;
+            &lt;p&gt;
+              3. In einer Selbstverpflichtungserklärung zum akademischen Ethos
+              geben alle Studierende der Hochschule Bonn-Rhein-Sieg spätestens
+              gegen Ende des ersten Studienjahres zum Ausdruck, dass sie sich
+              von den Dozentinnen und Dozenten der Hochschule Bonn-Rhein-Sieg
+              hinreichend über den akademischen Ethos und die akademischen
+              Standards aufgeklärt sind und diese beachten werden.
+            &lt;/p&gt;
+            &lt;p&gt;
+              Der Senat befürwortete in seiner Sitzung am 03.05.2012 die
+              Resolution in der o.g. Fassung.
+            &lt;/p&gt;
+            &lt;p&gt;
+              &lt;strong&gt;Eckpunkte zur Plagiatsprüfung&lt;/strong&gt;
+            &lt;/p&gt;
+            &lt;p&gt;Der Senat empfiehlt:&lt;/p&gt;
+            &lt;p&gt;
+              1. Die Aufklärung und das Bekenntnis zum akademischen Ethos und
+              den akademischen Standards muss fester Bestandteil aller Curricula
+              aller Studiengänge im ersten Studienjahr sein. Alle Curricula
+              aller Studiengänge werden darauf hin geprüft und ggfs. ergänzt.
+            &lt;/p&gt;
+            &lt;p&gt;2. Alle Abschlussarbeiten werden auf Plagiate geprüft.&lt;/p&gt;
+            &lt;p&gt;
+              3. Alle Abschlussarbeiten mit Plagiaten werden grundsätzlich als
+              Fehlversuch gewertet.
+            &lt;/p&gt;
+            &lt;p&gt;
+              4. Die Entscheidung, ob die Arbeit Plagiate enthält, liegt zuerst
+              bei den Gutachterinnen und Gutachtern. Der Nachweis in einem
+              Gutachten reicht.
+            &lt;/p&gt;
+            &lt;p&gt;
+              5. Alle Abschlussarbeiten werden grundsätzlich auch in
+              elektronischer Form (PDF-Format und Originalformat wie Word,
+              OpenOffice, ...) eingereicht.
+            &lt;/p&gt;
+            &lt;p&gt;
+              6. Alle Abschlussarbeiten ohne Sperrvermerk werden einem vom
+              Fachbereich definierten Kreis zur Einsicht zur Verfügung gestellt.
+              Alle Abschlussarbeiten sollten nach Möglichkeit grundsätzlich zur
+              Veröffentlichung freigegeben werden. Wissenschaft zielt auf
+              Veröffentlichung ab. Nichtveröffentlichung sollte nur in
+              begründeten und durch den Prüfungsausschuss genehmigten
+              Ausnahmefällen geschehen.
+            &lt;/p&gt;
+            &lt;p&gt;
+              7. Im Bereich von Seminar-, Hausarbeiten und Praktikumsberichten
+              behält sich die Hochschule stichprobenartige Plagiatsprüfungen
+              vor.
+            &lt;/p&gt;
+            &lt;p&gt;
+              &lt;strong&gt;Selbstverpflichtungserklärung der Studierenden:&lt;/strong&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+              Eine akademische Arbeit stellt eine individuelle Leistung dar, die
+              eigenständig und allein auf Basis der im Literaturverzeichnis
+              angegebenen Quellen erstellt wurde und in der alle Zitate als
+              solche gekennzeichnet sind.
+            &lt;/p&gt;
+            &lt;p&gt;
+              "Ich erkläre hiermit, dass ich den akademischen Ehrencodex kenne
+              und über die Folgen einer Missachtung oder Verletzung aufgeklärt
+              worden bin."
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code>
+<hr>
+<h3 class="codeHeader">JavaScript</h3>
+<hr>
+<code>const stopwords = [...]
+const tags = ["&lt;", "&gt;", "/", " ", ".", "\n"];
+    let raw = document.getElementsByClassName("field--type-text-long")[0]
+      .innerHTML;
+    let rawArray = raw.split(" ");
+    function testword(y) {
+      let valid = true;
+      for (const n in tags) {
+        if (y.indexOf(tags[n]) != -1) {
+          valid = false;
+        }
+      }
+      return valid;
+    }
+    function testFill(x) {
+      return stopwords.indexOf(x) === -1 && testword(x) && x.length &gt; 1;
+    }
+    let f1 = rawArray.filter((x) =&gt; testFill(x));
+    const distinctArr = [...new Set(f1)];
+    const count = [];
+    count.length = distinctArr.length;
+    count.fill(0);
+    f1.map((x) =&gt; (count[distinctArr.indexOf(x)] += 1));
+    Array.prototype.max = function () {
+      return Math.max.apply(null, this);
+    };
+    let erg = [];
+    erg.push([distinctArr[count.indexOf(count.max())], count.max()]);
+    count[count.indexOf(count.max())] = 0;
+    erg.push([distinctArr[count.indexOf(count.max())], count.max()]);
+    count[count.indexOf(count.max())] = 0;
+    erg.push([distinctArr[count.indexOf(count.max())], count.max()]);
+    console.log(erg);
+    document.querySelector(".result").innerHTML = "&lt;b&gt;Ergebniss: &lt;/b&gt;" + erg;
+</code>
+</pre>
