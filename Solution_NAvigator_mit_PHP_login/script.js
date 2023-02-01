@@ -59,7 +59,7 @@ function renderMainNav(){
           <a href="https://www.instagram.com/hendrik.oh/" target=_"blank"><img src="./ressources/svg/instagram.svg"></a>
           <a href="https://www.snapchat.com/add/hendrik_0605?share_id=fffdcaKES824ysRlQ58Ukg&locale=de_DE" target=_"blank"><img src="./ressources/svg/snapchat.svg"></a>
           <a href="https://www.youtube.com/@lothohornblaeser5879" target=_"blank"><img src="./ressources/svg/youtube.svg"></a>
-          <a href="hhttps://www.facebook.com/fredegar.maggot.5" target=_"blank"><img src="./ressources/svg/facebook.svg"></a>
+          <a href="https://www.facebook.com/fredegar.maggot.5" target=_"blank"><img src="./ressources/svg/facebook.svg"></a>
           <a href="https://github.com/Hendrik-altruism" target=_"blank"><img src="./ressources/svg/github.svg"></a>
         </div>
       </div>
