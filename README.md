@@ -4,9 +4,9 @@ Projekt von Hendrik Oude Hengel im Kurs Einführung ins Web Engineering an der H
 
 
 
-PHP Login
+PHP Login:
 
-email: default@email.com
-pw: 123
+Email: default@email.com
+Passwort: 123
 
-Eigenes anlegen eine Accounts möglich
+Anlegen eines eigenen Accounts möglich
