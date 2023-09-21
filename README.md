@@ -2,12 +2,11 @@
 
 Projekt von Hendrik Oude Hengel im Kurs Einführung ins Web Engineering an der Hochschule Bonn-Rhein-Sieg
 
-Studiererendenkürzel: houde2s
-Name: Hendrik Oude Hengel
 
-PHP Login
 
-email: default@email.com
-pw: 123
+PHP Login:
 
-Eigenes anlegen eine Accounts möglich
+Email: default@email.com
+Passwort: 123
+
+Anlegen eines eigenen Accounts möglich
