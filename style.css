@@ -7,6 +7,17 @@ html{
 .light-mode{
     --font-color: black;
     --primary-color: rgb(255, 255, 255);
+    --secondary-color: #BCF4DE;
+    --tertiary-color: #DED6D1;
+    --forth-color: #CDE5D7;
+    --fifth-color: rgb(9, 9, 24);
+    --scrollbar-color: #EEC6CA;
+    --scrollbar-hover-color: #FFB7C3;
+}
+
+.save-light-mode{
+    --font-color: black;
+    --primary-color: rgb(255, 255, 255);
     --secondary-color: rgb(73, 154, 247);
     --tertiary-color: rgb(219, 235, 245);
     --forth-color: rgb(101, 184, 252);
@@ -15,7 +26,7 @@ html{
     --scrollbar-hover-color: rgb(55, 87, 124);
 }
 
-:root{
+.sav-root{
     --font-color: rgb(204, 203, 203);
     --primary-color: rgb(9, 9, 24);
     --secondary-color: rgb(10, 20, 34);
@@ -23,7 +34,18 @@ html{
     --forth-color: rgb(14, 28, 48);
     --fifth-color: rgb(204, 224, 236);
     --scrollbar-color: rgb(12, 17, 46);
-    --scrollbar-hover-color: rgb(25, 34, 80);
+    --scrollbar-hover-color: rgb(25, 34, 80);    
+}
+
+:root{
+    --font-color: rgb(204, 203, 203);
+    --primary-color: rgb(9, 9, 100);
+    --secondary-color: rgb(59, 70, 177);
+    --tertiary-color: rgb(8, 18, 124);
+    --forth-color: rgb(68, 82, 177);
+    --fifth-color: rgb(204, 224, 236);
+    --scrollbar-color: rgb(37, 42, 139);
+    --scrollbar-hover-color: rgb(72, 79, 173);
 }
 
 body{

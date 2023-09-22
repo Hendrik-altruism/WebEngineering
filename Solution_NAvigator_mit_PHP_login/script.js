@@ -61,6 +61,7 @@ function renderMainNav(){
           <a href="https://www.youtube.com/@lothohornblaeser5879" target=_"blank"><img src="./ressources/svg/youtube.svg"></a>
           <a href="https://www.facebook.com/fredegar.maggot.5" target=_"blank"><img src="./ressources/svg/facebook.svg"></a>
           <a href="https://github.com/Hendrik-altruism" target=_"blank"><img src="./ressources/svg/github.svg"></a>
+          <a href="https://www.linkedin.com/in/hendrik-oude-hengel-32247421a/" target=_"blank"><img src="./ressources/svg/linkedin.svg"></a>
         </div>
       </div>
       <div class="footer-box">
